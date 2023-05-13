@@ -3,7 +3,7 @@ using System.Data;
 
 namespace HeraclesDAO.Logic
 {
-    internal class BaseImpl
+    public class BaseImpl
     {
         string _connectionString = "Server=localhost;Database=heracles;Uid=root;Pwd=chris.gonza707;";
         public string _query = "";

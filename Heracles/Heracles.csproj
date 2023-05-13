@@ -67,8 +67,29 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Membresies\ShowMembresies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Membresies\winConfirmDeleteMembresy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Membresies\winNewMembresie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Membresies\ShowMembresies.xaml.cs">
+      <DependentUpon>ShowMembresies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Membresies\winConfirmDeleteMembresy.xaml.cs">
+      <DependentUpon>winConfirmDeleteMembresy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Membresies\winNewMembresie.xaml.cs">
+      <DependentUpon>winNewMembresie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,6 +122,12 @@
     <PackageReference Include="MaterialDesignThemes">
       <Version>4.9.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HeraclesDAO\HeraclesDAO.csproj">
+      <Project>{732613cf-f9da-4ce2-a6c7-99c758b6ea60}</Project>
+      <Name>HeraclesDAO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

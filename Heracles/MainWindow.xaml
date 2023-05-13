@@ -75,7 +75,7 @@
                                     <TextBlock Text="Horarios" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
                                 </StackPanel>
                             </Button>
-                            <Button Width="210" Height="100" Margin="30,0,0,0">
+                            <Button x:Name="btnMembresies" Width="210" Height="100" Margin="30,0,0,0" Click="btnMembresies_Click">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="Payment" Foreground="#FFE800" Height="50" Width="50" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Membresias" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>

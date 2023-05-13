@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heracles.Membresies;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,14 @@ namespace Heracles
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+        #endregion
+
+        #region Options
+        private void btnMembresies_Click(object sender, RoutedEventArgs e)
+        {
+            ShowMembresies showMembresies = new ShowMembresies();
+            showMembresies.ShowDialog();
         }
         #endregion
     }

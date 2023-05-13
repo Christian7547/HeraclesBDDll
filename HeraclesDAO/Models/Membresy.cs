@@ -11,6 +11,5 @@ namespace HeraclesDAO.Models
         public byte Id { get; set; }
         public string TypeMembresy { get; set; }
         public float Price { get; set; }
-        public byte Status { get; set; }
     }
 }
