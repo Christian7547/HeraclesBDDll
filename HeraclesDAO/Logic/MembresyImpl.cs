@@ -10,11 +10,12 @@ namespace HeraclesDAO.Logic
     {
         public int Delete(Membresy t)
         {
-            _query = @"UPDATE membresy SET status = 0, lastUpdate = CURRENT_TIMESTAMP WHERE id = @id";
+            _query = @"UPDATE membresy SET `status` = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
             using(MySqlCommand delete = CreateCommand(_query))
             {
                 delete.Connection.Open();
                 delete.Parameters.AddWithValue("@id", t.Id);
+                delete.Parameters.AddWithValue("@userId", 1);
                 
                 return WriteCommand(delete);    
             }

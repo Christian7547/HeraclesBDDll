@@ -1,4 +1,5 @@
-﻿using Heracles.Membresies;
+﻿using Heracles.Coachs;
+using Heracles.Membresies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace Heracles
         public MainWindow()
         {
             InitializeComponent();
+            txtCurrentDate.Text = DateTime.Today.Date.ToShortDateString(); 
         }
         #region ConfigApplication
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -43,6 +45,13 @@ namespace Heracles
             ShowMembresies showMembresies = new ShowMembresies();
             showMembresies.ShowDialog();
         }
+
+        private void btnCoachs_Click(object sender, RoutedEventArgs e)
+        {
+            winShowCoachs winShowCoachs = new winShowCoachs();
+            winShowCoachs.ShowDialog(); 
+        }
+
         #endregion
     }
 }

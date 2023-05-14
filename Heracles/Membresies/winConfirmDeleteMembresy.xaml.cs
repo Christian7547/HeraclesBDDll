@@ -39,13 +39,14 @@ namespace Heracles.Membresies
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            _membresy = new Membresy()
+            {
+                Id = _id
+            };
+            membresyImpl = new MembresyImpl();
+
             try
             {
-                _membresy = new Membresy()
-                {
-                    Id = _id
-                };
-                membresyImpl = new MembresyImpl();
                 membresyImpl.Delete(_membresy);
                 Close();
                 ShowMembresies showMembresies = new ShowMembresies();

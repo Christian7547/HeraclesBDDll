@@ -33,9 +33,9 @@ namespace Heracles.Membresies
 
         public void Select()
         {
-            membresyImpl = new MembresyImpl();  
-            DataTable data = membresyImpl.Select();
-            dtgData.ItemsSource = data.DefaultView;
+            membresyImpl = new MembresyImpl();
+            dtgData.ItemsSource = membresyImpl.Select().DefaultView;
+            dtgData.Columns[0].Visibility = Visibility.Collapsed;
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)

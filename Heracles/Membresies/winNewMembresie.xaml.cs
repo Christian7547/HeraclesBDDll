@@ -27,15 +27,13 @@ namespace Heracles.Membresies
                 TypeMembresy = txtType.Text,
                 Price = float.Parse(txtPrice.Text)
             };
-
+            membresyImpl = new MembresyImpl();
             try
             {
-                membresyImpl = new MembresyImpl();
                 int success = membresyImpl.Insert(_membresy);
                 if (success > 0)
-                {
-                    MessageBox.Show("Registro guardado correcatmente");
-                }
+                    MessageBox.Show("Registro guardado correctamente");
+                _membresy = null;
                 Close();
                 ShowMembresies showMembresies = new ShowMembresies();
                 showMembresies.ShowDialog();
@@ -75,10 +73,8 @@ namespace Heracles.Membresies
                 membresyImpl = new MembresyImpl();
                 int success = membresyImpl.Update(_membresy);
                 if(success > 0)
-                {
                     MessageBox.Show("Registro modificado");
-                }
-                Close();
+                this.Close();
                 ShowMembresies showMembresies = new ShowMembresies();
                 showMembresies.ShowDialog();
             }

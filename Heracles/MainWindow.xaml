@@ -10,14 +10,13 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1000" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}">
     <Border Background="#2E4053" CornerRadius="20">
         <Grid>
             <StackPanel>
                 <StackPanel Height="40" Orientation="Horizontal">
-                    <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" Foreground="White" TextAlignment="Center" Padding="12" FontWeight="ExtraBold">
+                    <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" Foreground="White" TextAlignment="Center" Padding="12" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold">
                         HERACLES
                     </TextBlock>
                     <Button x:Name="btnMinimize" Margin="800,0,0,0" Width="50" Height="30" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Click="btnMinimize_Click">
@@ -33,7 +32,7 @@
                         <Button Height="350" Width="170" Margin="10">
                             <StackPanel>
                                 <MaterialDesign:PackIcon Kind="User" Foreground="#FFE800" Height="100" Width="100"/>
-                                <TextBlock Text="Usuarios" Foreground="White" FontWeight="Bold" TextAlignment="Center" FontSize="12"/>
+                                <TextBlock Text="Usuarios" Foreground="White" FontWeight="Bold" TextAlignment="Center" FontSize="12" FontFamily="BiomeW04-Bold" />
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -42,13 +41,13 @@
                             <Button Width="210" Height="100" Margin="15,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="PersonCardDetails" Foreground="#FFE800" Height="50" Width="50" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Inscripciones" FontWeight="Bold" TextAlignment="Center" FontSize="12"/>
+                                    <TextBlock Text="Inscripciones" FontWeight="Bold" TextAlignment="Center" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
                             </Button>
                             <Button Width="210" Height="100" Margin="30,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="AccountPlus" Foreground="#FFE800" Height="50" Width="50" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Miembros" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
+                                    <TextBlock Text="Miembros" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
@@ -57,13 +56,13 @@
                             <Button Width="210" Height="100" Margin="15,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="Gymnastics" Foreground="#FFE800" Height="50" Width="50" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Clases" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
+                                    <TextBlock Text="Clases" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
                             </Button>
-                            <Button Width="210" Height="100" Margin="30,0,0,0">
+                            <Button x:Name="btnCoachs" Width="210" Height="100" Margin="30,0,0,0" Click="btnCoachs_Click">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="AccountEdit" Foreground="#FFE800" Height="50" Width="50" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Entrenadores" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
+                                    <TextBlock Text="Coachs" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
@@ -72,16 +71,28 @@
                             <Button Width="210" Height="100" Margin="15,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="Schedule" Foreground="#FFE800" Height="50" Width="50" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Horarios" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
+                                    <TextBlock Text="Horarios" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
+                                
                             </Button>
                             <Button x:Name="btnMembresies" Width="210" Height="100" Margin="30,0,0,0" Click="btnMembresies_Click">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="Payment" Foreground="#FFE800" Height="50" Width="50" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="Membresias" TextAlignment="Center" FontWeight="Bold" FontSize="12"/>
+                                    <TextBlock Text="Membresias" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold" Cursor=""/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Height="30" Width="930" HorizontalAlignment="Left" Margin="30,0,0,0" Orientation="Horizontal">
+                    <StackPanel Width="300" Orientation="Horizontal">
+                        <MaterialDesign:PackIcon Kind="Circle" Foreground="#2ECC71" Height="10" Width="10" Margin="10"/>
+                        <TextBlock Foreground="#2ECC71" Text="En línea:"  Margin="7" FontFamily="BiomeW04-Bold" Width="60" />
+                        <TextBlock x:Name="txbOnLine" Foreground="White" Text="Christian"  Margin="7" FontFamily="BiomeW04-Bold" Width="200" />
+                    </StackPanel>
+                    <StackPanel Margin="480,0,0,0" Orientation="Horizontal">
+                        <TextBlock Margin="7" Text="Fecha:" FontFamily="BiomeW04-Bold" Foreground="White"/>
+                        <TextBlock x:Name="txtCurrentDate" Margin="7" Text="..." FontFamily="BiomeW04-Bold" Foreground="White"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

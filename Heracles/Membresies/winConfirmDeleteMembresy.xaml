@@ -10,17 +10,16 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ShowMembresies" Height="230" Width="450"  WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}">
+        Title="ConfirmWindow" Height="230" Width="450"  WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}">
     <Border Background="#5D6D7E" CornerRadius="20">
         <Grid>
-            <TextBlock VerticalAlignment="Top" Margin="50,10" Text="Eliminar" FontSize="25" Foreground="White" FontWeight="ExtraBold"/>
+            <TextBlock VerticalAlignment="Top" Margin="50,10" Text="Eliminar" FontSize="25" Foreground="White" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
             <StackPanel Margin="80,60,80,20">
-                <TextBlock Text="Desea elimar la membresía?" Foreground="White" FontSize="18" FontWeight="Bold"/>
-                <TextBlock x:Name="txbNameMembresy" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                <TextBlock Text="Desea eliminar la membresía?" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                <TextBlock x:Name="txbNameMembresy" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
                 <StackPanel Orientation="Horizontal" Margin="10,20,10,0" Height="60">
-                    <Button x:Name="btnDelete" Content="Confirmar" Height="50" Width="120" FontSize="17" Click="btnDelete_Click"/>
-                    <Button x:Name="btnCancel" Content="Cancelar" Height="50" Margin="20,0,0,0" Width="120" FontSize="17" Click="btnCancel_Click"/>
+                    <Button x:Name="btnDelete" Content="Confirmar" Height="50" Width="120" FontSize="17" Click="btnDelete_Click" FontFamily="BiomeW04-Bold"/>
+                    <Button x:Name="btnCancel" Content="Cancelar" Height="50" Margin="20,0,0,0" Width="120" FontSize="17" Click="btnCancel_Click" FontFamily="BiomeW04-Bold"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

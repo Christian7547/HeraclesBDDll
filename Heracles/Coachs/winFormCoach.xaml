@@ -1,0 +1,31 @@
+﻿<Window x:Class="Heracles.Coachs.winFormCoach"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Heracles.Coachs"
+        mc:Ignorable="d"
+        Title="winFormCoach" Height="600" Width="480"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Border Background="#5D6D7E" CornerRadius="20" Margin="0,0,0,0">
+        <Grid>
+            <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,10" Text="Inscribir coach" FontSize="25" Foreground="White" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+            <StackPanel Margin="80,60,80,20">
+                <TextBlock Text="Nombre:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                <TextBox x:Name="txtName" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <TextBlock Text="Apellido:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                <TextBox x:Name="txtLastName" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <TextBlock Text="Apellido materno:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                <TextBox x:Name="txtSecondLastName" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <TextBlock Text="C.I:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                <TextBox x:Name="txtCI" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <TextBlock Text="Teléfono:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                <TextBox x:Name="txtPhone" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <StackPanel Orientation="Horizontal" Margin="10,10,10,0" Height="60">
+                    <Button x:Name="btnSave" Content="Guardar" Height="50" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnSave_Click"/>
+                    <Button x:Name="btnEdit" Content="Editar" Height="50" Width="120" FontSize="17" Visibility="Collapsed" FontFamily="BiomeW04-Bold" Click="btnEdit_Click"/>
+                    <Button x:Name="btnCancel" Content="Cancelar" Height="50" Margin="20,0,0,0" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnCancel_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
