@@ -68,17 +68,17 @@ namespace Heracles.Membresies
                 TypeMembresy = txtType.Text,
                 Price = float.Parse(txtPrice.Text)
             };
+            membresyImpl = new MembresyImpl();
             try
             {
-                membresyImpl = new MembresyImpl();
                 int success = membresyImpl.Update(_membresy);
-                if(success > 0)
+                if (success > 0)
                     MessageBox.Show("Registro modificado");
                 this.Close();
                 ShowMembresies showMembresies = new ShowMembresies();
                 showMembresies.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
