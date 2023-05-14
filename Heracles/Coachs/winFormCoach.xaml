@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Heracles.Coachs"
         mc:Ignorable="d"
         Title="winFormCoach" Height="600" Width="480"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Border Background="#5D6D7E" CornerRadius="20" Margin="0,0,0,0">
+    <Border Background="#FF434343" CornerRadius="10" Margin="0,0,0,0">
         <Grid>
             <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,10" Text="Inscribir coach" FontSize="25" Foreground="White" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
             <StackPanel Margin="80,60,80,20">

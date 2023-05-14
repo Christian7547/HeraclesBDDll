@@ -11,7 +11,7 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Title="NewMembresy" Height="370" Width="450"  WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}">
-    <Border Background="#5D6D7E" CornerRadius="20">
+    <Border Background="#FF434343" CornerRadius="10">
         <Grid>
             <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,10" Text="Crear" FontSize="25" Foreground="White" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
             <StackPanel Margin="80,60,80,20">

@@ -12,16 +12,16 @@
         TextOptions.TextRenderingMode="Auto"
         mc:Ignorable="d" 
         Title="winShowCoachs" Height="450" Width="650" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}">
-    <Border Background="#2E4053" CornerRadius="20" Margin="0,0,0,0">
+    <Border Background="#E74C3C" CornerRadius="20" Margin="0,0,0,0">
         <Grid>
             <StackPanel Height="50" VerticalAlignment="Top">
-            <Button x:Name="btnBack" Background="{x:Null}" Height="40" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,5,0,0" BorderBrush="Transparent" Click="btnBack_Click">
-                <MaterialDesign:PackIcon Kind="ArrowBack" Foreground="#FFE800" Height="30" Width="30"/>
-            </Button>
+                <Button x:Name="btnBack" Background="{x:Null}" Height="40" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,5,0,0" BorderBrush="Transparent" Click="btnBack_Click">
+                    <MaterialDesign:PackIcon Kind="ArrowBack" Foreground="White" Height="30" Width="30"/>
+                </Button>
             </StackPanel>
             <StackPanel Margin="0,50" Height="40" VerticalAlignment="Top" Orientation="Horizontal">
                 <TextBlock Height="30" Margin="50,5,0,0" VerticalAlignment="Top"  HorizontalAlignment="Left" TextAlignment="Center" Foreground="White" FontSize="25" Text="Coachs" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
-                <Button x:Name="btnNewCoach" Margin="290,0,0,0" Width="120" Height="40" Click="btnNewCoach_Click">
+                <Button Background="Gray" x:Name="btnNewCoach" Margin="340,0,0,0" Width="120" Height="40" Click="btnNewCoach_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <MaterialDesign:PackIcon Kind="AddBold" Height="25" Width="25" />
                         <TextBlock Height="20" Text="Nuevo" FontWeight="ExtraBold" FontSize="17" TextAlignment="Center" FontFamily="BiomeW04-Bold"/>
@@ -40,7 +40,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button x:Name="btnEdit" Click="btnEdit_Click">
-                                    <MaterialDesign:PackIcon Kind="Edit" Foreground="#FFE800"/>
+                                    <MaterialDesign:PackIcon Kind="Edit" Foreground="White"/>
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -49,14 +49,30 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button x:Name="btnDelete" Click="btnDelete_Click">
-                                    <MaterialDesign:PackIcon Kind="Delete" Foreground="#FFE800"/>
+                                    <MaterialDesign:PackIcon Kind="Delete" Foreground="White"/>
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <Grid Grid.Column="1" Grid.RowSpan="2" Margin="120,-421,-676,54.2" Panel.ZIndex="-1">
+                <Grid.RenderTransform>
+                    <RotateTransform Angle="40"/>
+                </Grid.RenderTransform>
 
+                <StackPanel Orientation="Horizontal" Margin="-450 250 -255 -250">
+                    <StackPanel Width="941">
+                        <Border Width="700" Height="35" Background="Gray" Margin="150 0 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="#FF434343" Margin="0 15 0 0" CornerRadius="20"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Border Width="700" Height="35" Background="Gray" Margin="170 0 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="#FF434343" Margin="75 15 0 0" CornerRadius="20"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Border>
 </Window>
