@@ -12,7 +12,7 @@
         TextOptions.TextRenderingMode="Auto"
         mc:Ignorable="d"
         Title="ShowMembresies" Height="450" Width="600"  WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}">
-    <Border Background="#E74C3C" CornerRadius="20" Margin="0,0,0,0">
+    <Border Background="#E74C3C" CornerRadius="20" BorderBrush="#FF434343" BorderThickness="5">
         <Grid>
             <StackPanel Height="50" VerticalAlignment="Top">
                 <Button x:Name="btnClose" Background="{x:Null}" Height="40" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,5,0,0" BorderBrush="Transparent" Click="btnClose_Click">

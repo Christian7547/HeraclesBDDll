@@ -2,6 +2,7 @@
 using HeraclesDAO.Logic;
 using System.Windows;
 using System;
+using Heracles.MyShowDialog;
 
 namespace Heracles.Membresies
 {
@@ -32,7 +33,10 @@ namespace Heracles.Membresies
             {
                 int success = membresyImpl.Insert(_membresy);
                 if (success > 0)
-                    MessageBox.Show("Registro guardado correctamente");
+                {
+                    winInsertDialog insertDialog = new winInsertDialog();
+                    insertDialog.ShowDialog();
+                }
                 _membresy = null;
                 Close();
                 ShowMembresies showMembresies = new ShowMembresies();
@@ -73,7 +77,10 @@ namespace Heracles.Membresies
             {
                 int success = membresyImpl.Update(_membresy);
                 if (success > 0)
-                    MessageBox.Show("Registro modificado");
+                {
+                    winUpdateDialog updateDialog = new winUpdateDialog();
+                    updateDialog.ShowDialog();
+                }
                 this.Close();
                 ShowMembresies showMembresies = new ShowMembresies();
                 showMembresies.ShowDialog();

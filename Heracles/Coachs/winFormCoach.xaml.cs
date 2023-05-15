@@ -1,4 +1,5 @@
-﻿using HeraclesDAO.Logic;
+﻿using Heracles.MyShowDialog;
+using HeraclesDAO.Logic;
 using HeraclesDAO.Models;
 using System;
 using System.Windows;
@@ -35,7 +36,8 @@ namespace Heracles.Coachs
                 int success = coachImpl.Insert(_coach);
                 if(success > 0)
                 {
-                    MessageBox.Show("Registro guardado correctamente");
+                    winInsertDialog insertDialog = new winInsertDialog();
+                    insertDialog.ShowDialog();
                 }
                 _coach = null;
                 Close();
@@ -64,8 +66,11 @@ namespace Heracles.Coachs
             try
             {
                 int success = coachImpl.Update(_coach);
-                if(success > 0)
-                    MessageBox.Show("Registro modificado");
+                if (success > 0)
+                {
+                    winUpdateDialog updateDialog = new winUpdateDialog();
+                    updateDialog.ShowDialog();
+                }
 
                 _coach = null;
 
