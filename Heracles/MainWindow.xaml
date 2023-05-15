@@ -17,7 +17,7 @@
             <StackPanel>
                 <StackPanel Height="40" Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Heracles" Style="{DynamicResource MaterialDesignTextBlock}" FontSize="17" Foreground="White" TextAlignment="Center" Padding="12" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+                        <TextBlock Text="Heracles" Style="{DynamicResource MaterialDesignTextBlock}" FontSize="17" Foreground="#FF434343" TextAlignment="Center" Padding="12" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
                         <Image Width="48" Source="Images/logo.png" Height="33"/>
                     </StackPanel>
                     <Button x:Name="btnMinimize" Margin="730,0,0,0" Width="50" Height="30" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Click="btnMinimize_Click">
@@ -89,11 +89,11 @@
                     <StackPanel Width="300" Orientation="Horizontal">
                         <MaterialDesign:PackIcon Kind="Circle" Foreground="#FF0A7637" Height="10" Width="10" Margin="10"/>
                         <TextBlock Foreground="#FF0A7637" Text="En línea:"  Margin="7" FontFamily="BiomeW04-Bold" Width="60" />
-                        <TextBlock x:Name="txbOnLine" Foreground="White" Text="Christian"  Margin="7" FontFamily="BiomeW04-Bold" Width="200" />
+                        <TextBlock x:Name="txbOnLine" Foreground="#FF434343" Text="Christian"  Margin="7" FontFamily="BiomeW04-Bold" Width="200" />
                     </StackPanel>
                     <StackPanel Margin="480,0,0,0" Orientation="Horizontal">
-                        <TextBlock Margin="7" Text="Fecha:" FontFamily="BiomeW04-Bold" Foreground="White"/>
-                        <TextBlock x:Name="txtCurrentDate" Margin="7" Text="..." FontFamily="BiomeW04-Bold" Foreground="White"/>
+                        <TextBlock Margin="7" Text="Fecha:" FontFamily="BiomeW04-Bold" Foreground="#FF434343"/>
+                        <TextBlock x:Name="txtCurrentDate" Margin="7" Text="..." FontFamily="BiomeW04-Bold" Foreground="#FF434343"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
