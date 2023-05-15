@@ -100,10 +100,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MyShowDialog\winDeleteDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MyShowDialog\winInsertDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,9 +118,6 @@
     </Compile>
     <Compile Include="Membresies\winNewMembresie.xaml.cs">
       <DependentUpon>winNewMembresie.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MyShowDialog\winDeleteDialog.xaml.cs">
-      <DependentUpon>winDeleteDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyShowDialog\winInsertDialog.xaml.cs">
       <DependentUpon>winInsertDialog.xaml</DependentUpon>
