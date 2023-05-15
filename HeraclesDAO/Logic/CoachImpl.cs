@@ -1,6 +1,7 @@
 ﻿using HeraclesDAO.Interfaces;
 using HeraclesDAO.Models;
 using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 
 namespace HeraclesDAO.Logic
@@ -18,6 +19,35 @@ namespace HeraclesDAO.Logic
                 
                 return WriteCommand(delete);    
             }
+        }
+
+        public Coach GetCoach(byte id)
+        {
+            Coach coach = null;
+            _query = @"SELECT id, `names`, lastName, secondLastName, ci, phone, `status`, registerDate, IFNULL(lastUpdate, CURRENT_TIMESTAMP), userId FROM coach WHERE id = @id;";
+            using (MySqlCommand get = CreateCommand(_query))
+            {
+                get.Connection.Open();
+                get.Parameters.AddWithValue("@id", id);
+                DataTable dataTable = ReadCommand(get);
+                if (dataTable.Rows.Count > 0)
+                {
+                    coach = new Coach()
+                    {
+                        Id = byte.Parse(dataTable.Rows[0][0].ToString()),
+                        Name = dataTable.Rows[0][1].ToString(),
+                        LastName = dataTable.Rows[0][2].ToString(),
+                        SecondLastName = dataTable.Rows[0][3].ToString(),
+                        CI = dataTable.Rows[0][4].ToString(),
+                        Phone = dataTable.Rows[0][5].ToString(),
+                        Status = byte.Parse(dataTable.Rows[0][6].ToString()),
+                        RegisterDate = DateTime.Parse(dataTable.Rows[0][7].ToString()),
+                        LastUpdate = DateTime.Parse(dataTable.Rows[0][8].ToString()),
+                        UserId = int.Parse(dataTable.Rows[0][9].ToString())
+                    };
+                }
+            }
+            return coach;
         }
 
         public int Insert(Coach t)

@@ -87,8 +87,8 @@
                 </StackPanel>
                 <StackPanel Height="30" Width="930" HorizontalAlignment="Left" Margin="30,0,0,0" Orientation="Horizontal">
                     <StackPanel Width="300" Orientation="Horizontal">
-                        <MaterialDesign:PackIcon Kind="Circle" Foreground="#FF21DF71" Height="10" Width="10" Margin="10"/>
-                        <TextBlock Foreground="#FF21DF71" Text="En línea:"  Margin="7" FontFamily="BiomeW04-Bold" Width="60" />
+                        <MaterialDesign:PackIcon Kind="Circle" Foreground="#FF0A7637" Height="10" Width="10" Margin="10"/>
+                        <TextBlock Foreground="#FF0A7637" Text="En línea:"  Margin="7" FontFamily="BiomeW04-Bold" Width="60" />
                         <TextBlock x:Name="txbOnLine" Foreground="White" Text="Christian"  Margin="7" FontFamily="BiomeW04-Bold" Width="200" />
                     </StackPanel>
                     <StackPanel Margin="480,0,0,0" Orientation="Horizontal">
