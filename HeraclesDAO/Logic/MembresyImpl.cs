@@ -1,6 +1,6 @@
 ﻿using HeraclesDAO.Interfaces;
 using HeraclesDAO.Models;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 using System;
 using System.Data;
 
@@ -10,8 +10,8 @@ namespace HeraclesDAO.Logic
     {
         public int Delete(Membresy t)
         {
-            _query = @"UPDATE membresy SET `status` = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
-            using(MySqlCommand delete = CreateCommand(_query))
+            _query = @"UPDATE Membresy SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
+            using(SqlCommand delete = CreateCommand(_query))
             {
                 delete.Connection.Open();
                 delete.Parameters.AddWithValue("@id", t.Id);
@@ -24,8 +24,8 @@ namespace HeraclesDAO.Logic
         public Membresy GetMembresy(byte id)
         {
             Membresy membresy = null;
-            _query = @"SELECT id, `type`, price, `status`, registerDate, IFNULL(lastUpdate, CURRENT_TIMESTAMP), userId FROM membresy WHERE id = @id;";
-            using(MySqlCommand get = CreateCommand(_query))
+            _query = @"SELECT id, [type], price, [status], registerDate, ISNULL(lastUpdate, CURRENT_TIMESTAMP), userId FROM Membresy WHERE id = @id;";
+            using(SqlCommand get = CreateCommand(_query))
             {
                 get.Connection.Open();
                 get.Parameters.AddWithValue("@id", id);
@@ -49,8 +49,8 @@ namespace HeraclesDAO.Logic
 
         public int Insert(Membresy t)
         {
-            _query = @"INSERT INTO membresy (type, price, userId) VALUES (@type, @price, @userId)";
-            using(MySqlCommand insert = CreateCommand(_query))
+            _query = @"INSERT INTO Membresy ([type], price, userId) VALUES (@type, @price, @userId)";
+            using(SqlCommand insert = CreateCommand(_query))
             {
                 insert.Connection.Open();
                 insert.Parameters.AddWithValue("@type", t.TypeMembresy);
@@ -64,8 +64,8 @@ namespace HeraclesDAO.Logic
 
         public DataTable Select()
         {
-            _query = @"SELECT id AS ID, `type` AS `Type`, price AS Price FROM membresy WHERE status = 1 ORDER BY type";
-            using(MySqlCommand select = CreateCommand(_query))
+            _query = @"SELECT id AS ID, [type] AS 'Type', price AS Price FROM Membresy WHERE [status] = 1 ORDER BY [type]";
+            using(SqlCommand select = CreateCommand(_query))
             {
                 return ReadCommand(select); 
             }
@@ -74,8 +74,8 @@ namespace HeraclesDAO.Logic
 
         public int Update(Membresy t)
         {
-            _query = @"UPDATE membresy SET `type` = @type, price = @price, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
-            using(MySqlCommand update = CreateCommand(_query))
+            _query = @"UPDATE Membresy SET [type] = @type, price = @price, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
+            using(SqlCommand update = CreateCommand(_query))
             {
                 update.Connection.Open();
                 update.Parameters.AddWithValue("@type", t.TypeMembresy);

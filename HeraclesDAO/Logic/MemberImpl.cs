@@ -1,6 +1,6 @@
 ﻿using HeraclesDAO.Interfaces;
 using HeraclesDAO.Models;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 using System;
 using System.Data;
 
@@ -10,8 +10,8 @@ namespace HeraclesDAO.Logic
     {
         public int Delete(Member t)
         {
-            _query = @"UPDATE member SET status = 0 WHERE id = @id";
-            using(MySqlCommand delete = CreateCommand(_query))
+            _query = @"UPDATE Member SET [status] = 0 WHERE id = @id";
+            using(SqlCommand delete = CreateCommand(_query))
             {
                 delete.Connection.Open();
                 delete.Parameters.AddWithValue("@id", t.Id); 
@@ -22,8 +22,8 @@ namespace HeraclesDAO.Logic
 
         public int Insert(Member t)
         {
-            _query = @"INSERT INTO member (name, lastName, secondLastName) VALUES (@name, @lastName, @secondLastName)";
-            using(MySqlCommand insert = CreateCommand(_query))
+            _query = @"INSERT INTO Member (name, lastName, secondLastName) VALUES (@name, @lastName, @secondLastName)";
+            using(SqlCommand insert = CreateCommand(_query))
             {
                 insert.Parameters.AddWithValue("@name", t.Name);
                 insert.Parameters.AddWithValue("@lastName", t.LastName);
@@ -34,8 +34,8 @@ namespace HeraclesDAO.Logic
 
         public DataTable Select()
         {
-            _query = @"SELECT name, lastName, secondLastName FROM member WHERE status = 1"; 
-            using(MySqlCommand select = CreateCommand(_query))
+            _query = @"SELECT name, lastName, secondLastName FROM Member WHERE [status] = 1"; 
+            using(SqlCommand select = CreateCommand(_query))
             {
                 return ReadCommand(select);
             }

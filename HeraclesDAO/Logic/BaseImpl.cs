@@ -1,33 +1,33 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
 
 namespace HeraclesDAO.Logic
 {
     public class BaseImpl
     {
-        string _connectionString = "Server=localhost;Database=heracles;Uid=root;Pwd=chris.gonza707;";
+        string _connectionString = "Server=DESKTOP-QP9IKU0\\SQLEXPRESS;Database=Heracles;User=sa;Password=Univalle;";
         public string _query = "";
 
-        public MySqlCommand CreateCommand(string sql)
+        public SqlCommand CreateCommand(string sql)
         {
-            MySqlConnection connection = new MySqlConnection(_connectionString);
-            MySqlCommand command = new MySqlCommand(sql, connection);   
+            SqlConnection connection = new SqlConnection(_connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);   
             return command;
         }
 
-        public DataTable ReadCommand(MySqlCommand command)
+        public DataTable ReadCommand(SqlCommand command)
         {
             DataTable dt = new DataTable();    
-            using(MySqlCommand mySqlConnection = new MySqlCommand(_connectionString))
+            using(SqlCommand sqlConnection = new SqlCommand(_connectionString))
             {
                 command.Connection.Open();
-                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
             } 
             return dt;  
         }
 
-        public int WriteCommand(MySqlCommand command)
+        public int WriteCommand(SqlCommand command)
         {
             return command.ExecuteNonQuery();
         }

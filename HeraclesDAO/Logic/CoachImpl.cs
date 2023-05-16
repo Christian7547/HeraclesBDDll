@@ -1,6 +1,6 @@
 ﻿using HeraclesDAO.Interfaces;
 using HeraclesDAO.Models;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 using System;
 using System.Data;
 
@@ -10,8 +10,8 @@ namespace HeraclesDAO.Logic
     {
         public int Delete(Coach t)
         {
-            _query = @"UPDATE coach SET `status` = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
-            using(MySqlCommand delete = CreateCommand(_query))
+            _query = @"UPDATE Coach SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
+            using(SqlCommand delete = CreateCommand(_query))
             {
                 delete.Connection.Open();
                 delete.Parameters.AddWithValue("@id", t.Id); 
@@ -24,8 +24,8 @@ namespace HeraclesDAO.Logic
         public Coach GetCoach(byte id)
         {
             Coach coach = null;
-            _query = @"SELECT id, `names`, lastName, secondLastName, ci, phone, `status`, registerDate, IFNULL(lastUpdate, CURRENT_TIMESTAMP), userId FROM coach WHERE id = @id;";
-            using (MySqlCommand get = CreateCommand(_query))
+            _query = @"SELECT id, names, lastName, secondLastName, ci, phone, [status], registerDate, ISNULL(lastUpdate, CURRENT_TIMESTAMP), userId FROM Coach WHERE id = @id;";
+            using (SqlCommand get = CreateCommand(_query))
             {
                 get.Connection.Open();
                 get.Parameters.AddWithValue("@id", id);
@@ -52,9 +52,9 @@ namespace HeraclesDAO.Logic
 
         public int Insert(Coach t)
         {
-            _query = @"INSERT INTO coach (`names`, lastName, secondLastName, ci, phone, userId) 
+            _query = @"INSERT INTO Coach (names, lastName, secondLastName, ci, phone, userId) 
                         VALUES(@names, @lastName, @secondLastName, @ci, @phone, @userId)";
-            using(MySqlCommand insert = CreateCommand(_query))
+            using(SqlCommand insert = CreateCommand(_query))
             {
                 insert.Connection.Open();
                 insert.Parameters.AddWithValue("@names", t.Name);
@@ -70,10 +70,11 @@ namespace HeraclesDAO.Logic
 
         public DataTable Select()
         {
-            _query = @"SELECT id AS ID, `names` AS 'Name', lastName AS 'LastName', secondLastName AS 'SecondLastName', 
+            _query = @"SELECT id AS ID, names AS 'Name', lastName AS LastName, secondLastName AS SecondLastName, 
                         ci AS CI, phone AS Phone
-                        FROM coach WHERE `status` = 1";
-            using(MySqlCommand select = CreateCommand(_query))
+                        FROM Coach 
+                        WHERE [status] = 1";
+            using(SqlCommand select = CreateCommand(_query))
             {
                 return ReadCommand(select);
             }
@@ -81,9 +82,9 @@ namespace HeraclesDAO.Logic
 
         public int Update(Coach t)
         {
-            _query = @"UPDATE coach SET `names` = @name, lastName = @lastName, secondLastName = @sLastName, ci = @ci, 
+            _query = @"UPDATE Coach SET names = @name, lastName = @lastName, secondLastName = @sLastName, ci = @ci, 
                         phone = @phone, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
-            using(MySqlCommand update = CreateCommand(_query))
+            using(SqlCommand update = CreateCommand(_query))
             {
                 update.Connection.Open();
                 update.Parameters.AddWithValue("@name", t.Name);
