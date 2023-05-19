@@ -24,13 +24,19 @@ namespace Heracles.Users.UpdateProfile
             {
                 winUpdatePasswordDialog passwordDialog;
 
-                if (txtNewPassword.Password == txtConfirmPassword.Password )
+                if (txtNewPassword.Password == txtConfirmPassword.Password && ValidPassword(txtConfirmPassword.Password))
                 {
                     int n = _userImpl.ChangePassword(txtConfirmPassword.Password, txtOldPassword.Password);
                     if (n > 0)
                     {
                         passwordDialog = new winUpdatePasswordDialog();
                         passwordDialog.ShowMessage("Se restableció la contraseña");
+                        Close();
+                    }
+                    else
+                    {
+                        passwordDialog = new winUpdatePasswordDialog();
+                        passwordDialog.ShowMessage("Su contraseña no es correcta");
                     }
                 }
                 else
@@ -55,7 +61,7 @@ namespace Heracles.Users.UpdateProfile
 
         bool ValidPassword(string password)
         {
-            Regex regex = new Regex(@"^[a-zA-Z]{8,60}$");
+            Regex regex = new Regex(@"^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,60}$");
             if (regex.IsMatch(password))
                 return true;
             else
