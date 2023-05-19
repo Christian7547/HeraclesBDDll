@@ -3,6 +3,7 @@ using HeraclesDAO.Models;
 using System.Data.SqlClient;
 using System;
 using System.Data;
+using HeraclesDAO.Models.Session;
 
 namespace HeraclesDAO.Logic
 {
@@ -15,7 +16,7 @@ namespace HeraclesDAO.Logic
             {
                 delete.Connection.Open();
                 delete.Parameters.AddWithValue("@id", t.Id);
-                delete.Parameters.AddWithValue("@userId", 1);
+                delete.Parameters.AddWithValue("@userId", SessionClass.SessionId);
                 
                 return WriteCommand(delete);    
             }
@@ -55,7 +56,7 @@ namespace HeraclesDAO.Logic
                 insert.Connection.Open();
                 insert.Parameters.AddWithValue("@type", t.TypeMembresy);
                 insert.Parameters.AddWithValue("@price", t.Price);
-                insert.Parameters.AddWithValue("@userId", 1);
+                insert.Parameters.AddWithValue("@userId", SessionClass.SessionId);
 
                 return WriteCommand(insert);
             }
@@ -81,7 +82,7 @@ namespace HeraclesDAO.Logic
                 update.Parameters.AddWithValue("@type", t.TypeMembresy);
                 update.Parameters.AddWithValue("@price", t.Price);
                 update.Parameters.AddWithValue("@id", t.Id);
-                update.Parameters.AddWithValue("@userId", 1);       
+                update.Parameters.AddWithValue("@userId", SessionClass.SessionId);       
 
                 return WriteCommand(update);    
             }

@@ -55,6 +55,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Login\winIncorrectLogin.xaml.cs">
+      <DependentUpon>winIncorrectLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyShowDialog\winUpdatePasswordDialog.xaml.cs">
+      <DependentUpon>winUpdatePasswordDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UpdateProfile\winChangePassword.xaml.cs">
+      <DependentUpon>winChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\winDeleteUser.xaml.cs">
+      <DependentUpon>winDeleteUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\winFormUser.xaml.cs">
+      <DependentUpon>winFormUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UpdateProfile\winProfile.xaml.cs">
+      <DependentUpon>winProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\winShowUsers.xaml.cs">
+      <DependentUpon>winShowUsers.xaml</DependentUpon>
+    </Compile>
     <Page Include="Coachs\winConfirmDelete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -64,6 +85,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Coachs\winShowCoachs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login\winIncorrectLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login\winLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,6 +112,9 @@
     </Compile>
     <Compile Include="Coachs\winShowCoachs.xaml.cs">
       <DependentUpon>winShowCoachs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login\winLogin.xaml.cs">
+      <DependentUpon>winLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -105,6 +137,30 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyShowDialog\winUpdateDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyShowDialog\winUpdatePasswordDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UpdateProfile\winChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\winDeleteUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\winFormUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UpdateProfile\winProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\winShowUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,6 +224,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\default_Profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

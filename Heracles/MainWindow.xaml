@@ -20,7 +20,14 @@
                         <TextBlock Text="Heracles" Style="{DynamicResource MaterialDesignTextBlock}" FontSize="17" Foreground="#FF434343" TextAlignment="Center" Padding="12" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
                         <Image Width="48" Source="Images/logo.png" Height="33"/>
                     </StackPanel>
-                    <Button x:Name="btnMinimize" Margin="730,0,0,0" Width="50" Height="30" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Click="btnMinimize_Click">
+                    <MaterialDesign:PopupBox Margin="700,0,0,0">
+                        <StackPanel Width="150">
+                            <Button x:Name="btnProfile" Content="Tu Perfil" Height="40" Foreground="#FF434343" FontWeight="Bold" VerticalContentAlignment="Center" Click="btnProfile_Click"/>
+                            <Separator/>
+                            <Button x:Name="btnLogout" Content="Cerrar Sesión" Height="40" Foreground="#FF434343" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                    </MaterialDesign:PopupBox>
+                    <Button x:Name="btnMinimize" Margin="0,0,0,0" Width="50" Height="30" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Click="btnMinimize_Click">
                         <MaterialDesign:PackIcon Foreground="Black" VerticalAlignment="Center" FontWeight="ExtraBold" HorizontalAlignment="Center" Kind="Minimize" Height="25" Width="30" />
                     </Button>
                     <Button x:Name="btnClose" Margin="0,0,0,0" Width="50" Height="30" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Click="btnClose_Click">
@@ -30,7 +37,7 @@
                 <Separator Width="700" Background="White"/>
                 <StackPanel Height="400" Width="800" Margin="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <StackPanel Height="370" Width="190"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="60,0,0,0">
-                        <Button Height="350" Width="170" Margin="10">
+                        <Button x:Name="btnUsers" Height="350" Width="170" Margin="10" Click="btnUsers_Click">
                             <StackPanel>
                                 <MaterialDesign:PackIcon Kind="User" Foreground="White" Height="100" Width="100"/>
                                 <TextBlock Text="Usuarios" FontWeight="Bold" TextAlignment="Center" FontSize="12" FontFamily="BiomeW04-Bold" />
@@ -39,13 +46,13 @@
                     </StackPanel>
                     <StackPanel Width="500" Height="400">
                         <StackPanel Height="110" Orientation="Horizontal" Margin="10,10">
-                            <Button Width="210" Height="100" Margin="15,0,0,0">
+                            <Button x:Name="btnInscriptions" Width="210" Height="100" Margin="15,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="PersonCardDetails" Foreground="White" Height="50" Width="50" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Inscripciones" FontWeight="Bold" TextAlignment="Center" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
                             </Button>
-                            <Button Width="210" Height="100" Margin="30,0,0,0">
+                            <Button x:Name="btnMembers" Width="210" Height="100" Margin="30,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="AccountPlus" Foreground="White" Height="50" Width="50" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Miembros" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
@@ -54,7 +61,7 @@
                         </StackPanel>
                         <Separator Width="300" Background="White"/>
                         <StackPanel Height="110" Orientation="Horizontal" Margin="10">
-                            <Button Width="210" Height="100" Margin="15,0,0,0">
+                            <Button x:Name="btnAsignature" Width="210" Height="100" Margin="15,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="Gymnastics" Foreground="White" Height="50" Width="50" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Clases" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
@@ -69,7 +76,7 @@
                         </StackPanel>
                         <Separator Width="300" Background="White"/>
                         <StackPanel Height="110" Orientation="Horizontal" Margin="10">
-                            <Button Width="210" Height="100" Margin="15,0,0,0">
+                            <Button x:Name="btnSchedules" Width="210" Height="100" Margin="15,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="Schedule" Foreground="White" Height="50" Width="50" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Horarios" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
@@ -89,7 +96,7 @@
                     <StackPanel Width="300" Orientation="Horizontal">
                         <MaterialDesign:PackIcon Kind="Circle" Foreground="#FF0A7637" Height="10" Width="10" Margin="10"/>
                         <TextBlock Foreground="#FF0A7637" Text="En línea:"  Margin="7" FontFamily="BiomeW04-Bold" Width="60" />
-                        <TextBlock x:Name="txbOnLine" Foreground="#FF434343" Text="Christian"  Margin="7" FontFamily="BiomeW04-Bold" Width="200" />
+                        <TextBlock x:Name="txbOnLine" Foreground="#FF434343" Text="..."  Margin="7" FontFamily="BiomeW04-Bold" Width="200" />
                     </StackPanel>
                     <StackPanel Margin="480,0,0,0" Orientation="Horizontal">
                         <TextBlock Margin="7" Text="Fecha:" FontFamily="BiomeW04-Bold" Foreground="#FF434343"/>

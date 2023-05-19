@@ -6,9 +6,6 @@ using System.Windows;
 
 namespace Heracles.Coachs
 {
-    /// <summary>
-    /// Lógica de interacción para winFormCoach.xaml
-    /// </summary>
     public partial class winFormCoach : Window
     {
         Coach _coach;

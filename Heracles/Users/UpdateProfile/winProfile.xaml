@@ -1,0 +1,42 @@
+﻿<Window x:Class="Heracles.Users.winProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Heracles.Users"
+        mc:Ignorable="d"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Title="winFormCoach" Height="530" Width="450"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Border Background="#FF434343" CornerRadius="10" Margin="0,0,0,0">
+        <Grid>
+            <StackPanel Height="50" VerticalAlignment="Top">
+                <Button x:Name="btnBack" Background="{x:Null}" Height="40" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,5,0,0" BorderBrush="Transparent" Click="btnBack_Click">
+                    <MaterialDesign:PackIcon Kind="ArrowBack" Foreground="White" Height="30" Width="30"/>
+                </Button>
+            </StackPanel>
+            <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,60" Text="Tu Perfil" FontSize="20" Foreground="White" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+            <StackPanel Margin="70,100,70,20">
+                <Image Width="170" Height="170" Margin="15" Source="/Images/default_Profile.png"/>
+                <Button x:Name="btnChangePhoto" Content="Subir Foto" Height="25" Width="120" FontSize="13" FontFamily="BiomeW04-Bold"/>
+                <TextBlock x:Name="txbRoleSession" Margin="0,20,0,0" Text="..." TextAlignment="Center" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <TextBlock Text="Usuario:" Foreground="White" FontSize="15" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbUserNameSession" Margin="10,0,0,0" Text="..." Foreground="White" FontSize="14" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <TextBlock Text="E-mail:" Foreground="White" FontSize="15" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbEmailSession" Margin="20,0,0,0" Text="..." Foreground="White" FontSize="14" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,10,10,0" Height="50">
+                    <Button x:Name="btnChangeProfile" Margin="20,0,0,0" Content="Actualizar perfil" Height="40" Width="120" FontSize="10" FontFamily="BiomeW04-Bold"/>
+                    <Button x:Name="btnChangePassword" Margin="20,0,0,0" Content="Cambiar Contraseña" Height="40" Width="120" FontSize="8" FontFamily="BiomeW04-Bold" Click="btnChangePassword_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
