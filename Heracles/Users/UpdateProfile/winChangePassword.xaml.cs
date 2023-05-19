@@ -42,7 +42,7 @@ namespace Heracles.Users.UpdateProfile
                 else
                 {
                     passwordDialog = new winUpdatePasswordDialog();
-                    passwordDialog.ShowMessage("No es posible actualizar la contraseña,\n debe contener números, mayúsculas");
+                    passwordDialog.ShowMessage("No es posible actualizar la contraseña,\n debe contener números y mayúsculas");
                 }
                 txtOldPassword.Password = string.Empty;
                 txtNewPassword.Password = string.Empty;
