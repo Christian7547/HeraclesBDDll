@@ -13,12 +13,18 @@
         Title="Login" Height="350" Width="450"  WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}">
     <Border Background="#FFA0A0A0" CornerRadius="10">
         <Grid>
-            <TextBlock VerticalAlignment="Top" Margin="50,10" Text="LOGIN" FontSize="25" Foreground="#FF434343" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+            <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top">
+                <TextBlock VerticalAlignment="Top" Margin="50,10" Text="LOGIN" FontSize="25" Foreground="#FF434343" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+                <StackPanel Orientation="Horizontal" Height="40" Margin="140,0,0,0">
+                    <TextBlock Text="Heracles" FontSize="15" Foreground="#FF434343" TextAlignment="Center" Padding="10" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+                    <Image Width="30" Source="/Images/logo.png" Height="20"/>
+                </StackPanel>
+            </StackPanel>
             <StackPanel Margin="80,60,80,20">
                 <TextBlock Margin="0,20,0,15" Text="Nombre de usuario:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                <TextBox x:Name="txtTUserName" Height="40" Width="290" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <TextBox x:Name="txtTUserName" Height="40" Width="290" FontSize="17" Foreground="#FF434343" FontFamily="BiomeW04-Regular"/>
                 <TextBlock Margin="0,15,0,15" Text="Contraseña:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                <PasswordBox x:Name="txtPassword" Height="40" Width="290" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <PasswordBox x:Name="txtPassword" Height="40" Width="290" FontSize="17" Foreground="#FF434343" FontFamily="BiomeW04-Regular"/>
                 <StackPanel Orientation="Horizontal" Margin="10,20,10,0" Height="60">
                     <Button x:Name="btnLogin" Margin="7,0,0,0" Content="Ingresar" Height="50" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnLogin_Click" IsDefault="True"/>
                     <Button x:Name="btnCancel" Content="Cancelar" Height="50" Margin="20,0,0,0" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnCancel_Click"/>
