@@ -36,13 +36,13 @@ namespace Heracles.Users.UpdateProfile
                     else
                     {
                         passwordDialog = new winUpdatePasswordDialog();
-                        passwordDialog.ShowMessage("Su contraseña no es correcta");
+                        passwordDialog.ShowMessage("Su contraseña actual no es correcta");
                     }
                 }
                 else
                 {
                     passwordDialog = new winUpdatePasswordDialog();
-                    passwordDialog.ShowMessage("No es posible actualizar la contraseña");
+                    passwordDialog.ShowMessage("No es posible actualizar la contraseña,\n debe contener números, mayúsculas");
                 }
                 txtOldPassword.Password = string.Empty;
                 txtNewPassword.Password = string.Empty;
@@ -61,7 +61,7 @@ namespace Heracles.Users.UpdateProfile
 
         bool ValidPassword(string password)
         {
-            Regex regex = new Regex(@"^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,60}$");
+            Regex regex = new Regex(@"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W)\S{8,16}$");
             if (regex.IsMatch(password))
                 return true;
             else
