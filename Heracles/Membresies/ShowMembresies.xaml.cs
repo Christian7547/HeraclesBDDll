@@ -5,9 +5,6 @@ using System.Windows;
 
 namespace Heracles.Membresies
 {
-    /// <summary>
-    /// Lógica de interacción para ShowMembresies.xaml
-    /// </summary>
     public partial class ShowMembresies : Window
     {
         MembresyImpl membresyImpl;

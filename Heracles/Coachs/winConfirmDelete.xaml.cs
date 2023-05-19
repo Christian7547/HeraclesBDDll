@@ -5,9 +5,6 @@ using System.Windows;
 
 namespace Heracles.Coachs
 {
-    /// <summary>
-    /// Lógica de interacción para winConfirmDelete.xaml
-    /// </summary>
     public partial class winConfirmDelete : Window
     {
         Coach _coach;

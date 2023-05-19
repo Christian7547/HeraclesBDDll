@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Text;
 using System.Windows;
 using HeraclesDAO.Logic;
 using HeraclesDAO.Models.Session;

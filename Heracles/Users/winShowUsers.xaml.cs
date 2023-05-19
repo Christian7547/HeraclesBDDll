@@ -5,9 +5,6 @@ using HeraclesDAO.Models;
 
 namespace Heracles.Users
 {
-    /// <summary>
-    /// Lógica de interacción para winShowUsers.xaml
-    /// </summary>
     public partial class winShowUsers : Window
     {
         User _user;

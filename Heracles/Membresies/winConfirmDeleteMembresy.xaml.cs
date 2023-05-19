@@ -5,9 +5,6 @@ using System.Windows;
 
 namespace Heracles.Membresies
 {
-    /// <summary>
-    /// Lógica de interacción para winConfirmDeleteMembresy.xaml
-    /// </summary>
     public partial class winConfirmDeleteMembresy : Window
     {
         byte _id = 0;

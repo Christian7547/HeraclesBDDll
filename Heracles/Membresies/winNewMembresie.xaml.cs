@@ -6,9 +6,6 @@ using Heracles.MyShowDialog;
 
 namespace Heracles.Membresies
 {
-    /// <summary>
-    /// Lógica de interacción para winNewMembresie.xaml
-    /// </summary>
     public partial class winNewMembresie : Window
     {
         Membresy _membresy;
