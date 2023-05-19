@@ -27,6 +27,8 @@ namespace Heracles.Users
             _user = new User()
             {
                 Id = int.Parse(((DataRowView)dtgData.SelectedItem).Row["ID"].ToString()),
+                Name = ((DataRowView)dtgData.SelectedItem).Row["Name"].ToString(),
+                LastName = ((DataRowView)dtgData.SelectedItem).Row["LastName"].ToString(),
                 UserName = ((DataRowView)dtgData.SelectedItem).Row["UserName"].ToString(),
                 Email = ((DataRowView)dtgData.SelectedItem).Row["Email"].ToString(),
                 Role = ((DataRowView)dtgData.SelectedItem).Row["Role"].ToString()

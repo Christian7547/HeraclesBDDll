@@ -25,6 +25,8 @@ namespace Heracles.Users
             {
                 _user = new User()
                 {
+                    Name = txtName.Text,
+                    LastName = txtLastName.Text,
                     Email = txtEmail.Text,
                     UserName = txtUserName.Text,
                     Password = GenerateNewPassword(),
@@ -57,6 +59,8 @@ namespace Heracles.Users
             _user = new User()
             {
                 Id = _id,
+                Name = txtName.Text,
+                LastName = txtLastName.Text,
                 Email = txtEmail.Text,
                 UserName = txtUserName.Text,
                 Role = cmbRole.Text
@@ -86,6 +90,8 @@ namespace Heracles.Users
         public void Edit(User user)
         {
             _id = user.Id;
+            txtName.Text = user.Name;
+            txtLastName.Text = user.LastName;   
             txtEmail.Text = user.Email;
             txtUserName.Text = user.UserName;
             cmbRole.Text = user.Role;
@@ -106,10 +112,6 @@ namespace Heracles.Users
         {
             btnSave.Visibility = Visibility.Collapsed;
             btnEdit.Visibility = Visibility.Visible;
-            txbName.Visibility = Visibility.Collapsed;
-            txbLastName.Visibility = Visibility.Collapsed;
-            txtName.Visibility = Visibility.Collapsed;
-            txtLastName.Visibility = Visibility.Collapsed;
             txbtitle.Text = "Editar";
         }
 

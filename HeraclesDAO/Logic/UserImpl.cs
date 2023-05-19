@@ -2,6 +2,7 @@
 using HeraclesDAO.Models;
 using HeraclesDAO.Models.Session;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -24,12 +25,14 @@ namespace HeraclesDAO.Logic
 
         public int Insert(User t)
         {
-            _query = @"INSERT INTO [User] (email, userName, [password], [role], userId) 
-                        VALUES (@email, @userName, HASHBYTES('MD5', @password), @role, @userId)";
+            _query = @"INSERT INTO [User] (names, lastName, email, userName, [password], [role], userId) 
+                        VALUES (@names, @lastName, @email, @userName, HASHBYTES('MD5', @password), @role, @userId)";
             using(SqlCommand insert = CreateCommand(_query))
             {
                 insert.Connection.Open();
 
+                insert.Parameters.AddWithValue("@names", t.Name);
+                insert.Parameters.AddWithValue("@lastName", t.LastName);
                 insert.Parameters.AddWithValue("@email", t.Email);
                 insert.Parameters.AddWithValue("@userName", t.UserName);
                 insert.Parameters.AddWithValue("@password", t.Password).SqlDbType = SqlDbType.VarChar;
@@ -42,7 +45,7 @@ namespace HeraclesDAO.Logic
 
         public DataTable Select()
         {
-            _query = @"SELECT id AS ID, email AS Email, userName AS UserName, [role] AS 'Role' FROM [User] WHERE [status] = 1";
+            _query = @"SELECT id AS ID, names AS 'Name', lastName AS LastName, email AS Email, userName AS UserName, [role] AS 'Role' FROM [User] WHERE [status] = 1";
             using(SqlCommand select = CreateCommand(_query))
             {
                 return ReadCommand(select);
@@ -51,14 +54,16 @@ namespace HeraclesDAO.Logic
 
         public int Update(User t)
         {
-            _query = @"UPDATE [User] SET email = @email, userName = @userName, [role] = @role,
-                            lastUpdate = CURRENT_TIMESTAMP, userId = @userId
-                       WHERE id = @id";
+            _query = @"UPDATE [User] SET names = @names, lastName = @lastName, email = @email, userName = @user, 
+                            [role] = @role, lastUpdate = CURRENT_TIMESTAMP, userId = @userId
+                        WHERE id = @id";
             using(SqlCommand  update = CreateCommand(_query))
             {
                 update.Connection.Open();
+                update.Parameters.AddWithValue("@names", t.Name);
+                update.Parameters.AddWithValue("@lastName", t.LastName);
                 update.Parameters.AddWithValue("@email", t.Email);
-                update.Parameters.AddWithValue("@userName", t.UserName);
+                update.Parameters.AddWithValue("@user", t.UserName);
                 update.Parameters.AddWithValue("@role", t.Role);
                 update.Parameters.AddWithValue("@userId", SessionClass.SessionId);
                 update.Parameters.AddWithValue("@id", t.Id);

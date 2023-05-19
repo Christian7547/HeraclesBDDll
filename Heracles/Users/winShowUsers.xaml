@@ -31,6 +31,8 @@
             <DataGrid IsReadOnly="True" CanUserResizeColumns="False" AutoGenerateColumns="False" x:Name="dtgData" Margin="50,98,50,25">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding ID}"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Nombre"/>
+                    <DataGridTextColumn Binding="{Binding LastName}" Header="Apellido"/>
                     <DataGridTextColumn Binding="{Binding Email}" Header="E-mail"/>
                     <DataGridTextColumn Binding="{Binding UserName}" Header="Usuario"/>
                     <DataGridTextColumn Binding="{Binding Role}" Header="Cargo"/>
