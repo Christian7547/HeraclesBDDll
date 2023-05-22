@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Windows;
+using Heracles.Menus;
+using Heracles.Users.UpdateProfile;
 using HeraclesDAO.Logic;
 using HeraclesDAO.Models.Session;
 
@@ -32,13 +34,40 @@ namespace Heracles.Login
                     SessionClass.SessionUserName = userTable.Rows[0][1].ToString();
                     SessionClass.SessionRole = userTable.Rows[0][2].ToString();
                     SessionClass.SessionEmail = userTable.Rows[0][3].ToString();
+                    int firstSession = int.Parse(userTable.Rows[0][4].ToString());
 
-                    this.Visibility = Visibility.Hidden;
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.ShowDialog();
+                    if(firstSession == 0)
+                    {
+                        ClearTextBox();
+                        this.Visibility = Visibility.Hidden;
+                        winChangePassword winChangePassword = new winChangePassword();
+                        winChangePassword.ShowDialog();
+                        userImpl.FirstSession();
+                        this.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        this.Visibility = Visibility.Hidden;
+                        switch (SessionClass.SessionRole)
+                        {
+                            case "Administrador":
+                                MainWindow mainWindow = new MainWindow();
+                                mainWindow.ShowDialog();
+                                break;
+                            case "Recepcionista":
+                                winMenuReceptionist menuReceptionist = new winMenuReceptionist();
+                                menuReceptionist.ShowDialog();
+                                break;
+                            case "Coach":
+                                winMenuCoach menuCoach = new winMenuCoach();
+                                menuCoach.ShowDialog();
+                                break;
+                        }
+                    }
                 }
                 else
                 {
+                    ClearTextBox();
                     winIncorrectLogin winIncorrectLogin = new winIncorrectLogin();
                     winIncorrectLogin.ShowDialog();
                 }
@@ -52,6 +81,12 @@ namespace Heracles.Login
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown(); 
+        }
+
+        void ClearTextBox()
+        {
+            txtTUserName.Text = string.Empty;
+            txtPassword.Password = string.Empty;
         }
     }
 }

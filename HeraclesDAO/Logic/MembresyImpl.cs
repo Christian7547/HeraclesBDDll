@@ -11,6 +11,7 @@ namespace HeraclesDAO.Logic
     {
         public int Delete(Membresy t)
         {
+            int success;
             _query = @"UPDATE Membresy SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
             using(SqlCommand delete = CreateCommand(_query))
             {
@@ -18,8 +19,9 @@ namespace HeraclesDAO.Logic
                 delete.Parameters.AddWithValue("@id", t.Id);
                 delete.Parameters.AddWithValue("@userId", SessionClass.SessionId);
                 
-                return WriteCommand(delete);    
+                success = WriteCommand(delete);    
             }
+            return success;
         }
 
         public Membresy GetMembresy(byte id)
@@ -50,6 +52,7 @@ namespace HeraclesDAO.Logic
 
         public int Insert(Membresy t)
         {
+            int success;
             _query = @"INSERT INTO Membresy ([type], price, userId) VALUES (@type, @price, @userId)";
             using(SqlCommand insert = CreateCommand(_query))
             {
@@ -58,23 +61,25 @@ namespace HeraclesDAO.Logic
                 insert.Parameters.AddWithValue("@price", t.Price);
                 insert.Parameters.AddWithValue("@userId", SessionClass.SessionId);
 
-                return WriteCommand(insert);
+                success = WriteCommand(insert);
             }
-
+            return success;
         }
 
         public DataTable Select()
         {
+            DataTable data;
             _query = @"SELECT id AS ID, [type] AS 'Type', price AS Price FROM Membresy WHERE [status] = 1 ORDER BY [type]";
             using(SqlCommand select = CreateCommand(_query))
             {
-                return ReadCommand(select); 
+                data = ReadCommand(select); 
             }
-            
+            return data;
         }
 
         public int Update(Membresy t)
         {
+            int success;
             _query = @"UPDATE Membresy SET [type] = @type, price = @price, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
             using(SqlCommand update = CreateCommand(_query))
             {
@@ -84,8 +89,9 @@ namespace HeraclesDAO.Logic
                 update.Parameters.AddWithValue("@id", t.Id);
                 update.Parameters.AddWithValue("@userId", SessionClass.SessionId);       
 
-                return WriteCommand(update);    
+                success = WriteCommand(update);    
             }
+            return success;
         }
     }
 }

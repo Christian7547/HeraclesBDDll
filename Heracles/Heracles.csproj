@@ -58,6 +58,15 @@
     <Compile Include="Login\winIncorrectLogin.xaml.cs">
       <DependentUpon>winIncorrectLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Menus\winMenuCoach.xaml.cs">
+      <DependentUpon>winMenuCoach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\winMenuReceptionist.xaml.cs">
+      <DependentUpon>winMenuReceptionist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyShowDialog\winSentSuccessfully.xaml.cs">
+      <DependentUpon>winSentSuccessfully.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyShowDialog\winUpdatePasswordDialog.xaml.cs">
       <DependentUpon>winUpdatePasswordDialog.xaml</DependentUpon>
     </Compile>
@@ -132,7 +141,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Menus\winMenuCoach.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\winMenuReceptionist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyShowDialog\winInsertDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyShowDialog\winSentSuccessfully.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

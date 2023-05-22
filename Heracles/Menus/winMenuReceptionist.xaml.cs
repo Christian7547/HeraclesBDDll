@@ -1,21 +1,22 @@
 ﻿using Heracles.Coachs;
-using Heracles.Membresies;
 using Heracles.Users;
 using HeraclesDAO.Models.Session;
 using System;
 using System.Windows;
 
-namespace Heracles
+namespace Heracles.Menus
 {
-    public partial class MainWindow : Window
+    public partial class winMenuReceptionist : Window
     {
-        public MainWindow()
+        public winMenuReceptionist()
         {
             InitializeComponent();
             txtCurrentDate.Text = DateTime.Today.Date.ToShortDateString();
             txbOnLine.Text = SessionClass.SessionUserName;
         }
-        #region ConfigApplication
+
+        #region AppConfig
+
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -28,30 +29,17 @@ namespace Heracles
         #endregion
 
         #region Options
-        private void btnMembresies_Click(object sender, RoutedEventArgs e)
-        {
-            ShowMembresies showMembresies = new ShowMembresies();
-            showMembresies.ShowDialog();
-        }
-
         private void btnCoachs_Click(object sender, RoutedEventArgs e)
         {
             winShowCoachs winShowCoachs = new winShowCoachs();
-            winShowCoachs.ShowDialog(); 
+            winShowCoachs.ShowDialog();
         }
-
-        private void btnUsers_Click(object sender, RoutedEventArgs e)
-        {
-            winShowUsers winShowUsers = new winShowUsers();
-            winShowUsers.ShowDialog();
-        }
-
         #endregion
 
         #region PopupMenu
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
-            winProfile winProfile = new winProfile();   
+            winProfile winProfile = new winProfile();
             winProfile.ShowDialog();
         }
         #endregion

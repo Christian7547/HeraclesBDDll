@@ -1,8 +1,6 @@
 ﻿using Heracles.MyShowDialog;
 using HeraclesDAO.Logic;
-using HeraclesDAO.Models.Session;
 using System;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 
@@ -42,7 +40,7 @@ namespace Heracles.Users.UpdateProfile
                 else
                 {
                     passwordDialog = new winUpdatePasswordDialog();
-                    passwordDialog.ShowMessage("No es posible actualizar la contraseña,\n debe contener números y mayúsculas");
+                    passwordDialog.ShowMessage("No es posible actualizar la contraseña,\n debe contener números, minúsculas,\n mayúsculas y carácteres especiales");
                 }
                 txtOldPassword.Password = string.Empty;
                 txtNewPassword.Password = string.Empty;
@@ -61,7 +59,7 @@ namespace Heracles.Users.UpdateProfile
 
         bool ValidPassword(string password)
         {
-            Regex regex = new Regex(@"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W)\S{8,16}$");
+            Regex regex = new Regex(@"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\p{P})(?!.*\s).{8,16}$");
             if (regex.IsMatch(password))
                 return true;
             else

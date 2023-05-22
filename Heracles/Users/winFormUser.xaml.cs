@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using Heracles.MyShowDialog;
 using HeraclesDAO.Logic;
 using HeraclesDAO.Logic.CreateUser;
 using HeraclesDAO.Models;
+using HeraclesDAO.SMTP;
 
 namespace Heracles.Users
 {
@@ -13,6 +15,11 @@ namespace Heracles.Users
         User _user;
         int _id = 0;
 
+        #region Email
+        EmailManager manager;
+        Thread threadEmail;
+        #endregion
+
         public winNewUser()
         {
             InitializeComponent();
@@ -20,6 +27,8 @@ namespace Heracles.Users
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            manager = new EmailManager();
+
             userImpl = new UserImpl();
             try
             {
@@ -38,10 +47,23 @@ namespace Heracles.Users
                 {
                     winInsertDialog winInsertDialog = new winInsertDialog();
                     winInsertDialog.ShowDialog();
+
+                    string content = "Bienvenid@ a HERACLES!\n" +
+                        "Su cargo: " + _user.Role +"\nCredenciales de acceso:\nUsuario: " + 
+                        _user.UserName + "\nContraseña: " + _user.Password;
+
+                    threadEmail = new Thread(() =>
+                    {
+                        manager.SendEmail("eliasgonzalesec@gmail.com", _user.Email, content);
+                    });
+                    threadEmail.Start();
+
+                    winSentSuccessfully winSentSuccessfully = new winSentSuccessfully();
+                    winSentSuccessfully.ShowMessage("Correo enviado");
                 }
                 else
                     MessageBox.Show("No se puedo guardar el registro");
-                MessageBox.Show("Usuario = " + _user.UserName + " Password = " + _user.Password);
+
                 _user = null;
                 Close();
                 winShowUsers winShowUsers = new winShowUsers();

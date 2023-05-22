@@ -11,6 +11,7 @@ namespace HeraclesDAO.Logic
     {
         public int Delete(Coach t)
         {
+            int success;
             _query = @"UPDATE Coach SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
             using(SqlCommand delete = CreateCommand(_query))
             {
@@ -18,8 +19,9 @@ namespace HeraclesDAO.Logic
                 delete.Parameters.AddWithValue("@id", t.Id); 
                 delete.Parameters.AddWithValue("@userId", SessionClass.SessionId);
                 
-                return WriteCommand(delete);    
+                success = WriteCommand(delete);    
             }
+            return success;
         }
 
         public Coach GetCoach(byte id)
@@ -53,6 +55,7 @@ namespace HeraclesDAO.Logic
 
         public int Insert(Coach t)
         {
+            int success;
             _query = @"INSERT INTO Coach (names, lastName, secondLastName, ci, phone, userId) 
                         VALUES(@names, @lastName, @secondLastName, @ci, @phone, @userId)";
             using(SqlCommand insert = CreateCommand(_query))
@@ -65,24 +68,28 @@ namespace HeraclesDAO.Logic
                 insert.Parameters.AddWithValue("@phone", t.Phone);
                 insert.Parameters.AddWithValue("@userId", SessionClass.SessionId);
 
-                return WriteCommand(insert);
+                success = WriteCommand(insert);
             }
+            return success;
         }
 
         public DataTable Select()
         {
+            DataTable data;
             _query = @"SELECT id AS ID, names AS 'Name', lastName AS LastName, secondLastName AS SecondLastName, 
                         ci AS CI, phone AS Phone
                         FROM Coach 
                         WHERE [status] = 1";
             using(SqlCommand select = CreateCommand(_query))
             {
-                return ReadCommand(select);
+                data = ReadCommand(select);
             }
+            return data;
         }
 
         public int Update(Coach t)
         {
+            int success;
             _query = @"UPDATE Coach SET names = @name, lastName = @lastName, secondLastName = @sLastName, ci = @ci, 
                         phone = @phone, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
             using(SqlCommand update = CreateCommand(_query))
@@ -96,8 +103,9 @@ namespace HeraclesDAO.Logic
                 update.Parameters.AddWithValue("@userId", SessionClass.SessionId);
                 update.Parameters.AddWithValue("@id", t.Id);
 
-                return WriteCommand(update);
+                success = WriteCommand(update);
             }
+            return success;
         }
     }
 }

@@ -7,5 +7,6 @@ namespace HeraclesDAO.Interfaces
     {
         DataTable Login(string username, string password);
         int ChangePassword(string newPassword, string oldPassword);
+        bool FirstSession();
     }
 }
