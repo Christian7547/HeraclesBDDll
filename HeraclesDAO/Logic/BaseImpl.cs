@@ -5,7 +5,7 @@ namespace HeraclesDAO.Logic
 {
     public class BaseImpl
     {
-        string _connectionString = "Server=T110-06\\SQLEXPRESS;Database=Heracles;User=sa;Password=Univalle;";
+        string _connectionString = "ASUS_CHRIS07\\SQLEXPRESS;Database=Heracles;User=sa;Password=Univalle;";
         public string _query = "";
 
         public SqlCommand CreateCommand(string sql)
