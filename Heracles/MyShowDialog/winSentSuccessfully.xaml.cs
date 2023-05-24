@@ -13,7 +13,7 @@ namespace Heracles.MyShowDialog
         public winSentSuccessfully()
         {
             InitializeComponent();
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
         }
 
         public void ShowMessage(string message)
