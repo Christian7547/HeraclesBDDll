@@ -6,7 +6,7 @@ namespace HeraclesDAO.Logic.CreateUser
     {
         public string GenerateUserName(string name, string lastName, string email)
         {
-            string characters = "0123456789_-.@$";
+            string characters = "0123456789";
             string newName = name.Substring(0, 1).ToLower();
             string newLastName = lastName.Substring(0, 1).ToLower();
             string newEmail = email.Substring(0, 5).ToLower();

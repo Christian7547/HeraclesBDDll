@@ -13,12 +13,14 @@ namespace Heracles.MyShowDialog
         public winSentSuccessfully()
         {
             InitializeComponent();
-            WindowStartupLocation = WindowStartupLocation.CenterOwner;
         }
 
         public void ShowMessage(string message)
         {
+            winSentSuccessfully sentSuccessfully = this;
             txbMessage.Text = message;
+            sentSuccessfully.Top = 570;
+            sentSuccessfully.Left = 1050;
             Show();
         }
 
