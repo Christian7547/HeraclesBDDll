@@ -57,7 +57,7 @@ namespace Heracles.Utilities
                         return true;
                     return false;
                 case 6:
-                    Regex email = new Regex(@"^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9.]+$"); // email
+                    Regex email = new Regex(@"^[a-zA-Z0-9]+@[a-z0-9]+\.[a-z0-9.]+$"); // email
                     if (email.IsMatch(isValid))
                         return true;
                     return false;
