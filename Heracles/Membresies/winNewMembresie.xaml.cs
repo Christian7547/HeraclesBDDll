@@ -24,7 +24,6 @@ namespace Heracles.Membresies
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            string price = txtPrice.Text;
             ShowMessages();
             _membresy = new Membresy
             {
@@ -112,6 +111,7 @@ namespace Heracles.Membresies
         void ShowMessages()
         {
             txbErrorType.Visibility = Visibility.Collapsed;
+            txbErrorPrice.Visibility = Visibility.Collapsed;
         }
 
 

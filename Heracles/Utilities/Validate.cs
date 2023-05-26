@@ -47,17 +47,17 @@ namespace Heracles.Utilities
                         return true;
                     return false;
                 case 4:
-                    Regex typeMembresy = new Regex(@"^[A-Z][a-z]{5,10}$");
+                    Regex typeMembresy = new Regex(@"^[A-Z][a-z]{4,10}$");
                     if (typeMembresy.IsMatch(isValid))
                         return true;
                     return false;
                 case 5:
-                    Regex prices = new Regex(@"^(?!.*\s)\d{2,7}(?:\.\d{1,2})?$");
+                    Regex prices = new Regex(@"^(?:[1-9][0-9]{1,2}|999)$");
                     if (prices.IsMatch(isValid))
                         return true;
                     return false;
                 case 6:
-                    Regex email = new Regex(@"^[a-zA-Z0-9]+@[a-z0-9]+\.[a-z0-9.]+$"); // email
+                    Regex email = new Regex(@"^[a-zA-Z0-9]+@[a-z]+\.[a-z]+(?:\.[a-z]+)?$"); // email
                     if (email.IsMatch(isValid))
                         return true;
                     return false;

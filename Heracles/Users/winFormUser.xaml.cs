@@ -27,7 +27,6 @@ namespace Heracles.Users
         public winNewUser()
         {
             InitializeComponent();
-            cmbRole.SelectedIndex = 1;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -156,6 +155,7 @@ namespace Heracles.Users
             txbErrorLastName.Visibility = Visibility.Collapsed;
             txbErrorEmail.Visibility = Visibility.Collapsed;
             txbErrorUser.Visibility = Visibility.Collapsed;
+            txbErrorRole.Visibility = Visibility.Collapsed; 
         }
         #endregion
 
@@ -204,7 +204,12 @@ namespace Heracles.Users
                 }
                 if(txtUserName.Text == string.Empty)
                 {
-                    txbErrorEmail.Visibility = Visibility.Visible;
+                    txbErrorUser.Visibility = Visibility.Visible;
+                    allValids = false;
+                }
+                if(cmbRole.SelectedItem == null)
+                {
+                    txbErrorRole.Visibility = Visibility.Visible;
                     allValids = false;
                 }
                 return allValids;

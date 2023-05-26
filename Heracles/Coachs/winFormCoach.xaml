@@ -11,22 +11,22 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Title="winFormCoach" Height="570" Width="480"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="winFormCoach" Height="610" Width="490"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Border Background="#FF434343" CornerRadius="10" Margin="0,0,0,0">
         <Grid>
             <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,10" Text="Inscribir coach" FontSize="25" Foreground="White" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
             <StackPanel Margin="80,60,80,20">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
                     <TextBlock Text="Nombre:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                    <TextBlock x:Name="txbErrorName" Margin="10,0,0,0" Text="El nombre no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                    <TextBlock x:Name="txbErrorName" Margin="10,0,0,0" Text="Debe empezar por mayúscula, seguido de minúsculas" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
-                <TextBox x:Name="txtName" MaterialDesign:HintAssist.Hint="Este campo empieza por mayúscula" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtName_KeyDown"/>
-                <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtName" MaterialDesign:HintAssist.Hint="Debe empezar por mayúscula, seguido de minúsculas" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtName_KeyDown"/>
+                <StackPanel Orientation="Vertical">
                     <TextBlock Text="Apellido:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                    <TextBlock x:Name="txbErrorLastName" Margin="10,0,0,0" Text="El apellido no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                    <TextBlock x:Name="txbErrorLastName" Margin="10,0,0,0" Text="Debe empezar por mayúscula, seguido de minúsculas" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
                 <TextBox x:Name="txtLastName" MaterialDesign:HintAssist.Hint="Este campo empieza por mayúscula" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtLastName_KeyDown"/>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
                     <TextBlock Text="Apellido materno:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
                     <TextBlock x:Name="txbErrorSecondLastName" Margin="10,0,0,0" Text="El apellido no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
