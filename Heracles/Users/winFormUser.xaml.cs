@@ -27,6 +27,7 @@ namespace Heracles.Users
         public winNewUser()
         {
             InitializeComponent();
+            cmbRole.SelectedIndex = 1;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
