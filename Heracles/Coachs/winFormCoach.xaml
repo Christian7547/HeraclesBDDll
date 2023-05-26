@@ -5,21 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Heracles.Coachs"
         mc:Ignorable="d"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         Title="winFormCoach" Height="570" Width="480"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Border Background="#FF434343" CornerRadius="10" Margin="0,0,0,0">
         <Grid>
             <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,10" Text="Inscribir coach" FontSize="25" Foreground="White" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
             <StackPanel Margin="80,60,80,20">
-                <TextBlock Text="Nombre:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                <TextBox x:Name="txtName" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
-                <TextBlock Text="Apellido:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                <TextBox x:Name="txtLastName" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
-                <TextBlock Text="Apellido materno:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                <TextBox x:Name="txtSecondLastName" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
-                <TextBlock Text="C.I:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                <TextBox x:Name="txtCI" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
-                <TextBlock Text="Teléfono:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                <TextBox x:Name="txtPhone" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Nombre:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorName" Margin="10,0,0,0" Text="El nombre no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtName" MaterialDesign:HintAssist.Hint="Este campo empieza por mayúscula" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtName_KeyDown"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Apellido:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorLastName" Margin="10,0,0,0" Text="El apellido no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtLastName" MaterialDesign:HintAssist.Hint="Este campo empieza por mayúscula" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtLastName_KeyDown"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Apellido materno:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorSecondLastName" Margin="10,0,0,0" Text="El apellido no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtSecondLastName" MaterialDesign:HintAssist.Hint="Este campo empieza por mayúscula" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtSecondLastName_KeyDown"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="C.I:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorCi" Margin="10,0,0,0" Text="El CI no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtCI" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Teléfono:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorPhone" Margin="10,0,0,0" Text="El teléfono no es correcto" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtPhone" MaterialDesign:HintAssist.Hint="Requiere 8 dígitos (empieza con 7 o 6)" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtPhone_KeyDown"/>
                 <StackPanel Orientation="Horizontal" Margin="10,10,10,0" Height="60">
                     <Button x:Name="btnSave" Margin="20,0,0,0" Content="Guardar" Height="50" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnSave_Click"/>
                     <Button x:Name="btnEdit" Content="Editar" Height="50" Width="120" FontSize="17" Visibility="Collapsed" FontFamily="BiomeW04-Bold" Click="btnEdit_Click"/>

@@ -1,4 +1,5 @@
 ﻿using Heracles.MyShowDialog;
+using Heracles.Utilities;
 using HeraclesDAO.Logic;
 using System;
 using System.Text.RegularExpressions;
@@ -9,6 +10,7 @@ namespace Heracles.Users.UpdateProfile
     public partial class winChangePassword : Window
     {
         UserImpl _userImpl;
+        Validate validate;
 
         public winChangePassword()
         {
@@ -21,8 +23,8 @@ namespace Heracles.Users.UpdateProfile
             try
             {
                 winUpdatePasswordDialog passwordDialog;
-
-                if (txtNewPassword.Password == txtConfirmPassword.Password && ValidPassword(txtConfirmPassword.Password))
+                validate = new Validate();
+                if (txtNewPassword.Password == txtConfirmPassword.Password && validate.Inputs(txtConfirmPassword.Password, 0))
                 {
                     int n = _userImpl.ChangePassword(txtConfirmPassword.Password, txtOldPassword.Password);
                     if (n > 0)
@@ -55,15 +57,6 @@ namespace Heracles.Users.UpdateProfile
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-        bool ValidPassword(string password)
-        {
-            Regex regex = new Regex(@"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\p{P})(?!.*\s).{8,16}$");
-            if (regex.IsMatch(password))
-                return true;
-            else
-                return false;
         }
     }
 }

@@ -1,8 +1,14 @@
 ﻿using Heracles.MyShowDialog;
+using Heracles.Utilities;
 using HeraclesDAO.Logic;
 using HeraclesDAO.Models;
 using System;
 using System.Windows;
+using System.Windows.Input;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
+using MaterialDesignColors.ColorManipulation;
 
 namespace Heracles.Coachs
 {
@@ -12,6 +18,8 @@ namespace Heracles.Coachs
         CoachImpl coachImpl;
         byte _id = 0;
 
+        Validate validate;
+
         public winFormCoach()
         {
             InitializeComponent();
@@ -19,27 +27,31 @@ namespace Heracles.Coachs
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            ShowMessages();
             _coach = new Coach()
             {
-                Name = txtName.Text,
-                LastName = txtLastName.Text,
-                SecondLastName = txtSecondLastName.Text,
-                CI = txtCI.Text,
-                Phone = txtPhone.Text
+                Name = txtName.Text.Trim(),
+                LastName = txtLastName.Text.Trim(),
+                SecondLastName = txtSecondLastName.Text.Trim(),
+                CI = txtCI.Text.Trim(),
+                Phone = txtPhone.Text.Trim()
             };
             coachImpl = new CoachImpl();
             try
-            { 
-                int success = coachImpl.Insert(_coach);
-                if(success > 0)
+            {
+                if (Inputs())
                 {
-                    winInsertDialog insertDialog = new winInsertDialog();
-                    insertDialog.ShowDialog();
+                    int success = coachImpl.Insert(_coach);
+                    if (success > 0)
+                    {
+                        winInsertDialog insertDialog = new winInsertDialog();
+                        insertDialog.ShowDialog();
+                    }
+                    _coach = null;
+                    Close();
+                    winShowCoachs winShowCoachs = new winShowCoachs();
+                    winShowCoachs.ShowDialog();
                 }
-                _coach = null;
-                Close();
-                winShowCoachs winShowCoachs = new winShowCoachs();
-                winShowCoachs.ShowDialog();
             }
             catch(Exception ex)
             {
@@ -49,31 +61,33 @@ namespace Heracles.Coachs
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
+            ShowMessages();
             _coach = new Coach()
             {
                 Id = _id,
-                Name = txtName.Text,
-                LastName = txtLastName.Text,
-                SecondLastName = txtSecondLastName.Text,
-                CI = txtCI.Text,
-                Phone = txtPhone.Text
+                Name = txtName.Text.Trim(),
+                LastName = txtLastName.Text.Trim(),
+                SecondLastName = txtSecondLastName.Text.Trim(),
+                CI = txtCI.Text.Trim(),
+                Phone = txtPhone.Text.Trim()
             };
-
+         
             coachImpl = new CoachImpl();
             try
             {
-                int success = coachImpl.Update(_coach);
-                if (success > 0)
+                if (Inputs())
                 {
-                    winUpdateDialog updateDialog = new winUpdateDialog();
-                    updateDialog.ShowDialog();
+                    int success = coachImpl.Update(_coach);
+                    if (success > 0)
+                    {
+                        winUpdateDialog updateDialog = new winUpdateDialog();
+                        updateDialog.ShowDialog();
+                    }
+                    _coach = null;
+                    Close();
+                    winShowCoachs showCoachs = new winShowCoachs();
+                    showCoachs.ShowDialog();
                 }
-
-                _coach = null;
-
-                this.Close();
-                winShowCoachs showCoachs = new winShowCoachs();
-                showCoachs.ShowDialog();
             }
             catch(Exception ex)
             {
@@ -93,6 +107,7 @@ namespace Heracles.Coachs
             ShowDialog();
         }
 
+        #region Config
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -106,5 +121,79 @@ namespace Heracles.Coachs
             btnEdit.Visibility = Visibility.Visible;
             txbtitle.Text = "Editar";
         }
+
+        void ShowMessages()
+        {
+            txbErrorCi.Visibility = Visibility.Collapsed;
+            txbErrorName.Visibility = Visibility.Collapsed;
+            txbErrorLastName.Visibility = Visibility.Collapsed;
+            txbErrorSecondLastName.Visibility = Visibility.Collapsed;
+            txbErrorPhone.Visibility = Visibility.Collapsed;    
+        }
+        #endregion
+
+        #region Validations
+
+        private bool Inputs()
+        {
+            bool allValids = true;
+            validate = new Validate();
+            if (allValids)
+            {
+                if (!validate.Inputs(txtName.Text, 1))
+                {
+                    txbErrorName.Visibility = Visibility.Visible;
+                    allValids = false;
+                }
+                if (!validate.Inputs(txtLastName.Text, 1))
+                {
+                    txbErrorLastName.Visibility = Visibility.Visible;
+                    allValids = false;
+                }
+                if (!validate.Inputs(txtSecondLastName.Text, 1))
+                {
+                    txbErrorSecondLastName.Visibility = Visibility.Visible;
+                    allValids = false;
+                }
+                if (!validate.Inputs(txtCI.Text, 2))
+                {
+                    txbErrorCi.Visibility = Visibility.Visible;
+                    allValids = false;
+                }
+                if (!validate.Inputs(txtPhone.Text, 3))
+                {
+                    txbErrorPhone.Visibility = Visibility.Visible;
+                    allValids = false;
+                }
+                return allValids;
+            }
+            else
+                return allValids;
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.FieldTextValid(e);
+        }
+
+        private void txtLastName_KeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.FieldTextValid(e);
+        }
+
+        private void txtSecondLastName_KeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.FieldTextValid(e);
+        }
+
+        private void txtPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.FieldNumberValid(e);
+        }
+        #endregion
     }
 }

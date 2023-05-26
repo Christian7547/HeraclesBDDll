@@ -85,6 +85,7 @@
     <Compile Include="Users\winShowUsers.xaml.cs">
       <DependentUpon>winShowUsers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Validate.cs" />
     <Page Include="Coachs\winConfirmDelete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
