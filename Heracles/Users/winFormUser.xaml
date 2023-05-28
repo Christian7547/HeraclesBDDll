@@ -18,22 +18,22 @@
             <StackPanel Margin="80,60,80,20">
                 <StackPanel Orientation="Vertical">
                     <TextBlock x:Name="txbName" Text="Nombre:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                    <TextBlock x:Name="txbErrorName" Margin="10,0,0,0" Text="Debe empezar por mayúscula, seguido de minúsculas" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                    <TextBlock x:Name="txbErrorName" Margin="10,0,0,0" Text="El campo esta vacío, y no puede tener espacios" Foreground="#e74c3c " FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
-                <TextBox x:Name="txtName" MaterialDesign:HintAssist.Hint="Este campo empieza por mayúscula" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtName_KeyDown"/>
+                <TextBox x:Name="txtName" Height="40" Width="300" MaterialDesign:HintAssist.Hint="Este campo solo acepta letras" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtName_KeyDown"/>
                 <StackPanel Orientation="Vertical">
                     <TextBlock x:Name="txbLastName" Text="Apellido:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                    <TextBlock x:Name="txbErrorLastName" Margin="10,0,0,0" Text="Debe empezar por mayúscula, seguido de minúsculas" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                    <TextBlock x:Name="txbErrorLastName" Margin="10,0,0,0" Text="El campo esta vacío, y no puede tener espacios"  Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
-                <TextBox x:Name="txtLastName" MaterialDesign:HintAssist.Hint="Este campo empieza por mayúscula" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtLastName_KeyDown"/>
+                <TextBox x:Name="txtLastName" Height="40" Width="300" MaterialDesign:HintAssist.Hint="Este campo solo acepta letras" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" KeyDown="txtLastName_KeyDown"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="E-mail:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                    <TextBlock x:Name="txbErrorEmail" Margin="10,0,0,0" Text="El email no es válido" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                    <TextBlock x:Name="txbErrorEmail" Margin="10,0,0,0" Text="El email no es válido o el campo está vacío" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
                 <TextBox x:Name="txtEmail" Height="40" MaterialDesign:HintAssist.Hint="example01@example.com" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Usuario:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                    <TextBlock x:Name="txbErrorUser" Margin="10,0,0,0" Text="El usuario no es válido" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                    <TextBlock x:Name="txbErrorUser" Margin="10,0,0,0" Text="Este campo no puede estar vacío" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBox x:Name="txtUserName" Height="40" Width="220" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular" IsEnabled="False"/>
@@ -41,7 +41,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Role:" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
-                    <TextBlock x:Name="txbErrorRole" Margin="10,0,0,0" Text="Seleccione un rol" Foreground="Red" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                    <TextBlock x:Name="txbErrorRole" Margin="10,0,0,0" Text="Seleccione un rol" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
                 </StackPanel>
                 <ComboBox x:Name="cmbRole" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="White" FontFamily="BiomeW04-Regular">
                     <ComboBoxItem Foreground="#FF434343">Administrador</ComboBoxItem>

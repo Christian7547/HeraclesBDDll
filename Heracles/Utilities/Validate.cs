@@ -32,7 +32,7 @@ namespace Heracles.Utilities
                         return true;
                     return false;
                 case 1:
-                    Regex textLength = new Regex(@"^[A-Z][a-z]{3,60}$"); //names
+                    Regex textLength = new Regex(@"^[A-ZÁÉÍÓÚ][a-zA-ZñÑÁÉÍÓÚáéíóú]{3,60}$"); //names
                     if (textLength.IsMatch(isValid))
                         return true;
                     return false;
@@ -47,7 +47,7 @@ namespace Heracles.Utilities
                         return true;
                     return false;
                 case 4:
-                    Regex typeMembresy = new Regex(@"^[A-Z][a-z]{4,10}$");
+                    Regex typeMembresy = new Regex(@"^[A-Z][a-zA-Z]{4,10}$");
                     if (typeMembresy.IsMatch(isValid))
                         return true;
                     return false;
