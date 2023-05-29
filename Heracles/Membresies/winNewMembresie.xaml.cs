@@ -124,6 +124,7 @@ namespace Heracles.Membresies
             {
                 if(!validate.Inputs(txtType.Text, 4))
                 {
+                    txbErrorType.Text = "No están permitidos los espacios,\n mas de una mayúscula o campo vacío";
                     txbErrorType.Visibility = Visibility.Visible;
                     allValids = false;
                 }

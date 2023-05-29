@@ -146,11 +146,6 @@ namespace Heracles.Coachs
                     txbErrorLastName.Visibility = Visibility.Visible;
                     allValids = false;
                 }
-                if (!validate.Inputs(txtSecondLastName.Text, 1))
-                {
-                    txbErrorSecondLastName.Visibility = Visibility.Visible;
-                    allValids = false;
-                }
                 if (!validate.Inputs(txtCI.Text, 2))
                 {
                     txbErrorCi.Visibility = Visibility.Visible;
