@@ -1,0 +1,76 @@
+﻿<Window x:Class="Heracles.Inscriptions.winFormInscription"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Heracles.Inscriptions"
+        mc:Ignorable="d"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Title="winFormInscription" Height="720" Width="490"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Border Background="#FFA0A0A0" CornerRadius="10" Margin="0,0,0,0" BorderBrush="#FF434343" BorderThickness="5">
+        <Grid>
+            <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,10" Text="Nueva Inscripción" FontSize="25" Foreground="#FF434343" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+            <StackPanel Margin="70,60,70,20">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Nombre:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorName" Margin="10,0,0,0" Text="El campo esta vacío, y no puede mas de un espacio entre nombres" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtName" MaterialDesign:HintAssist.Hint="Este campo solo acepta letras" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular" KeyDown="txtName_KeyDown"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Apellido:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorLastName" Margin="10,0,0,0" Text="El campo esta vacío, y no puede tener espacios" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtLastName" MaterialDesign:HintAssist.Hint="Este campo solo acepta letras" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular" KeyDown="txtLastName_KeyDown"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Apellido materno:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorSecondLastName" Margin="10,0,0,0" Text="El apellido no es correcto" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBox x:Name="txtSecondLastName" MaterialDesign:HintAssist.Hint="El campo esta vacío, y no puede tener espacios" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular" KeyDown="txtSecondLastName_KeyDown"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Membresía:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorMembresy" Margin="10,0,0,0" Text="Seleccione un rol" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <ComboBox x:Name="cmbMembresy" DisplayMemberPath="type" SelectedValuePath="id" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Fecha de inicio:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorStartDate" Margin="10,0,0,0" Text="El email no es válido o el campo está vacío" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <DatePicker x:Name="dtpStart" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular" FontWeight="Bold"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Fecha de renovación:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorFinishDate" Margin="10,0,0,0" Text="El email no es válido o el campo está vacío" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <DatePicker x:Name="dtpFinish" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal" Margin="10,10,10,0" Height="50">
+                    <Button x:Name="btnSave" Margin="40,0,0,0" Content="Guardar" Height="40" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnSave_Click"/>
+                    <Button x:Name="btnEdit" Content="Editar" Height="40" Width="120" FontSize="17" Visibility="Collapsed" FontFamily="BiomeW04-Bold" Click="btnEdit_Click"/>
+                    <Button x:Name="btnCancel" Content="Cancelar" Height="40" Margin="20,0,0,0" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnCancel_Click"/>
+                </StackPanel>
+            </StackPanel>
+            <Grid Grid.Column="1" Grid.RowSpan="2" Margin="340,-370,-676,54.2" Panel.ZIndex="-1">
+                <Grid.RenderTransform>
+                    <RotateTransform Angle="90"/>
+                </Grid.RenderTransform>
+
+                <StackPanel Orientation="Horizontal" Margin="-350 250 -255 -250">
+                    <StackPanel Width="941">
+                        <Border Width="700" Height="35" Background="White" Margin="150 0 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="Gray" Margin="0 15 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="40" Background="#FF434343" Margin="122,15,46.8,0" CornerRadius="20"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Border Width="700" Height="35" Background="White" Margin="150 0 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="Gray" Margin="0 15 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="White" Margin="75 15 0 0" CornerRadius="20"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

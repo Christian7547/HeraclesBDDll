@@ -24,32 +24,6 @@ namespace HeraclesDAO.Logic
             return success;
         }
 
-        public Membresy GetMembresy(byte id)
-        {
-            Membresy membresy = null;
-            _query = @"SELECT id, [type], price, [status], registerDate, ISNULL(lastUpdate, CURRENT_TIMESTAMP), userId FROM Membresy WHERE id = @id;";
-            using(SqlCommand get = CreateCommand(_query))
-            {
-                get.Connection.Open();
-                get.Parameters.AddWithValue("@id", id);
-                DataTable dataTable = ReadCommand(get);
-                if(dataTable.Rows.Count > 0)
-                {
-                    membresy = new Membresy()
-                    {
-                        Id = byte.Parse(dataTable.Rows[0][0].ToString()),
-                        TypeMembresy = dataTable.Rows[0][1].ToString(), 
-                        Price = float.Parse(dataTable.Rows[0][2].ToString()),
-                        Status = byte.Parse(dataTable.Rows[0][3].ToString()),
-                        RegisterDate = DateTime.Parse(dataTable.Rows[0][4].ToString()), 
-                        LastUpdate = DateTime.Parse(dataTable.Rows[0][5].ToString()),
-                        UserId = int.Parse(dataTable.Rows[0][6].ToString())
-                    };
-                }
-            }
-            return membresy;
-        }
-
         public int Insert(Membresy t)
         {
             int success;
@@ -93,5 +67,17 @@ namespace HeraclesDAO.Logic
             }
             return success;
         }
+
+        public DataTable GetMembresies()
+        {
+            DataTable dt;
+            _query = @"SELECT id, [type] FROM Membresy";
+            using (SqlCommand get = CreateCommand(_query))
+            {
+                dt = ReadCommand(get);
+            }
+            return dt;
+        }
+
     }
 }

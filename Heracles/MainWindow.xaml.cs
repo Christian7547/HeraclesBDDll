@@ -1,4 +1,5 @@
 ﻿using Heracles.Coachs;
+using Heracles.Inscriptions;
 using Heracles.Membresies;
 using Heracles.Users;
 using HeraclesDAO.Models.Session;
@@ -44,6 +45,12 @@ namespace Heracles
         {
             winShowUsers winShowUsers = new winShowUsers();
             winShowUsers.ShowDialog();
+        }
+
+        private void btnInscriptions_Click(object sender, RoutedEventArgs e)
+        {
+            winMenuInscriptions menuInscriptions = new winMenuInscriptions();
+            menuInscriptions.ShowDialog();
         }
 
         #endregion

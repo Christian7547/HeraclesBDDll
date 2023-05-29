@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace Heracles.Utilities
@@ -32,7 +33,7 @@ namespace Heracles.Utilities
                         return true;
                     return false;
                 case 1:
-                    Regex textLength = new Regex(@"^[A-ZÁÉÍÓÚ][a-zA-ZñÑÁÉÍÓÚáéíóú]{3,60}$"); //names
+                    Regex textLength = new Regex(@"^[A-Z][a-záéíóúñ]{1,}( [A-Z][a-záéíóúñ]*)?$"); //names
                     if (textLength.IsMatch(isValid))
                         return true;
                     return false;
@@ -60,6 +61,33 @@ namespace Heracles.Utilities
                     Regex email = new Regex(@"^[a-zA-Z0-9]+@[a-z]+\.[a-z]+(?:\.[a-z]+)?$"); // email
                     if (email.IsMatch(isValid))
                         return true;
+                    return false;
+                default:
+                    return false;
+            }
+        }
+
+        public bool Dates(DateTime dateTime, byte action)
+        {
+            switch (action)
+            {
+                case 0:
+                    //ANNUAL
+                    DateTime start = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                    DateTime end = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
+                    if(dateTime >= start && dateTime <= end)
+                    {
+                        return true;
+                    }
+                    return false;
+                case 1:
+                    //MONTHLY
+                    DateTime startMonthly = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                    DateTime endMonthly = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day);
+                    if(dateTime >= startMonthly && dateTime <= endMonthly)
+                    {
+                        return true;
+                    }
                     return false;
                 default:
                     return false;

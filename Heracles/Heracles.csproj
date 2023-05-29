@@ -55,6 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Inscriptions\winDeleteInscription.xaml.cs">
+      <DependentUpon>winDeleteInscription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inscriptions\winFormInscription.xaml.cs">
+      <DependentUpon>winFormInscription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inscriptions\winMenuInscriptions.xaml.cs">
+      <DependentUpon>winMenuInscriptions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login\winIncorrectLogin.xaml.cs">
       <DependentUpon>winIncorrectLogin.xaml</DependentUpon>
     </Compile>
@@ -95,6 +104,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Coachs\winShowCoachs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inscriptions\winDeleteInscription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inscriptions\winFormInscription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inscriptions\winMenuInscriptions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,5 +271,6 @@
   <ItemGroup>
     <Resource Include="Images\default_Profile.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

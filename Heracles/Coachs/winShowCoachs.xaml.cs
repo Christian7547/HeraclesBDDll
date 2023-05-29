@@ -25,7 +25,7 @@ namespace Heracles.Coachs
 
         private void btnNewCoach_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
             winFormCoach winFormCoach = new winFormCoach();
             winFormCoach.ShowDialog();
         }

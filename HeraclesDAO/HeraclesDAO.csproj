@@ -46,14 +46,17 @@
     <Compile Include="Interfaces\IMember.cs" />
     <Compile Include="Interfaces\IMembresy.cs" />
     <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Interfaces\I_Inscription.cs" />
     <Compile Include="Logic\BaseImpl.cs" />
     <Compile Include="Logic\CoachImpl.cs" />
     <Compile Include="Logic\CreateUser\NewUser.cs" />
+    <Compile Include="Logic\InscriptionImpl.cs" />
     <Compile Include="Logic\MemberImpl.cs" />
     <Compile Include="Logic\MembresyImpl.cs" />
     <Compile Include="Logic\UserImpl.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Coach.cs" />
+    <Compile Include="Models\Inscription.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Membresy.cs" />
     <Compile Include="Models\Session\SessionClass.cs" />
