@@ -9,18 +9,31 @@ namespace HeraclesDAO.Logic
 {
     public class InscriptionImpl : BaseImpl, I_Inscription
     {
-        public int Delete(Inscription m)
+        public int Delete(Inscription i, Member m)
         {
-            int success;
-            _query = @"UPDATE Inscription SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
-            using (SqlCommand delete = CreateCommand(_query))
+            List<SqlCommand> commands = new List<SqlCommand>();
+            string deleteInscription = @"UPDATE Inscription SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
+            string deleteMember = @"UPDATE Member SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userIdM WHERE id = @idMember";
+            bool success;
+            using (SqlConnection connection = CreateConnection())
             {
-                delete.Connection.Open();
-                delete.Parameters.AddWithValue("@id", m.Id);
-                delete.Parameters.AddWithValue("@userId", SessionClass.SessionId);
-                success = WriteCommand(delete);
+                connection.Open();
+                SqlTransaction transaction = connection.BeginTransaction();
+                SqlCommand deleteM = new SqlCommand(deleteMember);
+                SqlCommand deleteI = new SqlCommand(deleteInscription);
+                deleteI.Parameters.AddWithValue("@id", i.Id);
+                deleteI.Parameters.AddWithValue("@userId", SessionClass.SessionId);
+
+                deleteM.Parameters.AddWithValue("@idMember", m.Id);
+                deleteM.Parameters.AddWithValue("@userIdM", SessionClass.SessionId);
+                commands.Add(deleteM);
+                commands.Add(deleteI);
+
+                success = ExecuteAnyCommands(transaction, commands);
             }
-            return success;
+            if (success)
+                return 1;
+            return 0;
         }
 
         public int Insert(Member m, Inscription i)

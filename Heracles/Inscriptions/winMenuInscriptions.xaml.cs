@@ -60,9 +60,13 @@ namespace Heracles.Inscriptions
             {
                 Id = int.Parse(((DataRowView)dtgData.SelectedItem).Row["ID"].ToString())
             };
+            _member = new Member()
+            {
+                Id = int.Parse(((DataRowView)dtgData.SelectedItem).Row["MemberId"].ToString())
+            };
             Close();
             winDeleteInscription winDeleteInscription = new winDeleteInscription();
-            winDeleteInscription.ConfirmDelete(_inscription);
+            winDeleteInscription.ConfirmDelete(_inscription, _member);
         }
     }
 }

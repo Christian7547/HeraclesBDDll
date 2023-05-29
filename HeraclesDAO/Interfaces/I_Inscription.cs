@@ -13,6 +13,6 @@ namespace HeraclesDAO.Interfaces
         DataTable Select();
         int Insert(Member m, Inscription i);
         int Update(Inscription i, Member m);
-        int Delete(Inscription m);
+        int Delete(Inscription i, Member m);
     }
 }
