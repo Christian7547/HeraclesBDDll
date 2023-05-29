@@ -52,7 +52,7 @@
                                     <TextBlock Text="Inscripciones" FontWeight="Bold" TextAlignment="Center" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
                             </Button>
-                            <Button x:Name="btnMembers" Width="210" Height="100" Margin="30,0,0,0">
+                            <Button x:Name="btnMembers" Width="210" Height="100" Margin="15,0,0,0">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="AccountPlus" Foreground="White" Height="50" Width="50" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Miembros" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
