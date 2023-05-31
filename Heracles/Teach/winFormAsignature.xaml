@@ -1,0 +1,67 @@
+﻿<Window x:Class="Heracles.Teach.winFormAsignature"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Heracles.Teach"
+       xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        mc:Ignorable="d"
+        Title="newAsignature" Height="500" Width="500"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Border Background="#FFA0A0A0" CornerRadius="10" Margin="0,0,0,0" BorderBrush="#FF434343" BorderThickness="5">
+        <Grid>
+            <TextBlock x:Name="txbtitle" VerticalAlignment="Top" Margin="50,10" Text="Crear clase" FontSize="25" Foreground="#FF434343" FontWeight="ExtraBold" FontFamily="BiomeW04-Bold"/>
+            <StackPanel Margin="70,60,70,20">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Coach:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorCoach" Margin="10,0,0,0" Text="El campo esta vacío, y no puede mas de un espacio entre nombres" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <ComboBox x:Name="cmbCoach" SelectedIndex="0" DisplayMemberPath="Name" SelectedValuePath="id" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Disciplina:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorLesson" Margin="10,0,0,0" Text="El campo esta vacío, y no puede tener espacios" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <ComboBox x:Name="cmbLesson" SelectedIndex="0" DisplayMemberPath="Lesson" SelectedValuePath="id" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Horario:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorSchedule" Margin="10,0,0,0" Text="El apellido no es correcto" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <ComboBox x:Name="cmbSchedule" SelectedIndex="0" DisplayMemberPath="Schedule" SelectedValuePath="id" Height="40" Width="300" Margin="0,10" FontSize="17" Foreground="Black"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sala:" Foreground="#FF434343" FontSize="18" FontWeight="Bold" FontFamily="BiomeW04-Bold"/>
+                    <TextBlock x:Name="txbErrorRoom" Margin="10,0,0,0" Text="Seleccione un rol" Foreground="#e74c3c" FontSize="13" FontWeight="Bold" Visibility="Collapsed"/>
+                </StackPanel>
+                <ComboBox x:Name="cmbRoom" SelectedIndex="0" DisplayMemberPath="name" SelectedValuePath="id" Height="40" Width="300" Margin="0,10" FontSize="17" FontFamily="BiomeW04-Regular"/>
+                <StackPanel Orientation="Horizontal" Margin="10,10,10,0" Height="50">
+                    <Button x:Name="btnSave" Margin="40,0,0,0" Content="Guardar" Height="40" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnSave_Click"/>
+                    <Button x:Name="btnEdit" Content="Editar" Height="40" Margin="40 0 0 0" Width="120" FontSize="17" Visibility="Collapsed" FontFamily="BiomeW04-Bold" Click="btnEdit_Click"/>
+                    <Button x:Name="btnCancel" Content="Cancelar" Height="40" Margin="20,0,0,0" Width="120" FontSize="17" FontFamily="BiomeW04-Bold" Click="btnCancel_Click"/>
+                </StackPanel>
+            </StackPanel>
+            <Grid Grid.Column="1" Grid.RowSpan="2" Margin="340,-370,-676,54.2" Panel.ZIndex="-1">
+                <Grid.RenderTransform>
+                    <RotateTransform Angle="90"/>
+                </Grid.RenderTransform>
+
+                <StackPanel Orientation="Horizontal" Margin="-350 250 -275 -250">
+                    <StackPanel Width="941">
+                        <Border Width="700" Height="35" Background="White" Margin="150 0 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="Gray" Margin="0 15 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="40" Background="#FF434343" Margin="122,15,46.8,0" CornerRadius="20"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Border Width="700" Height="35" Background="White" Margin="150 0 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="Gray" Margin="0 15 0 0" CornerRadius="20"/>
+                        <Border Width="700" Height="35" Background="White" Margin="75 15 0 0" CornerRadius="20"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
