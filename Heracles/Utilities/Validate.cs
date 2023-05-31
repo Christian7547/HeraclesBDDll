@@ -107,9 +107,9 @@ namespace Heracles.Utilities
             }
         }
 
-        public byte SelectionAsignments(short schedule, short room)
+        public bool SelectionAsignments(short schedule, short room)
         {
-            byte found = 0;
+            bool found = true;
             TeachImpl teachImpl = new TeachImpl();
             DataTable dt = teachImpl.SearchForMatches();
             for(int i = 0; i < dt.Rows.Count; i++)
@@ -117,25 +117,26 @@ namespace Heracles.Utilities
                 if (schedule == short.Parse(dt.Rows[i][2].ToString()) //same room, same schedule
                     && room == short.Parse(dt.Rows[i][3].ToString()))
                 {
-                    break;
+                    return !found;
                 }
                 else
                 {
                     if (schedule != short.Parse(dt.Rows[i][2].ToString())  //another room, another schedule
                         && room != short.Parse(dt.Rows[i][3].ToString()))
                     {
-                        found = 2;
-                        return found;
+                        found = true;
                     }
                     else
                     {
-                        if (schedule != short.Parse(dt.Rows[i][2].ToString())
-                            && room == short.Parse(dt.Rows[i][3].ToString()))
+                        if ((schedule != short.Parse(dt.Rows[i][2].ToString())
+                            && room == short.Parse(dt.Rows[i][3].ToString())) ||
+                            (schedule == short.Parse(dt.Rows[i][2].ToString())
+                            && room != short.Parse(dt.Rows[i][3].ToString()))) 
                         {
-                            found = 0; //same room, another schedule 
+                            found = true; //same room, another schedule OR another room, same schedule
                         }
                         else
-                            found = 3;
+                            return !found;
                     }
                 }
             }

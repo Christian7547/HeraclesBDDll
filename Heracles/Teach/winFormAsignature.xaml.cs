@@ -59,9 +59,7 @@ namespace Heracles.Teach
             _teachImpl = new TeachImpl();
             try
             {
-                if (validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId) == 1 || //registro no existe
-                    validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId) == 2 ||
-                    validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId) == 3)
+                if (validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId))
                 {
                     if (_teachImpl.Insert(_teach) > 0)
                     {
@@ -96,9 +94,7 @@ namespace Heracles.Teach
             _teachImpl = new TeachImpl();
             try
             {
-                if (validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId) == 1 || //registro no existe
-                    validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId) == 2 ||
-                    validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId) == 3)
+                if (validate.SelectionAsignments(_teach.ScheduleId, _teach.RoomId))
                 {
                     if (_teachImpl.Update(_teach) > 0)
                     {
