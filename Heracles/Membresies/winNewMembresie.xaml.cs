@@ -27,10 +27,9 @@ namespace Heracles.Membresies
             ShowMessages();
             _membresy = new Membresy
             {
-                TypeMembresy = txtType.Text.Trim()
+                TypeMembresy = txtType.Text.Trim(),
+                Price = float.Parse(txtPrice.Text.Trim())
             };
-            if(txtPrice.Text == string.Empty)
-                _membresy.Price = 0;
             membresyImpl = new MembresyImpl();
             try
             {
@@ -148,6 +147,18 @@ namespace Heracles.Membresies
         {
             validate = new Validate();
             validate.FieldNumberValid(e);
+        }
+
+        private void txtType_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtType.Text);
+        }
+
+        private void txtPrice_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtPrice.Text);
         }
         #endregion
     }

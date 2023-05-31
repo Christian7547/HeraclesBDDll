@@ -67,7 +67,7 @@
                                     <TextBlock Text="Coachs" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>
                                 </StackPanel>
                             </Button>
-                            <Button x:Name="btnLesson" Width="210" Height="100" Margin="15,0,0,0">
+                            <Button x:Name="btnLesson" Width="210" Height="100" Margin="15,0,0,0" Click="btnLesson_Click">
                                 <StackPanel>
                                     <MaterialDesign:PackIcon Kind="Gymnastics" Foreground="White" Height="50" Width="50" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Clases" TextAlignment="Center" FontWeight="Bold" FontSize="12" FontFamily="BiomeW04-Bold"/>

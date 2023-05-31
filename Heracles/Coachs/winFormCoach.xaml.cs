@@ -1,4 +1,6 @@
-﻿using Heracles.MyShowDialog;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using Heracles.MyShowDialog;
 using Heracles.Utilities;
 using HeraclesDAO.Logic;
 using HeraclesDAO.Models;
@@ -16,14 +18,17 @@ namespace Heracles.Coachs
 
         Validate validate;
 
+        private bool isKeyBlocked = false;
+
         public winFormCoach()
         {
             InitializeComponent();
+            txtName.PreviewKeyDown += txtName_PreviewKeyDown;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            ShowMessages();
+            HiddenMessages();
             _coach = new Coach()
             {
                 Name = txtName.Text.Trim(),
@@ -35,7 +40,7 @@ namespace Heracles.Coachs
             coachImpl = new CoachImpl();
             try
             {
-                if (Inputs())
+                if (Inputs(_coach))
                 {
                     int success = coachImpl.Insert(_coach);
                     if (success > 0)
@@ -57,7 +62,7 @@ namespace Heracles.Coachs
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            ShowMessages();
+            HiddenMessages();
             _coach = new Coach()
             {
                 Id = _id,
@@ -71,7 +76,7 @@ namespace Heracles.Coachs
             coachImpl = new CoachImpl();
             try
             {
-                if (Inputs())
+                if (Inputs(_coach))
                 {
                     int success = coachImpl.Update(_coach);
                     if (success > 0)
@@ -118,7 +123,7 @@ namespace Heracles.Coachs
             txbtitle.Text = "Editar";
         }
 
-        void ShowMessages()
+        void HiddenMessages()
         {
             txbErrorCi.Visibility = Visibility.Collapsed;
             txbErrorName.Visibility = Visibility.Collapsed;
@@ -126,40 +131,30 @@ namespace Heracles.Coachs
             txbErrorSecondLastName.Visibility = Visibility.Collapsed;
             txbErrorPhone.Visibility = Visibility.Collapsed;    
         }
+
+        void ShowMessages()
+        {
+            txbErrorCi.Visibility = Visibility.Visible;
+            txbErrorName.Visibility = Visibility.Visible;
+            txbErrorLastName.Visibility = Visibility.Visible;
+            txbErrorSecondLastName.Visibility = Visibility.Visible;
+            txbErrorPhone.Visibility = Visibility.Visible;
+        }
         #endregion
 
         #region Validations
 
-        private bool Inputs()
+        private bool Inputs(Coach coach)
         {
-            bool allValids = true;
-            validate = new Validate();
-            if (allValids)
+            CoachValidation validationRules = new CoachValidation();
+            ValidationResult result = validationRules.Validate(coach);
+            if (!result.IsValid)
             {
-                if (!validate.Inputs(txtName.Text, 1))
-                {
-                    txbErrorName.Visibility = Visibility.Visible;
-                    allValids = false;
-                }
-                if (!validate.Inputs(txtLastName.Text, 1))
-                {
-                    txbErrorLastName.Visibility = Visibility.Visible;
-                    allValids = false;
-                }
-                if (!validate.Inputs(txtCI.Text, 2))
-                {
-                    txbErrorCi.Visibility = Visibility.Visible;
-                    allValids = false;
-                }
-                if (!validate.Inputs(txtPhone.Text, 3))
-                {
-                    txbErrorPhone.Visibility = Visibility.Visible;
-                    allValids = false;
-                }
-                return allValids;
+                winValidationForms validationForms = new winValidationForms();
+                validationForms.PrintErrors(result.Errors);
+                return result.IsValid;
             }
-            else
-                return allValids;
+            return result.IsValid;
         }
 
         private void txtName_KeyDown(object sender, KeyEventArgs e)
@@ -184,6 +179,36 @@ namespace Heracles.Coachs
         {
             validate = new Validate();
             validate.FieldNumberValid(e);
+        }
+
+        private void txtName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtName.Text);
+        }
+
+        private void txtLastName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtLastName.Text);
+        }
+
+        private void txtSecondLastName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtSecondLastName.Text);
+        }
+
+        private void txtCI_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtCI.Text);
+        }
+
+        private void txtPhone_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtPhone.Text);
         }
         #endregion
     }

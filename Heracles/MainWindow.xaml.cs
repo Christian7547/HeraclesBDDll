@@ -1,6 +1,7 @@
 ﻿using Heracles.Coachs;
 using Heracles.Inscriptions;
 using Heracles.Membresies;
+using Heracles.Teach;
 using Heracles.Users;
 using HeraclesDAO.Models.Session;
 using System;
@@ -53,6 +54,11 @@ namespace Heracles
             menuInscriptions.ShowDialog();
         }
 
+        private void btnLesson_Click(object sender, RoutedEventArgs e)
+        {
+            winTeach winTeach = new winTeach();
+            winTeach.ShowDialog();
+        }
         #endregion
 
         #region PopupMenu

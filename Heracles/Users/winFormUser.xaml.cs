@@ -229,6 +229,18 @@ namespace Heracles.Users
             validate = new Validate();
             validate.FieldTextValid(e);
         }
+
+        private void txtName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtName.Text);
+        }
+
+        private void txtLastName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            validate = new Validate();
+            validate.LockedSpaceKey(e, txtLastName.Text);
+        }
         #endregion
     }
 }

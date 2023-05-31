@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HeraclesDAO.Logic;
+using System;
+using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 
@@ -23,6 +25,17 @@ namespace Heracles.Utilities
                 eventArgs.Handled = true;
         }
 
+        public void LockedSpaceKey(KeyEventArgs eventArgs, string keyPress)
+        {
+            if (eventArgs.Key == Key.Space)
+            {
+                if(keyPress.EndsWith(" "))
+                {
+                    eventArgs.Handled = true;
+                }
+            }
+        }
+
         public bool Inputs(string isValid, byte test)
         {
             switch(test)
@@ -33,7 +46,7 @@ namespace Heracles.Utilities
                         return true;
                     return false;
                 case 1:
-                    Regex textLength = new Regex(@"^[A-Z][a-záéíóúñ]{1,}( [A-Z][a-záéíóúñ]*)?$"); //names
+                    Regex textLength = new Regex(@"^(?!$)(?=[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]{2})[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]*$"); //names
                     if (textLength.IsMatch(isValid))
                         return true;
                     return false;
@@ -48,7 +61,7 @@ namespace Heracles.Utilities
                         return true;
                     return false;
                 case 4:
-                    Regex typeMembresy = new Regex(@"^[A-Z][a-zA-Z]{4,10}$");
+                    Regex typeMembresy = new Regex(@"^(?!$)(?=[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]{2})[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]*$");
                     if (typeMembresy.IsMatch(isValid))
                         return true;
                     return false;
@@ -92,6 +105,41 @@ namespace Heracles.Utilities
                 default:
                     return false;
             }
+        }
+
+        public byte SelectionAsignments(short schedule, short room)
+        {
+            byte found = 0;
+            TeachImpl teachImpl = new TeachImpl();
+            DataTable dt = teachImpl.SearchForMatches();
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (schedule == short.Parse(dt.Rows[i][2].ToString()) //same room, same schedule
+                    && room == short.Parse(dt.Rows[i][3].ToString()))
+                {
+                    break;
+                }
+                else
+                {
+                    if (schedule != short.Parse(dt.Rows[i][2].ToString())  //another room, another schedule
+                        && room != short.Parse(dt.Rows[i][3].ToString()))
+                    {
+                        found = 2;
+                        return found;
+                    }
+                    else
+                    {
+                        if (schedule != short.Parse(dt.Rows[i][2].ToString())
+                            && room == short.Parse(dt.Rows[i][3].ToString()))
+                        {
+                            found = 0; //same room, another schedule 
+                        }
+                        else
+                            found = 3;
+                    }
+                }
+            }
+            return found;
         }
     }
 }

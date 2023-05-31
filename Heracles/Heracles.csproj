@@ -79,6 +79,15 @@
     <Compile Include="MyShowDialog\winUpdatePasswordDialog.xaml.cs">
       <DependentUpon>winUpdatePasswordDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Teach\winDeleteAsignature.xaml.cs">
+      <DependentUpon>winDeleteAsignature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Teach\winFormAsignature.xaml.cs">
+      <DependentUpon>winFormAsignature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Teach\winTeach.xaml.cs">
+      <DependentUpon>winTeach.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Users\UpdateProfile\winChangePassword.xaml.cs">
       <DependentUpon>winChangePassword.xaml</DependentUpon>
     </Compile>
@@ -94,7 +103,11 @@
     <Compile Include="Users\winShowUsers.xaml.cs">
       <DependentUpon>winShowUsers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\CoachValidation.cs" />
     <Compile Include="Utilities\Validate.cs" />
+    <Compile Include="Utilities\winValidationForms.xaml.cs">
+      <DependentUpon>winValidationForms.xaml</DependentUpon>
+    </Compile>
     <Page Include="Coachs\winConfirmDelete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +200,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Teach\winDeleteAsignature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Teach\winFormAsignature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Teach\winTeach.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Users\UpdateProfile\winChangePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +231,10 @@
     <Page Include="Users\winShowUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\winValidationForms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +281,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FluentValidation">
+      <Version>11.5.2</Version>
+    </PackageReference>
     <PackageReference Include="MaterialDesignColors">
       <Version>2.1.4</Version>
     </PackageReference>
