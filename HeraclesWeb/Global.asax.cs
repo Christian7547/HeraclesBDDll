@@ -19,7 +19,7 @@ namespace HeraclesWeb
         private void RegisterRoutes(RouteCollection routes)
         {
             //Index
-            routes.MapPageRoute("Default", "default", "~/Default.aspx");
+            routes.MapPageRoute("Default", "views/default", "~/Views/Default.aspx");
 
             //Membresies
             routes.MapPageRoute("Membresies", "views/membresies", "~/Views/MembresiesViews/ShowMembresies.aspx");
