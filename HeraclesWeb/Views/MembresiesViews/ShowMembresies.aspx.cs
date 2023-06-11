@@ -46,7 +46,7 @@ namespace HeraclesWeb.Views.MembresiesViews
                     };
 
                     Session["MembresyEdit"] = membresy;
-                    Response.Redirect("Edit.aspx");
+                    Response.Redirect("EditMembresy");
                     break;
 
                 case "delete":
@@ -62,7 +62,7 @@ namespace HeraclesWeb.Views.MembresiesViews
                     };
 
                     Session["DeleteMembresy"] = membresy;
-                    Response.Redirect("Delete.aspx");
+                    Response.Redirect("DeleteMembresy");
                     break;
             }
         }

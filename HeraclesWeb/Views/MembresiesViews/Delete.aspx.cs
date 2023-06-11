@@ -28,7 +28,7 @@ namespace HeraclesWeb.Views.MembresiesViews
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ShowMembresies.aspx");
+            Response.Redirect("Membresies");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace HeraclesWeb.Views.MembresiesViews
             try
             {
                 if (membresyImpl.Delete(_membresy) > 0)
-                    Response.Redirect("ShowMembresies.aspx");
+                    Response.Redirect("Membresies");
                 _membresy = null;
             }
             catch(Exception ex)

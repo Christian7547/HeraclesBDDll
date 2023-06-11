@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Views\CoachsViews\Delete.aspx" />
+    <Content Include="Views\CoachsViews\Edit.aspx" />
+    <Content Include="Views\CoachsViews\New.aspx" />
+    <Content Include="Views\CoachsViews\ShowCoachs.aspx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Views\MembresiesViews\Delete.aspx" />
     <Content Include="Views\MembresiesViews\Edit.aspx" />
@@ -86,6 +90,34 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoachsViews\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CoachsViews\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoachsViews\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CoachsViews\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoachsViews\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CoachsViews\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoachsViews\ShowCoachs.aspx.cs">
+      <DependentUpon>ShowCoachs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CoachsViews\ShowCoachs.aspx.designer.cs">
+      <DependentUpon>ShowCoachs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

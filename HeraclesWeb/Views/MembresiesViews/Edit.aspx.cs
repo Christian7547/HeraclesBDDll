@@ -40,7 +40,7 @@ namespace HeraclesWeb.Views.MembresiesViews
             try
             {
                 if (membresyImpl.Update(_membresy) > 0)
-                    Response.Redirect("ShowMembresies.aspx");
+                    Response.Redirect("Membresies");
                 _membresy = null;
             }
             catch(Exception ex)
@@ -51,7 +51,7 @@ namespace HeraclesWeb.Views.MembresiesViews
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ShowMembresies.aspx");
+            Response.Redirect("Membresies");
         }
     }
 }
