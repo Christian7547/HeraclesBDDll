@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="contact_section layout_padding">
         <div class="custom_heading-container">
-            <h3>Actualizar Coach</h3>
+            <h3 class="typographyClass">Actualizar Coach</h3>
         </div>
         <div class="container layout_padding2-top">
             <div class="row">

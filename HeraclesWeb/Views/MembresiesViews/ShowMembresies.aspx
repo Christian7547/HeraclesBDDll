@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="contact_section layout_padding">
         <div class="custom_heading-container">
-            <h3>Membresías</h3>
+            <h3 class="typographyClass">Membresías</h3>
         </div>
         <div class="container layout_padding2-top">
             <div class="row">
@@ -15,9 +15,9 @@
                     <form runat="server">
                         <asp:GridView runat="server" ID="gridData" CssClass="table" AutoGenerateColumns="false" OnRowCommand="gridData_RowCommand" OnRowDataBound="gridData_RowDataBound" >
                             <Columns>
-                                <asp:BoundField DataField="ID" ItemStyle-HorizontalAlign="Center" HeaderText="ID"/>
-                                <asp:BoundField DataField="Type" HeaderText="Tipo"/>
-                                <asp:BoundField DataField="Price" HeaderText="Precio"/>
+                                <asp:BoundField DataField="ID" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo"/>
+                                <asp:BoundField DataField="Type" HeaderText="Precio"/>
+                                <asp:BoundField DataField="Price" HeaderText=""/>
                                 <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" CommandName="update" ButtonType="Button" Text="Editar"/>
                                 <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" Text="Eliminar" ButtonType="Button" CommandName="delete"/>
                             </Columns>
