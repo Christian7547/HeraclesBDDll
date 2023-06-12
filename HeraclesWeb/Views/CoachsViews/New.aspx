@@ -11,7 +11,7 @@
                 <div class="col-md-6 mx-auto">
                     <form id="formMembresy" runat="server">
                         <div>
-                            <asp:TextBox ID="txtName" runat="server" type="text" placeholder="Nombre" />
+                            <asp:TextBox ID="txtName" runat="server" type="text" placeholder="Nombre"/>
                         </div>
                         <div>
                             <asp:TextBox ID="txtLastName" runat="server" type="text" placeholder="Apellido" />

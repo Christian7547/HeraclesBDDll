@@ -16,13 +16,12 @@ namespace HeraclesWeb.Views.CoachsViews
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
         {
             coachImpl = new CoachImpl();
-
             _coach = new Coach()
             {
                 Name = txtName.Text,
@@ -31,7 +30,7 @@ namespace HeraclesWeb.Views.CoachsViews
                 CI = txtCI.Text,
                 Phone = txtPhone.Text
             };
-
+            
             try
             {
                 if (coachImpl.Insert(_coach) > 0)
