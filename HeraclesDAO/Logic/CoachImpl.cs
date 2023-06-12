@@ -50,7 +50,8 @@ namespace HeraclesDAO.Logic
             _query = @"SELECT id AS ID, names AS 'Name', lastName AS LastName, secondLastName AS SecondLastName, 
                         ci AS CI, phone AS Phone
                         FROM Coach 
-                        WHERE [status] = 1";
+                        WHERE [status] = 1
+                        ORDER BY 2";
             using(SqlCommand select = CreateCommand(_query))
             {
                 data = ReadCommand(select);

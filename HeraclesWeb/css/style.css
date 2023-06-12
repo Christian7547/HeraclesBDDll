@@ -15,7 +15,11 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #000000;
-    background-color: #ffffff;
+    background-color: #FFA0A0A0;
+}
+
+.body-class {
+    background-color: #FFA0A0A0;
 }
 
 .layout_padding {
