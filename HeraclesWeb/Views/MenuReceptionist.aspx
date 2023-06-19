@@ -1,26 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="HeraclesWeb.Views.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MenuReceptionist.aspx.cs" Inherits="HeraclesWeb.Views.MenuReceptionist" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<div class="header">Menu</div>
+    <div class="header">Menu</div>
     <div class="cards_wrap">
-        <div class="card_item">
-			<div class="card_inner">
-				<image src="../../Images/user.png" class="logo"></image>
-				<div class="role_name">Usuarios</div>
-                <div class="film">Gestión de usuarios</div>
-				<br />
-				<a class="link-styleCard" href="#">Ver Usuarios</a>
-			</div>
-		</div>
 		<div class="card_item">
 			<div class="card_inner">
 				<span class="fa fa-user"></span>
 				<image src="../../Images/personcard.png" class="logo"></image>
-				<div class="role_name">Miembros</div>
-				<div class="film">Gestión de Miembros</div>
+				<div class="role_name">Inscripciones</div>
+				<div class="film">Gestión de Inscripciones</div>
 				<br />
-				<a class="link-styleCard" href="members">Ver Miembros</a>
+				<a class="link-styleCard" href="#">Ver Inscripciones</a>
 			</div>
 		</div>
 		<div class="card_item">
@@ -68,10 +59,28 @@
 				<span class="fa fa-user"></span>
 				<image src="../../Images/default_Profile.png" class="logo"></image>
 				<div class="role_name">Cuenta</div>
-				<div class="film">Opciones de perfil</div>
+				<div class="film">Cambiar contraseña</div>
 				<br />
-				<a class="link-styleCard" href="changepassword">Cambiar contraseña</a>
+				<form runat="server">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+					<asp:Button ID="btnChangePassword" OnClick="btnChangePassword_Click" Text="Cambiar contraseña" runat="server" CssClass="link-styleCard"/>
+					<ajaxToolkit:ModalPopupExtender ID="ModalPopup" runat="server" TargetControlID="btnChangePassword"
+						PopupControlID="pnlConfirmation" BackgroundCssClass="modal-background" OkControlID="btnOk" CancelControlID="btnCancel" />
+					<asp:Panel ID="pnlConfirmation" runat="server" CssClass="modal-panel">
+						<h3>Cambio de contraseña</h3>
+						<asp:TextBox ID="txtOldPassword" runat="server" CssClass="input-modal" type="password" placeholder="Contraseña actual"></asp:TextBox>
+						<asp:TextBox ID="txtNewPassword" runat="server" CssClass="input-modal" type="password" placeholder="Nueva contraseña"></asp:TextBox>
+						<asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="input-modal" type="password" placeholder="Confirmar contraseña"></asp:TextBox>
+						<div class="modal-buttons">
+							<asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="Aceptar" CssClass="button-modal" />
+							<asp:Button runat="server" ID="btnCancel" Text="Cancelar" CssClass="button-modal" />
+						</div>
+					</asp:Panel>
+					<script>
+
+                    </script>
+				</form>
 			</div>
 		</div>
-    </div>
+	</div>
 </asp:Content>

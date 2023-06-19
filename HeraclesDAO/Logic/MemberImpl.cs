@@ -6,7 +6,7 @@ using System.Data;
 
 namespace HeraclesDAO.Logic
 {
-    internal class MemberImpl : BaseImpl, IMember
+    public class MemberImpl : BaseImpl, IMember
     {
         public int Delete(Member t)
         {
@@ -34,7 +34,7 @@ namespace HeraclesDAO.Logic
 
         public DataTable Select()
         {
-            _query = @"SELECT name, lastName, secondLastName FROM Member WHERE [status] = 1"; 
+            _query = @"SELECT id AS ID, names AS 'Names', lastName AS 'LastName', secondLastName AS 'SecondLastName' FROM Member WHERE [status] = 1"; 
             using(SqlCommand select = CreateCommand(_query))
             {
                 return ReadCommand(select);

@@ -11,7 +11,7 @@ namespace HeraclesWeb
 {
 
 
-    public partial class Site
+    public partial class Init
     {
 
         /// <summary>
@@ -22,15 +22,6 @@ namespace HeraclesWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
-        /// <summary>
-        /// Control lblOnLine.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOnLine;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

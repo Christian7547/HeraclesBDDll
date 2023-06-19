@@ -51,7 +51,7 @@
                     <Button x:Name="btnSchedules" Height="350" Width="170" Margin="10">
                         <StackPanel>
                             <MaterialDesign:PackIcon Kind="Schedule" Foreground="White" Height="100" Width="100"/>
-                            <TextBlock Text="Clases" FontWeight="Bold" TextAlignment="Center" FontSize="12" FontFamily="BiomeW04-Bold" />
+                            <TextBlock Text="Horarios" FontWeight="Bold" TextAlignment="Center" FontSize="12" FontFamily="BiomeW04-Bold" />
                         </StackPanel>
                     </Button>
                 </StackPanel>

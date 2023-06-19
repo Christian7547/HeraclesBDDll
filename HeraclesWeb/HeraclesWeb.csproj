@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,22 +70,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\cards.css" />
     <Content Include="Global.asax" />
     <Resource Include="Images\Logo.png" />
+    <Content Include="Images\accountedit.png" />
+    <Resource Include="Images\default_Profile.png" />
+    <Content Include="Images\payment.png" />
+    <Content Include="Images\personcard.png" />
+    <Content Include="Images\schedule.png" />
+    <Content Include="Images\training.png" />
+    <Content Include="Images\user.png" />
     <Content Include="Views\CoachsViews\Delete.aspx" />
     <Content Include="Views\CoachsViews\Edit.aspx" />
     <Content Include="Views\CoachsViews\New.aspx" />
     <Content Include="Views\CoachsViews\ShowCoachs.aspx" />
     <Content Include="Views\Default.aspx" />
+    <Content Include="Views\LoginViews\ChangePassword.aspx" />
+    <Content Include="Views\LoginViews\Login.aspx" />
+    <Content Include="Views\MembersViews\New.aspx" />
+    <Content Include="Views\MembersViews\ShowMembers.aspx" />
     <Content Include="Views\MembresiesViews\Delete.aspx" />
     <Content Include="Views\MembresiesViews\Edit.aspx" />
     <Content Include="Views\MembresiesViews\New.aspx" />
     <Content Include="Views\MembresiesViews\ShowMembresies.aspx" />
+    <Content Include="Views\MenuCoach.aspx" />
+    <Content Include="Views\MenuReceptionist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Init.Master.cs">
+      <DependentUpon>Init.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Init.Master.designer.cs">
+      <DependentUpon>Init.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -127,6 +151,34 @@
     <Compile Include="Views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoginViews\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginViews\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginViews\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginViews\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MembersViews\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MembersViews\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MembersViews\ShowMembers.aspx.cs">
+      <DependentUpon>ShowMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MembersViews\ShowMembers.aspx.designer.cs">
+      <DependentUpon>ShowMembers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\MembresiesViews\Delete.aspx.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,10 +207,33 @@
     <Compile Include="Views\MembresiesViews\ShowMembresies.aspx.designer.cs">
       <DependentUpon>ShowMembresies.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\MenuCoach.aspx.cs">
+      <DependentUpon>MenuCoach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MenuCoach.aspx.designer.cs">
+      <DependentUpon>MenuCoach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuReceptionist.aspx.cs">
+      <DependentUpon>MenuReceptionist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MenuReceptionist.aspx.designer.cs">
+      <DependentUpon>MenuReceptionist.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Fonts\Biome W04 Regular.ttf" />
-    <Resource Include="Fonts\Biome.ttf" />
+    <Content Include="Fonts\Biome W04 Regular.ttf" />
+    <Content Include="Fonts\Biome.ttf" />
+    <Content Include="Init.Master" />
+    <Content Include="Fonts\af\fa-brands-400.ttf" />
+    <Content Include="Fonts\af\fa-brands-400.woff2" />
+    <Content Include="Fonts\af\fa-regular-400.ttf" />
+    <Content Include="Fonts\af\fa-regular-400.woff2" />
+    <Content Include="Fonts\af\fa-solid-900.ttf" />
+    <Content Include="Fonts\af\fa-solid-900.woff2" />
+    <Content Include="Fonts\af\fa-v4compatibility.ttf" />
+    <Content Include="Fonts\af\fa-v4compatibility.woff2" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">

@@ -1,18 +1,14 @@
-﻿using HeraclesDAO.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HeraclesWeb.Views
+namespace HeraclesWeb
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Init : System.Web.UI.MasterPage
     {
-        UserImpl _userImpl;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

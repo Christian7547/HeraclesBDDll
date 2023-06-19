@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeraclesDAO.Models.Session;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace HeraclesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblOnLine.Text = SessionClass.SessionUserName;
         }
     }
 }

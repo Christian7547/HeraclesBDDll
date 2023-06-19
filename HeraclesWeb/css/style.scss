@@ -28,11 +28,7 @@ $white: #ffffff;
   font-weight: bold;
 }
 
-body {
-  @include main-font;
-  color: #000000;
-  background-color: #ffffff;
-}
+
 
 .layout_padding {
   padding: 75px 0;
@@ -286,7 +282,6 @@ a:focus {
 
   &:hover {
     background-image: url(../images/left-arrow.png);
-
   }
 }
 

@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Web.UI;
 
 namespace HeraclesWeb
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : HttpApplication
     {
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -20,6 +21,7 @@ namespace HeraclesWeb
         {
             //Index
             routes.MapPageRoute("Default", "views/default", "~/Views/Default.aspx");
+            routes.MapPageRoute("ChangePassword", "views/changePassword", "~/Views/LoginViews/ChangePassword.aspx");
 
             //Membresies
             routes.MapPageRoute("Membresies", "views/membresies", "~/Views/MembresiesViews/ShowMembresies.aspx");
@@ -32,6 +34,10 @@ namespace HeraclesWeb
             routes.MapPageRoute("NewCoach", "views/newcoach", "~/Views/CoachsViews/New.aspx");
             routes.MapPageRoute("EditCoach", "views/editcoach", "~/Views/CoachsViews/Edit.aspx");
             routes.MapPageRoute("DeleteCoach", "views/deletecoach", "~/Views/CoachsViews/Delete.aspx");
+
+            //Members
+            routes.MapPageRoute("Members", "views/members", "~/Views/MembersViews/ShowMembers.aspx");
+            routes.MapPageRoute("NewMember", "views/newmember", "~/Views/MembersViews/New.aspx");
         }
     }
 }

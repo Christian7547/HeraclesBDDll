@@ -65,6 +65,7 @@
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Inscription.cs" />
+    <Compile Include="Models\Measures.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Membresy.cs" />
     <Compile Include="Models\Room.cs" />

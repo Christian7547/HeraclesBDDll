@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShowCoachs.aspx.cs" Inherits="HeraclesWeb.Views.CoachsViews.ShowCoachs" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -27,6 +29,19 @@
                                 <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" CommandName="delete" ButtonType="Button" Text="Eliminar" />
                             </Columns>
                         </asp:GridView>
+                        <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:Button runat="server" ID="btnDelete"/>
+                        <ajaxToolkit:ModalPopupExtender ID="ModalPopup" runat="server" TargetControlID="btnDelete"
+                            PopupControlID="pnlConfirmation" BackgroundCssClass="modal-background"
+                            CancelControlID="btnCancel" OkControlID="btnOk" />
+                        <asp:Panel ID="pnlConfirmation" runat="server" CssClass="modal-panel">
+                            <h3>Confirmación</h3>
+                            <p>¿Estás seguro de realizar esta acción?</p>
+                            <div class="modal-buttons">
+                                <asp:Button ID="btnCancel" runat="server" Text="Cancelar" />
+                                <asp:Button ID="btnOk" runat="server" Text="Aceptar" />
+                            </div>
+                        </asp:Panel>--%>
                     </form>
                 </div>
             </div>

@@ -3,7 +3,65 @@
     src: url("../Fonts/Biome.ttf") format('truetype')
 }
 
-.typographyClass {
+@import url('../FontAwesome/fontawesome.min.css');
+
+/*Measures*/
+.input-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
+}
+
+.input-item {
+    margin-right: 10px; 
+}
+/*Measures*/
+
+/*MODAL*/
+.modal-background {
+    background-color: transparent;
+}
+
+.modal-panel {
+    color: white;
+    font-family: MyFont;
+    padding: 20px;
+    background-color: #636363;
+    border: 1px solid #636363;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.modal-buttons {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.button-modal {
+    border: 2px solid #a1a2a9;
+    background-color: #a1a2a9;
+    color: #a1a2a9;
+    height: 50px;
+    width: 100px;
+}
+
+.button-modal:hover {
+    border: 2px solid #f44336;
+    background-color: #f44336;
+    color: white;
+}
+
+.input-modal {
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    margin: 10px;
+    width: 300px;
+    height: 40px;
+}
+/*MODAL*/
+
+
+.typographyClass{
     font-family: MyFont;
 }
 
@@ -12,15 +70,6 @@
     margin-left: 10px;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #000000;
-    background-color: #FFA0A0A0;
-}
-
-.body-class {
-    background-color: #FFA0A0A0;
-}
 
 .layout_padding {
     padding: 75px 0;
@@ -55,25 +104,25 @@ body {
     justify-content: center;
 }
 
-    .custom_heading-container h3 {
-        text-transform: uppercase;
-        font-weight: bold;
-        color: #000000;
-        position: relative;
-    }
+.custom_heading-container h3 {
+text-transform: uppercase;
+font-weight: bold;
+color: #000000;
+position: relative;
+}
 
-        .custom_heading-container h3::before {
-            content: "";
-            position: absolute;
-            bottom: -7px;
-            left: 50%;
-            width: 50px;
-            height: 7px;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-            background-color: #f44336;
-            border-radius: 15px;
-        }
+.custom_heading-container h3::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    width: 50px;
+    height: 7px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #f44336;
+    border-radius: 15px;
+}
 
 .btn-box {
     display: -webkit-box;
@@ -112,18 +161,18 @@ body {
 }
 
 .header_section {
-    background-color: #000000;
+    background-color: transparent;
     font-family: "Poppins", sans-serif;
 }
 
-    .header_section .container-fluid {
-        padding-right: 25px;
-        padding-left: 25px;
-    }
+.header_section .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+}
 
-    .header_section .nav_container {
-        margin: 0 auto;
-    }
+.header_section .nav_container {
+    margin: 0 auto;
+}
 
 .custom_nav-container .navbar-nav .nav-item .nav-link {
     padding: 10px 30px;
@@ -170,10 +219,24 @@ a:focus {
     border: 1px solid #f44336;
 }
 
-    .link-style:hover {
-        background-color: transparent;
-        color: #f44336;
-    }
+.link-style:hover {
+    background-color: transparent;
+    color: #f44336;
+}
+
+.link-styleCard {
+    background-color: #a1a2a9;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #a1a2a9;
+}
+
+.link-styleCard:hover {
+    background-color: white;
+    color: #a1a2a9;
+}
 /*LINKS*/
 
 a:hover,
@@ -208,30 +271,30 @@ a:focus {
     align-items: center;
 }
 
-    .navbar-brand img {
-        width: 45px;
-        margin-right: 5px;
-    }
+.navbar-brand img {
+    width: 45px;
+    margin-right: 5px;
+}
 
-    .navbar-brand span {
-        font-weight: bold;
-        font-size: 24px;
-        color: #ffffff;
-    }
+.navbar-brand span {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+}
 
 .custom_nav-container {
     z-index: 99999;
     padding: 5px 0;
 }
 
-    .custom_nav-container .navbar-toggler {
-        outline: none;
-    }
+.custom_nav-container .navbar-toggler {
+    outline: none;
+}
 
-        .custom_nav-container .navbar-toggler .navbar-toggler-icon {
-            background-image: url(../images/menu.png);
-            background-size: 42px;
-        }
+.custom_nav-container .navbar-toggler .navbar-toggler-icon {
+    background-image: url(../images/menu.png);
+    background-size: 42px;
+}
 
 /*end header section*/
 /* slider section */
