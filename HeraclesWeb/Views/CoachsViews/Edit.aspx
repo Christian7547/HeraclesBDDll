@@ -28,7 +28,7 @@
                         <div>
                             <asp:TextBox ID="txtPhone" runat="server" type="number" placeholder="Teléfono" />
                         </div>
-                        <div class="col-md-6 mx-auto container">
+                        <div class="input-container">
                             <asp:Button runat="server" Text="Actualizar" OnClick="btnUpdate_Click" ID="btnUpdate" CssClass="button-class"/>
                             <asp:Button runat="server" Text="Atrás" OnClick="btnBack_Click"  ID="btnBack" CssClass="button-class"/>
                         </div>

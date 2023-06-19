@@ -11,7 +11,7 @@ namespace HeraclesWeb.Views.MembersViews
 {
 
 
-    public partial class New
+    public partial class Edit
     {
 
         /// <summary>
@@ -22,6 +22,15 @@ namespace HeraclesWeb.Views.MembersViews
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm formMembresy;
+
+        /// <summary>
+        /// Control txtId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
         /// Control txtName.
@@ -96,13 +105,13 @@ namespace HeraclesWeb.Views.MembersViews
         protected global::System.Web.UI.WebControls.TextBox txtWaist;
 
         /// <summary>
-        /// Control btnInsert.
+        /// Control btnUpdate.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsert;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
 
         /// <summary>
         /// Control btnBack.

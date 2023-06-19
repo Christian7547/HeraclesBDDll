@@ -1,6 +1,8 @@
 ﻿using HeraclesDAO.Logic;
+using HeraclesDAO.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,9 +10,10 @@ using System.Web.UI.WebControls;
 
 namespace HeraclesWeb.Views.MembersViews
 {
-    public partial class ShowMembers : System.Web.UI.Page
+    public partial class ShowMembers : Page
     {
         MemberImpl memberImpl;
+        Measures measures;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +29,40 @@ namespace HeraclesWeb.Views.MembersViews
 
         protected void gridData_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            memberImpl = new MemberImpl();
+            int row;
+            GridViewRow gridView;
+            switch (e.CommandName)
+            {
+                case "update":
+                    row = Convert.ToInt32(e.CommandArgument);
+                    gridView = gridData.Rows[row];
 
+                    Member member = new Member()
+                    {
+                        Id = int.Parse(gridView.Cells[0].Text),
+                        Name = gridView.Cells[1].Text,
+                        LastName = gridView.Cells[2].Text,
+                        SecondLastName = gridView.Cells[3].Text,
+                    };
+                    DataTable dataTable = memberImpl.GetMeasures(member.Id);
+
+                    measures = new Measures()
+                    {
+                        Weight = double.Parse(dataTable.Rows[0][0].ToString()),
+                        ChestMeasure = double.Parse(dataTable.Rows[0][1].ToString()),
+                        ArmMeasure = double.Parse(dataTable.Rows[0][2].ToString()),
+                        LegMeasure = double.Parse(dataTable.Rows[0][3].ToString()),
+                        Waist = double.Parse(dataTable.Rows[0][4].ToString())
+                    };
+                    Session["EditMeasures"] = measures;
+                    Session["EditMember"] = member;
+                    Response.Redirect("EditMember");
+
+                    break;
+                case "delete":
+                    break;
+            }
         }
 
         protected void gridData_RowDataBound(object sender, GridViewRowEventArgs e)

@@ -9,7 +9,7 @@
         <div class="container layout_padding2-top">
             <div class="row">
                 <div>
-                    <a href="NewMember" class="link-style">Nueva miembro</a>
+                    <a href="NewMember" class="link-style">Nuevo miembro</a>
                 </div>
                 <div class="col-md-6 mx-auto">
                     <form runat="server">

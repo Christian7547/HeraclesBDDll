@@ -19,7 +19,7 @@
                         <div>
                             <asp:TextBox ID="txtConfirmPassword" runat="server" type="password" placeholder="Confirmar contraseña" />
                         </div>
-                        <div class="col-md-6 mx-auto container">
+                        <div class="input-container">
                             <asp:Button runat="server" Text="Actualizar" OnClick="btnChange_Click" ID="btnChange" CssClass="button-class"/>
                             <asp:Button runat="server" Text="Atrás" OnClick="btnBack_Click"  ID="btnBack" CssClass="button-class"/>
                         </div>

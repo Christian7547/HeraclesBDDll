@@ -2,7 +2,5 @@
 
 namespace HeraclesDAO.Interfaces
 {
-    internal interface IMember : IBaseInterface<Member>
-    {
-    }
+    
 }

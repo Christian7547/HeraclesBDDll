@@ -38,6 +38,7 @@ namespace HeraclesWeb
             //Members
             routes.MapPageRoute("Members", "views/members", "~/Views/MembersViews/ShowMembers.aspx");
             routes.MapPageRoute("NewMember", "views/newmember", "~/Views/MembersViews/New.aspx");
+            routes.MapPageRoute("EditMember", "views/editmember", "~/Views/MembersViews/Edit.aspx");
         }
     }
 }

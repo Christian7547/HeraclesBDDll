@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace HeraclesWeb.Views.MembersViews
 {
-    public partial class New : System.Web.UI.Page
+    public partial class Edit : Page
     {
         MemberImpl _memberImpl;
         Member _member;
@@ -17,10 +17,25 @@ namespace HeraclesWeb.Views.MembersViews
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            _member = Session["EditMember"] as Member;
+            _measures = Session["EditMeasures"] as Measures;
+            if(_member != null && _measures != null)
+            {
+                txtId.Text = _member.Id.ToString();
+                txtName.Text = HttpUtility.HtmlDecode(_member.Name);
+                txtLastName.Text = HttpUtility.HtmlDecode(_member.LastName);
+                txtSecondLastName.Text = HttpUtility.HtmlDecode(_member.SecondLastName);
+                txtWeight.Text = _measures.Weight.ToString();
+                txtChest.Text = _measures.ChestMeasure.ToString();
+                txtArms.Text = _measures.ArmMeasure.ToString();
+                txtLeg.Text = _measures.LegMeasure.ToString();
+                txtWaist.Text = _measures.Waist.ToString();
+                Session.Remove("EditMember");
+                Session.Remove("EditMeasures");
+            }
         }
 
-        protected void btnInsert_Click(object sender, EventArgs e)
+        protected void btnUpdate_Click(object sender, EventArgs e)
         {
             _memberImpl = new MemberImpl();
 
@@ -42,14 +57,14 @@ namespace HeraclesWeb.Views.MembersViews
 
             try
             {
-                if(_memberImpl.Insert(_member, _measures) > 0)
+                if (_memberImpl.Update(_member, _measures) > 0)
                 {
                     Response.Redirect("Members");
                 }
                 _member = null;
                 _measures = null;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

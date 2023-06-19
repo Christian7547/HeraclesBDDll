@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HeraclesDAO.Models
 {
-    internal class Measures
+    public class Measures
     {
         public int MemberId { get; set; }
         public double Weight { get; set; }

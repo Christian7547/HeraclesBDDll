@@ -19,15 +19,7 @@
                         <div>
                             <asp:TextBox ID="txtPrice" runat="server" type="number" placeholder="Precio" />
                         </div>
-                        <%--<div>
-                            <select name="" id="">
-                            <option value="" disabled selected>TYPE OF SERVICE</option>
-                            <option value="">Service 1</option>
-                            <option value="">Service 2</option>
-                            <option value="">Service 3</option>
-                            </select>
-                        </div>--%>
-                        <div class="col-md-6 mx-auto container">
+                        <div class="input-container">
                             <asp:Button runat="server" Text="Actualizar" ID="btnUpdate" OnClick="btnUpdate_Click" CssClass="button-class"/>
                             <asp:Button runat="server" Text="Volver" ID="btnBack" OnClick="btnBack_Click" CssClass="button-class"/>
                         </div>

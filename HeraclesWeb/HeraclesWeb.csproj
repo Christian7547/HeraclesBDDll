@@ -87,6 +87,7 @@
     <Content Include="Views\Default.aspx" />
     <Content Include="Views\LoginViews\ChangePassword.aspx" />
     <Content Include="Views\LoginViews\Login.aspx" />
+    <Content Include="Views\MembersViews\Edit.aspx" />
     <Content Include="Views\MembersViews\New.aspx" />
     <Content Include="Views\MembersViews\ShowMembers.aspx" />
     <Content Include="Views\MembresiesViews\Delete.aspx" />
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="Views\LoginViews\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MembersViews\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MembersViews\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\MembersViews\New.aspx.cs">
       <DependentUpon>New.aspx</DependentUpon>
