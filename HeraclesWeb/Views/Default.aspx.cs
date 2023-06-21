@@ -9,13 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace HeraclesWeb.Views
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : Page
     {
-        UserImpl _userImpl;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((string)Session["Role"] != "Administrador")
+                Response.Redirect("Login");
         }
     }
 }

@@ -52,7 +52,7 @@ namespace HeraclesDAO.Logic
             List<SqlCommand> commands = new List<SqlCommand>();
             string query = @"INSERT INTO Member (names, lastName, secondLastName, userId) 
                             VALUES (@name, @lastName, @secondLastName, @user)";
-            string queryMeasures = @"INSERT INTO Member (memberId, weight, chest, arm, leg, waist) 
+            string queryMeasures = @"INSERT INTO Measures (memberId, weight, chest, arm, leg, waist) 
                                     VALUES (@memberId, @weight, @chest, @arm, @leg, @waist)";
             bool success;
             using (SqlConnection connection = CreateConnection())
@@ -106,7 +106,7 @@ namespace HeraclesDAO.Logic
 
                 updateMember.Parameters.AddWithValue("@names", member.Name);
                 updateMember.Parameters.AddWithValue("@lastName", member.LastName);
-                updateMember.Parameters.AddWithValue("@secondLastName", member.SecondLastName);
+                updateMember.Parameters.AddWithValue("@second", member.SecondLastName);
                 updateMember.Parameters.AddWithValue("@user", SessionClass.SessionId);
                 updateMember.Parameters.AddWithValue("@id", member.Id);
 

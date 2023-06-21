@@ -59,27 +59,9 @@
 				<span class="fa fa-user"></span>
 				<image src="../../Images/default_Profile.png" class="logo"></image>
 				<div class="role_name">Cuenta</div>
-				<div class="film">Cambiar contraseña</div>
+				<div class="film">Opciones de perfil</div>
 				<br />
-				<form runat="server">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-					<asp:Button ID="btnChangePassword" OnClick="btnChangePassword_Click" Text="Cambiar contraseña" runat="server" CssClass="link-styleCard"/>
-					<ajaxToolkit:ModalPopupExtender ID="ModalPopup" runat="server" TargetControlID="btnChangePassword"
-						PopupControlID="pnlConfirmation" BackgroundCssClass="modal-background" OkControlID="btnOk" CancelControlID="btnCancel" />
-					<asp:Panel ID="pnlConfirmation" runat="server" CssClass="modal-panel">
-						<h3>Cambio de contraseña</h3>
-						<asp:TextBox ID="txtOldPassword" runat="server" CssClass="input-modal" type="password" placeholder="Contraseña actual"></asp:TextBox>
-						<asp:TextBox ID="txtNewPassword" runat="server" CssClass="input-modal" type="password" placeholder="Nueva contraseña"></asp:TextBox>
-						<asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="input-modal" type="password" placeholder="Confirmar contraseña"></asp:TextBox>
-						<div class="modal-buttons">
-							<asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="Aceptar" CssClass="button-modal" />
-							<asp:Button runat="server" ID="btnCancel" Text="Cancelar" CssClass="button-modal" />
-						</div>
-					</asp:Panel>
-					<script>
-
-                    </script>
-				</form>
+				<a class="link-styleCard" href="changepassword">Cambiar contraseña</a>
 			</div>
 		</div>
 	</div>

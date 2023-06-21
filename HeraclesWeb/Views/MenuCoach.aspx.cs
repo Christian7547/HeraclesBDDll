@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace HeraclesWeb.Views
 {
-    public partial class MenuCoach : System.Web.UI.Page
+    public partial class MenuCoach : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((string)Session["Role"] != "Coach")
+                Response.Redirect("Login");
         }
     }
 }

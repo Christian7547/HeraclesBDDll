@@ -23,16 +23,6 @@
                             <asp:Button runat="server" Text="Actualizar" OnClick="btnChange_Click" ID="btnChange" CssClass="button-class"/>
                             <asp:Button runat="server" Text="Atrás" OnClick="btnBack_Click"  ID="btnBack" CssClass="button-class"/>
                         </div>
-                        <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
-					    <ajaxToolkit:ModalPopupExtender ID="ModalPopup" runat="server" TargetControlID="btnChange"
-						    PopupControlID="pnlConfirmation" BackgroundCssClass="modal-background" OkControlID="btnOk" />
-					    <asp:Panel ID="pnlConfirmation" runat="server" CssClass="modal-panel">
-						    <h5>Cambio de contraseña</h5>
-                            <asp:Label runat="server" ID="lblMessage" Text="..." CssClass="input-modal"></asp:Label>
-						    <div class="modal-buttons">
-                                <asp:Button runat="server" ID="btnOk" Text="Aceptar" CssClass="button-modal" />
-						    </div>
-					    </asp:Panel>
                     </form>
                 </div>
             </div>

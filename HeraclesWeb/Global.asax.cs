@@ -19,8 +19,12 @@ namespace HeraclesWeb
         //ROUTING
         private void RegisterRoutes(RouteCollection routes)
         {
+            //Login
+            routes.MapPageRoute("Login", "views/login", "~/Views/LoginViews/Login.aspx");
             //Index
             routes.MapPageRoute("Default", "views/default", "~/Views/Default.aspx");
+            routes.MapPageRoute("MenuCoach", "views/menucoach", "~/Views/MenuCoach.aspx");
+            routes.MapPageRoute("MenuReceptionist", "views/menureceptionist", "~/Views/MenuReceptionist.aspx");
             routes.MapPageRoute("ChangePassword", "views/changePassword", "~/Views/LoginViews/ChangePassword.aspx");
 
             //Membresies

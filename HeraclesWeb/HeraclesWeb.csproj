@@ -251,7 +251,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HeraclesDAO\HeraclesDAO.csproj">
       <Project>{732613cf-f9da-4ce2-a6c7-99c758b6ea60}</Project>

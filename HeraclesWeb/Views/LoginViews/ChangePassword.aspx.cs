@@ -26,11 +26,21 @@ namespace HeraclesWeb.Views.LoginViews
                 if(txtNewPassword.Text == txtConfirmPassword.Text)
                 {
                     int n = userImpl.ChangePassword(txtConfirmPassword.Text, txtoldPassword.Text);
-                    //if (n > 0)
-                    //{
-                    //    lblMessage.Text = "Se restableció la contraseña";
-                    //    ModalPopup.Show();
-                    //}
+                    if (n > 0)
+                    {
+                        switch (SessionClass.SessionRole)
+                        {
+                            case "Administrador":
+                                Response.Redirect("Default");
+                                break;
+                            case "Recepcionista":
+                                Response.Redirect("MenuReceptionist");
+                                break;
+                            case "Coach":
+                                Response.Redirect("MenuCoach");
+                                break;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
