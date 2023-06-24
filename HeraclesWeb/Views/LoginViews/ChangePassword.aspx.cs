@@ -72,7 +72,7 @@ namespace HeraclesWeb.Views.LoginViews
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            switch (SessionClass.SessionRole)
+            switch ((string)Session["Role"])
             {
                 case "Administrador":
                     Response.Redirect("Default");
