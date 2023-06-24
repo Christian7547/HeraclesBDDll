@@ -117,6 +117,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ValidateWeb.cs" />
     <Compile Include="Views\CoachsViews\Delete.aspx.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,14 +235,6 @@
     <Content Include="Fonts\Biome W04 Regular.ttf" />
     <Content Include="Fonts\Biome.ttf" />
     <Content Include="Init.Master" />
-    <Content Include="Fonts\af\fa-brands-400.ttf" />
-    <Content Include="Fonts\af\fa-brands-400.woff2" />
-    <Content Include="Fonts\af\fa-regular-400.ttf" />
-    <Content Include="Fonts\af\fa-regular-400.woff2" />
-    <Content Include="Fonts\af\fa-solid-900.ttf" />
-    <Content Include="Fonts\af\fa-solid-900.woff2" />
-    <Content Include="Fonts\af\fa-v4compatibility.ttf" />
-    <Content Include="Fonts\af\fa-v4compatibility.woff2" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
@@ -251,9 +244,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\HeraclesDAO\HeraclesDAO.csproj">
       <Project>{732613cf-f9da-4ce2-a6c7-99c758b6ea60}</Project>

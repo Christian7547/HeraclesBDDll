@@ -5,6 +5,13 @@
 
 @import url('../FontAwesome/fontawesome.min.css');
 
+/*ERRORMESSAGES*/
+.error-class{
+    font-size:12px;
+    color: red;
+}
+/*ERRORMESSAGES*/
+
 /*Measures*/
 .input-container {
     display: grid;

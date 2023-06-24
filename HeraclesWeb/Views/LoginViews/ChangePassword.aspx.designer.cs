@@ -33,6 +33,15 @@ namespace HeraclesWeb.Views.LoginViews
         protected global::System.Web.UI.WebControls.TextBox txtoldPassword;
 
         /// <summary>
+        /// Control lblErrorOldPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorOldPassword;
+
+        /// <summary>
         /// Control txtNewPassword.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace HeraclesWeb.Views.LoginViews
         protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
 
         /// <summary>
+        /// Control lblErrorNewPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorNewPassword;
+
+        /// <summary>
         /// Control txtConfirmPassword.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace HeraclesWeb.Views.LoginViews
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+
+        /// <summary>
+        /// Control lblErrorPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorPassword;
 
         /// <summary>
         /// Control btnChange.
