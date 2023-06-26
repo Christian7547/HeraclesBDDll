@@ -5,6 +5,13 @@
 
 @import url('../FontAwesome/fontawesome.min.css');
 
+/*MAP*/
+.divMap{
+    width: 500px;
+    height: 500px;
+}
+/*MAP*/
+
 /*ERRORMESSAGES*/
 .error-class{
     font-size:12px;

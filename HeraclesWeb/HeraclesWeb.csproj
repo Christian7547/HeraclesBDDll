@@ -47,6 +47,9 @@
       <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Maps.MapControl.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Maps.MapControl.WPF.1.0.0.3\lib\net40-Client\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,11 +78,15 @@
     <Resource Include="Images\Logo.png" />
     <Content Include="Images\accountedit.png" />
     <Resource Include="Images\default_Profile.png" />
+    <Content Include="Images\branchOffice.png" />
     <Content Include="Images\payment.png" />
     <Content Include="Images\personcard.png" />
     <Content Include="Images\schedule.png" />
     <Content Include="Images\training.png" />
     <Content Include="Images\user.png" />
+    <Content Include="Views\BranchViews\Edit.aspx" />
+    <Content Include="Views\BranchViews\New.aspx" />
+    <Content Include="Views\BranchViews\ShowOffice.aspx" />
     <Content Include="Views\CoachsViews\Delete.aspx" />
     <Content Include="Views\CoachsViews\Edit.aspx" />
     <Content Include="Views\CoachsViews\New.aspx" />
@@ -118,6 +125,27 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ValidateWeb.cs" />
+    <Compile Include="Views\BranchViews\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BranchViews\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BranchViews\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BranchViews\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BranchViews\ShowOffice.aspx.cs">
+      <DependentUpon>ShowOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\BranchViews\ShowOffice.aspx.designer.cs">
+      <DependentUpon>ShowOffice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\CoachsViews\Delete.aspx.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,9 +272,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\BranchViews\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\HeraclesDAO\HeraclesDAO.csproj">
       <Project>{732613cf-f9da-4ce2-a6c7-99c758b6ea60}</Project>

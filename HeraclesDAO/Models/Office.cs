@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace HeraclesDAO.Models
 {
-    public class BranchOffice : BaseModel
+    public class Office : BaseModel
     {
         public byte Id { get; set; }
         public string Name { get; set; }
         public double Latitude { get; set; }
-        public double Longitude { get; set; }   
+        public double Longitude { get; set; }
         public byte CityId { get; set; }
     }
 }

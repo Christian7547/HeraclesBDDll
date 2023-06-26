@@ -10,36 +10,35 @@ using System.Threading.Tasks;
 
 namespace HeraclesDAO.Logic
 {
-    public class BranchOfficeImpl : BaseImpl, IBranchOffice
+    public class OfficeImpl : BaseImpl, IBranchOffice
     {
-        public int Delete(BranchOffice t)
+        public int Delete(Office t)
         {
             int success;
             _query = @"UPDATE BranchOffice SET [status] = 0, lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
-            using (SqlCommand update = CreateCommand(_query))
+            using(SqlCommand delete = CreateCommand(_query))
             {
-                update.Connection.Open();
-                update.Parameters["@userId"].Value = t.UserId;
-                update.Parameters["@id"].Value = t.Id;
-
-                success = WriteCommand(update);
+                delete.Connection.Open();
+                delete.Parameters["@userId"].Value = t.UserId;
+                delete.Parameters["@id"].Value = t.Id;
+                success = WriteCommand(delete);
             }
             return success;
         }
 
-        public int Insert(BranchOffice t)
+        public int Insert(Office t)
         {
             int success;
-            _query = @"INSERT INTO BranchOffice([name], latitude, longitude, cityId) 
-                        VALUES(@name, @latitude, @longitude, @cityId)";
-            using(SqlCommand insert = CreateCommand(_query))
+            _query = @"INSERT INTO BranchOffice([name], latitude, longitude, cityId, userId) 
+                        VALUES(@name, @latitude, @longitude, @cityId, @userId)";
+            using (SqlCommand insert = CreateCommand(_query))
             {
                 insert.Connection.Open();
-                insert.Parameters["@name"].Value = t.Name;
-                insert.Parameters["@latitude"].Value = t.Latitude;
-                insert.Parameters["@longitude"].Value = t.Longitude;
-                insert.Parameters["@cityId"].Value = t.CityId;
-                insert.Parameters["@userId"].Value = t.UserId;
+                insert.Parameters.AddWithValue("@name", t.Name);
+                insert.Parameters.AddWithValue("@latitude", t.Latitude);
+                insert.Parameters.AddWithValue("@longitude", t.Longitude);
+                insert.Parameters.AddWithValue("@cityId", t.CityId);
+                insert.Parameters.AddWithValue("@userId", t.UserId);
 
                 success = WriteCommand(insert);
             }
@@ -49,15 +48,18 @@ namespace HeraclesDAO.Logic
         public DataTable Select()
         {
             DataTable dataTable;
-            _query = @"SELECT id, [name], latitude, longitude FROM BranchOffice WHERE [status] = 1";
-            using(SqlCommand select = CreateCommand(_query))
+            _query = @"SELECT O.id AS ID, O.[name] AS Office, O.latitude AS Latitude, O.longitude AS Longitude, C.[name] AS City
+	                            FROM BranchOffice O
+	                            INNER JOIN City C ON C.id = O.cityId
+	                            WHERE O.[status] = 1";
+            using (SqlCommand select = CreateCommand(_query))
             {
                 dataTable = ReadCommand(select);
             }
             return dataTable;
         }
 
-        public int Update(BranchOffice t)
+        public int Update(Office t)
         {
             int success;
             _query = @"UPDATE BranchOffice SET [name] = @name, latitude = @latitude, longitude = @longitude, cityId = @cityId,
@@ -75,6 +77,17 @@ namespace HeraclesDAO.Logic
                 success = WriteCommand(update);
             }
             return success;
+        }
+
+        public DataTable GetCities()
+        {
+            DataTable data;
+            _query = @"SELECT id, [name] FROM City ORDER BY [name]";
+            using(SqlCommand getCities = CreateCommand(_query))
+            {
+                data = ReadCommand(getCities);
+            }
+            return data;
         }
     }
 }

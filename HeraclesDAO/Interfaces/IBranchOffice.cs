@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HeraclesDAO.Interfaces
 {
-    internal interface IBranchOffice : IBaseInterface<BranchOffice>
+    internal interface IBranchOffice : IBaseInterface<Office>
     {
     }
 }

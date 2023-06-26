@@ -16,6 +16,16 @@
 		<div class="card_item">
 			<div class="card_inner">
 				<span class="fa fa-user"></span>
+				<image src="../../Images/branchOffice.png" class="logo"></image>
+				<div class="role_name">Sucursales</div>
+				<div class="film">Gestión de sucursales</div>
+				<br />
+				<a class="link-styleCard" href="branchoffices">Ver Sucursales</a>
+			</div>
+		</div>
+		<div class="card_item">
+			<div class="card_inner">
+				<span class="fa fa-user"></span>
 				<image src="../../Images/personcard.png" class="logo"></image>
 				<div class="role_name">Miembros</div>
 				<div class="film">Gestión de Miembros</div>

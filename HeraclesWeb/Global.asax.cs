@@ -43,6 +43,11 @@ namespace HeraclesWeb
             routes.MapPageRoute("Members", "views/members", "~/Views/MembersViews/ShowMembers.aspx");
             routes.MapPageRoute("NewMember", "views/newmember", "~/Views/MembersViews/New.aspx");
             routes.MapPageRoute("EditMember", "views/editmember", "~/Views/MembersViews/Edit.aspx");
+
+            //Branch Office 
+            routes.MapPageRoute("BranchOffices", "views/branchOffices", "~/Views/BranchViews/ShowOffice.aspx");
+            routes.MapPageRoute("NewOffice", "views/newoffice", "~/Views/BranchViews/New.aspx");
+            routes.MapPageRoute("EditOffice", "views/editoffice", "~/Views/BranchViews/Edit.aspx");
         }
     }
 }

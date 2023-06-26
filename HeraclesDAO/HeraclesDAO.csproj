@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IBaseInterface.cs" />
+    <Compile Include="Interfaces\IBranchOffice.cs" />
     <Compile Include="Interfaces\ICoach.cs" />
     <Compile Include="Interfaces\ILesson.cs" />
     <Compile Include="Interfaces\IMember.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Logic\LessonImpl.cs" />
     <Compile Include="Logic\MemberImpl.cs" />
     <Compile Include="Logic\MembresyImpl.cs" />
+    <Compile Include="Logic\OfficeImpl.cs" />
     <Compile Include="Logic\RoomImpl.cs" />
     <Compile Include="Logic\ScheduleImpl.cs" />
     <Compile Include="Logic\TeachImpl.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Models\Measures.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Membresy.cs" />
+    <Compile Include="Models\Office.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\Session\SessionClass.cs" />
