@@ -1,12 +1,7 @@
 ﻿using HeraclesDAO.Interfaces;
 using HeraclesDAO.Models;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HeraclesDAO.Logic
 {
@@ -19,8 +14,8 @@ namespace HeraclesDAO.Logic
             using(SqlCommand delete = CreateCommand(_query))
             {
                 delete.Connection.Open();
-                delete.Parameters["@userId"].Value = t.UserId;
-                delete.Parameters["@id"].Value = t.Id;
+                delete.Parameters.AddWithValue("@userId", t.UserId);
+                delete.Parameters.AddWithValue("@id", t.Id);
                 success = WriteCommand(delete);
             }
             return success;
@@ -67,12 +62,12 @@ namespace HeraclesDAO.Logic
             using (SqlCommand update = CreateCommand(_query))
             {
                 update.Connection.Open();
-                update.Parameters["@name"].Value = t.Name;
-                update.Parameters["@latitude"].Value = t.Latitude;
-                update.Parameters["@longitude"].Value = t.Longitude;
-                update.Parameters["@cityId"].Value = t.CityId;
-                update.Parameters["@userId"].Value = t.UserId;
-                update.Parameters["@id"].Value = t.Id;
+                update.Parameters.AddWithValue("@name", t.Name);
+                update.Parameters.AddWithValue("@latitude", t.Latitude);
+                update.Parameters.AddWithValue("@longitude", t.Longitude);
+                update.Parameters.AddWithValue("@cityId", t.CityId);
+                update.Parameters.AddWithValue("@userId", t.UserId);
+                update.Parameters.AddWithValue("@id", t.Id);
 
                 success = WriteCommand(update);
             }

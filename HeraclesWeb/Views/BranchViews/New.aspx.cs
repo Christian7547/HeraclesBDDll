@@ -21,8 +21,6 @@ namespace HeraclesWeb.Views.BranchViews
         protected void Page_Load(object sender, EventArgs e)
         {
             FillComboBox();
-
-            string MethodName = Request.QueryString["method"];
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)

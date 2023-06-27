@@ -34,7 +34,28 @@ namespace HeraclesWeb.Views.BranchViews
 
         protected void gridData_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            int row;
+            GridViewRow gridViewRow;
+            switch (e.CommandName)
+            {
+                case "update":
+                    row = Convert.ToInt32(e.CommandArgument);
+                    gridViewRow = gridData.Rows[row];
+                    office = new Office()
+                    {
+                        Id = byte.Parse(gridViewRow.Cells[0].Text),
+                        Name = gridViewRow.Cells[1].Text,
+                        Latitude = double.Parse(gridViewRow.Cells[2].Text),
+                        Longitude = double.Parse(gridViewRow.Cells[3].Text)
+                    };
+                    string cityName = gridViewRow.Cells[4].Text;
+                    Session["editOffice"] = office;
+                    Session["city"] = cityName;
+                    Response.Redirect("EditOffice");
+                    break;
+                case "delete":
+                    break;
+            }
         }
     }
 }

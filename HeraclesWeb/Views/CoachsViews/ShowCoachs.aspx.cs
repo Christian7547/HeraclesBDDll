@@ -50,7 +50,6 @@ namespace HeraclesWeb.Views.CoachsViews
                     Response.Redirect("EditCoach");
                     break;
                 case "delete":
-                    //ModalPopup.Show();
                     row = Convert.ToInt32(e.CommandArgument);
                     gridView = gridData.Rows[row];
 
