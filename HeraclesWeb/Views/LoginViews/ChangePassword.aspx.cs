@@ -75,13 +75,13 @@ namespace HeraclesWeb.Views.LoginViews
             switch ((string)Session["Role"])
             {
                 case "Administrador":
-                    Response.Redirect("Default");
+                    Response.Redirect(ResolveUrl("~/Views/Default"));
                     break;
                 case "Recepcionista":
-                    Response.Redirect("");
+                    Response.Redirect(ResolveUrl("~/Views/MenuReceptionist.aspx"));
                     break;
                 case "Coach":
-                    Response.Redirect("");
+                    Response.Redirect(ResolveUrl("~/Views/MenuCoach.aspx"));
                     break;
             }
         }

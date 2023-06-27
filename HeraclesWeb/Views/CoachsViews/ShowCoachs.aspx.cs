@@ -74,5 +74,21 @@ namespace HeraclesWeb.Views.CoachsViews
             if (e.Row.RowType == DataControlRowType.DataRow)
                 e.Row.Cells[0].Visible = false;
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            switch ((string)Session["Role"])
+            {
+                case "Administrador":
+                    Response.Redirect(ResolveUrl("~/Views/Default"));
+                    break;
+                case "Recepcionista":
+                    Response.Redirect(ResolveUrl("~/Views/MenuReceptionist.aspx"));
+                    break;
+                case "Coach":
+                    Response.Redirect(ResolveUrl("~/Views/MenuCoach.aspx"));
+                    break;
+            }
+        }
     }
 }

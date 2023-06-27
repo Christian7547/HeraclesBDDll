@@ -29,6 +29,9 @@
                                 <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" CommandName="delete" ButtonType="Button" Text="Eliminar" />
                             </Columns>
                         </asp:GridView>
+                        <div>
+                            <asp:Button runat="server" CssClass="button-class" ID="btnBack" OnClick="btnBack_Click" style="width: 100px" Text="Volver" />
+                        </div>
                     </form>
                 </div>
             </div>

@@ -7,23 +7,25 @@
             <h3 class="typographyClass">Membresías</h3>
         </div>
         <div class="container layout_padding2-top">
-            <div class="row">
-                <div>
-                    <a href="NewMembresy" class="link-style">Nueva membresía</a>
-                </div>
-                <div class="col-md-6 mx-auto">
-                    <form runat="server">
-                        <asp:GridView runat="server" ID="gridData" CssClass="table" AutoGenerateColumns="false" OnRowCommand="gridData_RowCommand" OnRowDataBound="gridData_RowDataBound" >
-                            <Columns>
-                                <asp:BoundField DataField="ID" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo"/>
-                                <asp:BoundField DataField="Type" HeaderText="Precio"/>
-                                <asp:BoundField DataField="Price" HeaderText=""/>
-                                <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" CommandName="update" ButtonType="Button" Text="Editar"/>
-                                <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" Text="Eliminar" ButtonType="Button" CommandName="delete"/>
-                            </Columns>
-                        </asp:GridView>
-                    </form>
-                </div>
+            <div class="col-md-6 mx-auto">
+                <form runat="server">
+                    <div>
+                        <a href="NewMembresy" class="link-style">Nueva membresía</a>
+                    </div>
+                    <br />
+                    <asp:GridView runat="server" ID="gridData" CssClass="table" AutoGenerateColumns="false" OnRowCommand="gridData_RowCommand" OnRowDataBound="gridData_RowDataBound">
+                        <Columns>
+                            <asp:BoundField DataField="ID" ItemStyle-HorizontalAlign="Center" HeaderText="Tipo" />
+                            <asp:BoundField DataField="Type" HeaderText="Precio" />
+                            <asp:BoundField DataField="Price" HeaderText="" />
+                            <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" CommandName="update" ButtonType="Button" Text="Editar" />
+                            <asp:ButtonField runat="server" ControlStyle-CssClass="buttonColumn-class" Text="Eliminar" ButtonType="Button" CommandName="delete" />
+                        </Columns>
+                    </asp:GridView>
+                    <div>
+                        <asp:Button runat="server" CssClass="button-class" ID="btnBack" OnClick="btnBack_Click" Style="width: 100px" Text="Volver" />
+                    </div>
+                </form>
             </div>
         </div>
     </section>

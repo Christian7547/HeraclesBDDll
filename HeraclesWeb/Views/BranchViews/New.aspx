@@ -10,16 +10,15 @@
             <div style="display: flex; margin: 40px; padding-bottom: 50px;">
                 <div style="margin-right: 40px; width: 600px; margin-top: 100px;">
                     <form id="formMembresy" runat="server">
-                        <asp:ScriptManager runat="server" EnablePartialRendering="true"></asp:ScriptManager>
                         <div>
-                            <asp:TextBox ID="txtName" runat="server" type="text" placeholder="Nombre" />
+                            <asp:TextBox ID="txtName" runat="server" type="text" placeholder="Nombre de la sucursal" />
                         </div>
                         <div>
                             <asp:DropDownList runat="server" ID="cmbLocation" />
                         </div>
                         <div>
-                            <asp:TextBox runat="server" ID="txtLatitude"></asp:TextBox>
-                            <asp:TextBox runat="server" ID="txtLongitude"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtLatitude" type="hidden"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtLongitude" type="hidden"></asp:TextBox>
                         </div>
                         <div class="input-container">
                             <asp:Button runat="server" Text="Añadir" OnClick="btnInsert_Click" ID="btnInsert" CssClass="button-class" />
@@ -87,7 +86,6 @@
                     } else if (selectedValue === '5') {
                         map.setView({ center: new Microsoft.Maps.Location(-19.036211095196702, -65.26185634222716), zoom: 16 })
                     }
-                    console.log('Valor seleccionado:', selectedValue);
                 })
             }
 
