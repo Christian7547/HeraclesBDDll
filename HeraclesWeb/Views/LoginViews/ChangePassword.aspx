@@ -24,7 +24,7 @@
                         </div>
                         <div class="input-container">
                             <asp:Button runat="server" Text="Actualizar" OnClick="btnChange_Click" ID="btnChange" CssClass="button-class"/>
-                            <asp:Button runat="server" Text="Atrás" OnClick="btnBack_Click" ID="btnBack" CssClass="button-class"/>
+                            <asp:Button runat="server" Text="Volver" OnClick="btnBack_Click" ID="btnBack" CssClass="button-class"/>
                         </div>
                     </form>
                 </div>

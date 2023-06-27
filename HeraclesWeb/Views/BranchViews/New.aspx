@@ -22,7 +22,7 @@
                         </div>
                         <div class="input-container">
                             <asp:Button runat="server" Text="Añadir" OnClick="btnInsert_Click" ID="btnInsert" CssClass="button-class" />
-                            <asp:Button runat="server" Text="Atrás" OnClick="btnBack_Click" ID="btnBack" CssClass="button-class" />
+                            <asp:Button runat="server" Text="Volver" OnClick="btnBack_Click" ID="btnBack" CssClass="button-class" />
                         </div>
                     </form>
                 </div>
@@ -47,7 +47,7 @@
                 map = new Microsoft.Maps.Map(document.getElementById('map'), {
                     credentials: "AgfX3Lt338M1fXHQBLzao_pSuD1WXDM4IGbn3FXBG9lziA7QYZ3hUW84AKCxcMlW",
                     center: new Microsoft.Maps.Location(-17.393496874429385, -66.15692841770928),
-                    zoom: 16
+                    zoom: 17
                 });
 
                 refreshMap()
@@ -76,15 +76,15 @@
                 selectionChanged.addEventListener('change', () => {
                     var selectedValue = selectionChanged.value
                     if (selectedValue === '1') { //value is a string
-                        map.setView({ center: new Microsoft.Maps.Location(-17.393496874429385, -66.15692841770928), zoom: 16 })
+                        map.setView({ center: new Microsoft.Maps.Location(-17.393496874429385, -66.15692841770928), zoom: 17 })
                     } else if (selectedValue === '2') {
-                        map.setView({ center: new Microsoft.Maps.Location(-17.810339482847326, -63.152239238559666), zoom: 16 })
+                        map.setView({ center: new Microsoft.Maps.Location(-17.810339482847326, -63.152239238559666), zoom: 17 })
                     } else if (selectedValue === '3') {
-                        map.setView({ center: new Microsoft.Maps.Location(-16.488436864854233, -68.11927524848547), zoom: 16 })
+                        map.setView({ center: new Microsoft.Maps.Location(-16.488436864854233, -68.11927524848547), zoom: 17 })
                     } else if (selectedValue === '4') {
-                        map.setView({ center: new Microsoft.Maps.Location(-14.831559888992476, -64.90407863556396), zoom: 16 })
+                        map.setView({ center: new Microsoft.Maps.Location(-14.831559888992476, -64.90407863556396), zoom: 17 })
                     } else if (selectedValue === '5') {
-                        map.setView({ center: new Microsoft.Maps.Location(-19.036211095196702, -65.26185634222716), zoom: 16 })
+                        map.setView({ center: new Microsoft.Maps.Location(-19.036211095196702, -65.26185634222716), zoom: 17 })
                     }
                 })
             }

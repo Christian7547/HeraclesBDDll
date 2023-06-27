@@ -14,6 +14,8 @@ namespace HeraclesWeb.Views.MembersViews
     {
         MemberImpl memberImpl;
         Measures measures;
+        static Member aux;
+        Member member;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +40,7 @@ namespace HeraclesWeb.Views.MembersViews
                     row = Convert.ToInt32(e.CommandArgument);
                     gridView = gridData.Rows[row];
 
-                    Member member = new Member()
+                    member = new Member()
                     {
                         Id = int.Parse(gridView.Cells[0].Text),
                         Name = gridView.Cells[1].Text,
@@ -61,6 +63,18 @@ namespace HeraclesWeb.Views.MembersViews
 
                     break;
                 case "delete":
+                    row = Convert.ToInt32(e.CommandArgument);
+                    gridView = gridData.Rows[row];
+
+                    member = new Member()
+                    {
+                        Id = int.Parse(gridView.Cells[0].Text),
+                        Name = gridView.Cells[1].Text,
+                        LastName = gridView.Cells[2].Text,
+                        SecondLastName = gridView.Cells[3].Text,
+                    };
+                    aux = member;
+                    ModalPopup.Show();
                     break;
             }
         }
@@ -81,10 +95,35 @@ namespace HeraclesWeb.Views.MembersViews
                 case "Recepcionista":
                     Response.Redirect(ResolveUrl("~/Views/MenuReceptionist.aspx"));
                     break;
-                case "Coach":
-                    Response.Redirect(ResolveUrl("~/Views/MenuCoach.aspx"));
-                    break;
             }
+        }
+
+        protected void gridData_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            memberImpl = new MemberImpl();
+            try
+            {
+                if(memberImpl.Delete(aux) > 0)
+                {
+                    aux = null;
+                    ModalPopup.Hide();
+                    Select();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            ModalPopup.Hide();
         }
     }
 }

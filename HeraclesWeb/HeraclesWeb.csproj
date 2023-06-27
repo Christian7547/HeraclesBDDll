@@ -87,7 +87,6 @@
     <Content Include="Views\BranchViews\Edit.aspx" />
     <Content Include="Views\BranchViews\New.aspx" />
     <Content Include="Views\BranchViews\ShowOffice.aspx" />
-    <Content Include="Views\CoachsViews\Delete.aspx" />
     <Content Include="Views\CoachsViews\Edit.aspx" />
     <Content Include="Views\CoachsViews\New.aspx" />
     <Content Include="Views\CoachsViews\ShowCoachs.aspx" />
@@ -97,7 +96,6 @@
     <Content Include="Views\MembersViews\Edit.aspx" />
     <Content Include="Views\MembersViews\New.aspx" />
     <Content Include="Views\MembersViews\ShowMembers.aspx" />
-    <Content Include="Views\MembresiesViews\Delete.aspx" />
     <Content Include="Views\MembresiesViews\Edit.aspx" />
     <Content Include="Views\MembresiesViews\New.aspx" />
     <Content Include="Views\MembresiesViews\ShowMembresies.aspx" />
@@ -145,13 +143,6 @@
     </Compile>
     <Compile Include="Views\BranchViews\ShowOffice.aspx.designer.cs">
       <DependentUpon>ShowOffice.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CoachsViews\Delete.aspx.cs">
-      <DependentUpon>Delete.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\CoachsViews\Delete.aspx.designer.cs">
-      <DependentUpon>Delete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CoachsViews\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
@@ -215,13 +206,6 @@
     </Compile>
     <Compile Include="Views\MembersViews\ShowMembers.aspx.designer.cs">
       <DependentUpon>ShowMembers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MembresiesViews\Delete.aspx.cs">
-      <DependentUpon>Delete.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\MembresiesViews\Delete.aspx.designer.cs">
-      <DependentUpon>Delete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\MembresiesViews\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>

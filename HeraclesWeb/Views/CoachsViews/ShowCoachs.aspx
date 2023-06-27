@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShowCoachs.aspx.cs" Inherits="HeraclesWeb.Views.CoachsViews.ShowCoachs" %>
+﻿<%@ Page Title="Coachs" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShowCoachs.aspx.cs" Inherits="HeraclesWeb.Views.CoachsViews.ShowCoachs" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -17,7 +17,7 @@
                 <br />
                 <div>
                     <form runat="server">
-                        <asp:GridView runat="server" ID="gridData" CssClass="table" AutoGenerateColumns="false" OnRowCommand="gridData_RowCommand" OnRowDataBound="gridData_RowDataBound" >
+                        <asp:GridView runat="server" ID="gridData" CssClass="table" AutoGenerateColumns="false" OnRowCommand="gridData_RowCommand" OnRowDataBound="gridData_RowDataBound" OnRowDeleting="gridData_RowDeleting" >
                             <Columns>
                                 <asp:BoundField DataField="ID" HeaderText="Nombre"/>
                                 <asp:BoundField DataField="Name" HeaderText="Apellido"/>
@@ -31,7 +31,18 @@
                         </asp:GridView>
                         <div>
                             <asp:Button runat="server" CssClass="button-class" ID="btnBack" OnClick="btnBack_Click" style="width: 100px" Text="Volver" />
+                            <asp:Button runat="server" style="display: none" ID="btnPopup" />
                         </div>
+                        <asp:ScriptManager runat="server" ID="toolkitManager" ScriptMode="Release"></asp:ScriptManager>
+                        <ajaxToolkit:ModalPopupExtender ID="ModalPopup" runat="server" TargetControlID="btnPopup" PopupControlID="pnlModal" BackgroundCssClass="modal-background" />
+                        <asp:Panel runat="server" ID="pnlModal" CssClass="modal-panel" style="display: none">
+                            <h4>Confirmar acción</h4>
+                            <label>Desea Eliminar el registro?</label>
+                            <div class="input-container">
+                                <asp:Button runat="server" CssClass="button-modal" ID="btnDelete" Text="Confirmar" OnClick="btnDelete_Click" />
+                                <asp:Button runat="server" CssClass="button-modal" ID="btnCancel" Text="Cancelar" OnClick="btnCancel_Click" />
+                            </div>
+                        </asp:Panel>
                     </form>
                 </div>
             </div>

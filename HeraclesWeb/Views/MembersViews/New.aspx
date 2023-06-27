@@ -43,7 +43,7 @@
                         </div>
                         <div class="input-container">
                             <asp:Button runat="server" Text="Añadir" OnClick="btnInsert_Click" ID="btnInsert" CssClass="button-class"/>
-                            <asp:Button runat="server" Text="Atrás" OnClick="btnBack_Click" ID="btnBack" CssClass="button-class"/>
+                            <asp:Button runat="server" Text="Volver" OnClick="btnBack_Click" ID="btnBack" CssClass="button-class"/>
                         </div>
                     </form>
                 </div>

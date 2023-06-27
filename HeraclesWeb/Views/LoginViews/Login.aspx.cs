@@ -23,6 +23,7 @@ namespace HeraclesWeb.Views.LoginViews
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            lblErrorLogin.Visible = false;
             _userImpl = new UserImpl();
             DataTable login = _userImpl.Login(txtUsername.Text, txtPassword.Text);
             try
@@ -46,6 +47,11 @@ namespace HeraclesWeb.Views.LoginViews
                             Response.Redirect(ResolveUrl("~/Views/MenuCoach.aspx"));
                             break;
                     }
+                }
+                else
+                {
+                    lblErrorLogin.Text = "Usuario y/o contraseña incorrectos. Verifique si los datos son correctos.";
+                    lblErrorLogin.Visible = true;
                 }
             }
             catch(Exception ex)

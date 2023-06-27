@@ -7,13 +7,14 @@
         <div class="container layout_padding2-top">
             <div class="row">
                 <div class="col-md-6 mx-auto">
-                    <form id="formMembresy" runat="server">
+                    <form runat="server">
                         <div>
                             <asp:TextBox ID="txtUsername" runat="server" type="text" placeholder="Usuario" />
                         </div>
                         <div>
                             <asp:TextBox runat="server" ID="txtPassword" type="password" placeholder="Contraseña" />
                         </div>
+                        <asp:Label runat="server" CssClass="error-class" ID="lblErrorLogin" Visible="false" />
                         <div class="col-md-6 mx-auto container">
                             <asp:Button runat="server" Text="Iniciar sesión" ID="btnLogin" OnClick="btnLogin_Click" CssClass="button-class" type="submit" />
                         </div>

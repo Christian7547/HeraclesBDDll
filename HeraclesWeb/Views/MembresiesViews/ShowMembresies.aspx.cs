@@ -14,6 +14,7 @@ namespace HeraclesWeb.Views.MembresiesViews
 
         MembresyImpl membresyImpl;
         Membresy membresy;
+        static Membresy aux;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,18 +52,15 @@ namespace HeraclesWeb.Views.MembresiesViews
 
                 case "delete":
                     row = Convert.ToInt32(e.CommandArgument);
-
                     dates = gridData.Rows[row];
-
                     membresy = new Membresy()
                     {
                         Id = byte.Parse(dates.Cells[0].Text),
                         TypeMembresy = dates.Cells[1].Text,
                         Price = float.Parse(dates.Cells[2].Text)
                     };
-
-                    Session["DeleteMembresy"] = membresy;
-                    Response.Redirect("DeleteMembresy");
+                    aux = membresy;
+                    ModalPopup.Show();
                     break;
             }
         }
@@ -81,12 +79,37 @@ namespace HeraclesWeb.Views.MembresiesViews
                     Response.Redirect(ResolveUrl("~/Views/Default"));
                     break;
                 case "Recepcionista":
-                    Response.Redirect(ResolveUrl("~/Views/MenuReceptionist.aspx"));
-                    break;
-                case "Coach":
-                    Response.Redirect(ResolveUrl("~/Views/MenuCoach.aspx"));
+                    Response.Redirect(ResolveUrl("~/Views/MenuReceptionist"));
                     break;
             }
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            membresyImpl = new MembresyImpl();
+            try
+            {
+                if(membresyImpl.Delete(aux) > 0)
+                {
+                    aux = null;
+                    ModalPopup.Hide();
+                    Select();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            ModalPopup.Hide();
+        }
+
+        protected void gridData_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
         }
     }
 }

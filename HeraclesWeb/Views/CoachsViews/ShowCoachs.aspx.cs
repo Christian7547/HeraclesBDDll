@@ -13,6 +13,7 @@ namespace HeraclesWeb.Views.CoachsViews
     {
         CoachImpl coachImpl;
         Coach _coach;
+        static Coach aux;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -62,9 +63,8 @@ namespace HeraclesWeb.Views.CoachsViews
                         CI = gridView.Cells[4].Text,
                         Phone = gridView.Cells[5].Text
                     };
-
-                    Session["DeleteCoach"] = _coach;
-                    Response.Redirect("DeleteCoach");
+                    aux = _coach;
+                    ModalPopup.Show();
                     break;
             }
         }
@@ -83,12 +83,40 @@ namespace HeraclesWeb.Views.CoachsViews
                     Response.Redirect(ResolveUrl("~/Views/Default"));
                     break;
                 case "Recepcionista":
-                    Response.Redirect(ResolveUrl("~/Views/MenuReceptionist.aspx"));
+                    Response.Redirect(ResolveUrl("~/Views/MenuReceptionist"));
                     break;
                 case "Coach":
-                    Response.Redirect(ResolveUrl("~/Views/MenuCoach.aspx"));
+                    Response.Redirect(ResolveUrl("~/Views/MenuCoach"));
                     break;
             }
+        }
+
+        protected void gridData_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            coachImpl = new CoachImpl();
+            try
+            {
+                if(coachImpl.Delete(aux) > 0)
+                {
+                    aux = null;
+                    ModalPopup.Hide();
+                    Select();
+                } 
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            ModalPopup.Hide();
         }
     }
 }
