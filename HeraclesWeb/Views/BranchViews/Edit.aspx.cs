@@ -5,10 +5,11 @@ using System;
 using System.Data;
 using System.Web;
 using System.Web.UI.WebControls;
+using System.Web.UI;
 
 namespace HeraclesWeb.Views.BranchViews
 {
-    public partial class Edit : System.Web.UI.Page
+    public partial class Edit : Page
     {
 
         OfficeImpl officeImpl;

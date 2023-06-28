@@ -302,74 +302,6 @@ a:focus {
 
 /*end header section*/
 
-@-webkit-keyframes odd-box-animate {
-    0% {
-        -webkit-transform: translateY(45px);
-        transform: translateY(45px);
-    }
-
-    50% {
-        -webkit-transform: translateY(-45px);
-        transform: translateY(-45px);
-    }
-
-    100% {
-        -webkit-transform: translateY(45px);
-        transform: translateY(45px);
-    }
-}
-
-@keyframes odd-box-animate {
-    0% {
-        -webkit-transform: translateY(45px);
-        transform: translateY(45px);
-    }
-
-    50% {
-        -webkit-transform: translateY(-45px);
-        transform: translateY(-45px);
-    }
-
-    100% {
-        -webkit-transform: translateY(45px);
-        transform: translateY(45px);
-    }
-}
-
-@-webkit-keyframes even-box-animate {
-    0% {
-        -webkit-transform: translateY(-45px);
-        transform: translateY(-45px);
-    }
-
-    50% {
-        -webkit-transform: translateY(45px);
-        transform: translateY(45px);
-    }
-
-    100% {
-        -webkit-transform: translateY(-45px);
-        transform: translateY(-45px);
-    }
-}
-
-@keyframes even-box-animate {
-    0% {
-        -webkit-transform: translateY(-45px);
-        transform: translateY(-45px);
-    }
-
-    50% {
-        -webkit-transform: translateY(45px);
-        transform: translateY(45px);
-    }
-
-    100% {
-        -webkit-transform: translateY(-45px);
-        transform: translateY(-45px);
-    }
-}
-
 /*INPUTS*/
 .work_section .btn-box a {
     color: #ffffff;
@@ -435,24 +367,6 @@ a:focus {
     background-color: transparent;
 }
 
-.client_section .client_container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 600px;
-    border: 1px solid #cccccc;
-    padding: 45px 35px 35px 25px;
-    background-color: #ffffff;
-    margin: 0 auto;
-}
-
 .client_section .client_container .detail-box p {
     text-align: center;
 }
@@ -485,7 +399,7 @@ a:focus {
 }
 
 .info_section {
-    background-color: #f44336;
+    background-color: #636363;
     color: #ffffff;
 }
 
@@ -574,4 +488,3 @@ a:focus {
 }
 
 /* end footer section*/
-/*# sourceMappingURL=style.css.map */

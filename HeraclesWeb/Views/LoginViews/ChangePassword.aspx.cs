@@ -1,16 +1,11 @@
 ﻿using HeraclesDAO.Logic;
-using HeraclesDAO.Models.Session;
 using HeraclesWeb.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace HeraclesWeb.Views.LoginViews
 {
-    public partial class ChangePassword : System.Web.UI.Page
+    public partial class ChangePassword : Page
     {
         UserImpl userImpl;
         ValidateWeb validateWeb;

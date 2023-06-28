@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using HeraclesDAO.Models;
 using HeraclesDAO.Logic;
 
 namespace HeraclesWeb.Views.MembresiesViews
 {
-    public partial class New : System.Web.UI.Page
+    public partial class New : Page
     {
         MembresyImpl membresyImpl;
         Membresy _membresy;

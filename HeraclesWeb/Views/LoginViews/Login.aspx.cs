@@ -1,14 +1,8 @@
 ﻿using HeraclesDAO.Logic;
-using HeraclesDAO.Models;
 using HeraclesDAO.Models.Session;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.SessionState;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace HeraclesWeb.Views.LoginViews
 {
@@ -50,7 +44,7 @@ namespace HeraclesWeb.Views.LoginViews
                 }
                 else
                 {
-                    lblErrorLogin.Text = "Usuario y/o contraseña incorrectos. Verifique si los datos son correctos.";
+                    lblErrorLogin.Text = "Usuario y/o contraseña incorrectos. Verifique los datos y vuelva a intentarlo.";
                     lblErrorLogin.Visible = true;
                 }
             }

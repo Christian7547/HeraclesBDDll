@@ -18,8 +18,6 @@ namespace Heracles.Coachs
 
         Validate validate;
 
-        private bool isKeyBlocked = false;
-
         public winFormCoach()
         {
             InitializeComponent();
