@@ -47,7 +47,7 @@ namespace HeraclesWeb.Views.LoginViews
                 else
                 {
                     lblErrorNewPassword.Text = "Las contraseñas no coinciden";
-                    txtConfirmPassword.Text = "Las contraseñas no coinciden";
+                    lblErrorPassword.Text = "Las contraseñas no coinciden";
                     lblErrorNewPassword.Visible = true;
                     lblErrorPassword.Visible = true;
                 }
