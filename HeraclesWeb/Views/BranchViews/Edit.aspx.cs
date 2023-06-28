@@ -23,6 +23,7 @@ namespace HeraclesWeb.Views.BranchViews
             {
                 txtId.Text = office.Id.ToString();
                 txtName.Text = HttpUtility.HtmlDecode(office.Name);
+                txtDirection.Text = HttpUtility.HtmlDecode(office.Direction);
                 txtLatitude.Text = office.Latitude.ToString();
                 txtLongitude.Text = office.Longitude.ToString();
                 Session.Remove("EditOffice");
@@ -39,6 +40,7 @@ namespace HeraclesWeb.Views.BranchViews
             {
                 Id = byte.Parse(txtId.Text),
                 Name = txtName.Text,
+                Direction = txtDirection.Text,
                 Latitude = double.Parse(txtLatitude.Text.Replace('.', ',')),
                 Longitude = double.Parse(txtLongitude.Text.Replace('.', ',')),
                 CityId = byte.Parse(cmbLocation.SelectedValue),

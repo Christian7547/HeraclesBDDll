@@ -25,12 +25,13 @@ namespace HeraclesDAO.Logic
         public int Insert(Office t)
         {
             int success;
-            _query = @"INSERT INTO BranchOffice([name], latitude, longitude, cityId, userId) 
-                        VALUES(@name, @latitude, @longitude, @cityId, @userId)";
+            _query = @"INSERT INTO BranchOffice([name], direction, latitude, longitude, cityId, userId) 
+                        VALUES(@name, @direction, @latitude, @longitude, @cityId, @userId)";
             using (SqlCommand insert = CreateCommand(_query))
             {
                 insert.Connection.Open();
                 insert.Parameters.AddWithValue("@name", t.Name);
+                insert.Parameters.AddWithValue("@direction", t.Direction);
                 insert.Parameters.AddWithValue("@latitude", t.Latitude);
                 insert.Parameters.AddWithValue("@longitude", t.Longitude);
                 insert.Parameters.AddWithValue("@cityId", t.CityId);
@@ -44,7 +45,8 @@ namespace HeraclesDAO.Logic
         public DataTable Select()
         {
             DataTable dataTable;
-            _query = @"SELECT O.id AS ID, O.[name] AS Office, O.latitude AS Latitude, O.longitude AS Longitude, C.[name] AS City
+            _query = @"SELECT O.id AS ID, O.[name] AS Office, O.direction AS 'Dirección', 
+                                O.latitude AS Latitude, O.longitude AS Longitude, C.[name] AS City
 	                            FROM BranchOffice O
 	                            INNER JOIN City C ON C.id = O.cityId
 	                            WHERE O.[status] = 1";
@@ -58,12 +60,14 @@ namespace HeraclesDAO.Logic
         public int Update(Office t)
         {
             int success;
-            _query = @"UPDATE BranchOffice SET [name] = @name, latitude = @latitude, longitude = @longitude, cityId = @cityId,
+            _query = @"UPDATE BranchOffice SET [name] = @name, direction = @direction, 
+                        latitude = @latitude, longitude = @longitude, cityId = @cityId,
 						lastUpdate = CURRENT_TIMESTAMP, userId = @userId WHERE id = @id";
             using (SqlCommand update = CreateCommand(_query))
             {
                 update.Connection.Open();
                 update.Parameters.AddWithValue("@name", t.Name);
+                update.Parameters.AddWithValue("@direction", t.Direction);
                 update.Parameters.AddWithValue("@latitude", t.Latitude);
                 update.Parameters.AddWithValue("@longitude", t.Longitude);
                 update.Parameters.AddWithValue("@cityId", t.CityId);

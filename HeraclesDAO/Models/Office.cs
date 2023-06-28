@@ -10,6 +10,7 @@ namespace HeraclesDAO.Models
     {
         public byte Id { get; set; }
         public string Name { get; set; }
+        public string Direction { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public byte CityId { get; set; }

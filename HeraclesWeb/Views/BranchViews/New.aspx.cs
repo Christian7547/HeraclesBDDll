@@ -24,6 +24,7 @@ namespace HeraclesWeb.Views.BranchViews
             office = new Office()
             {
                 Name = txtName.Text,
+                Direction = txtDirection.Text,
                 Latitude = double.Parse(txtLatitude.Text.Replace('.', ',')),
                 Longitude = double.Parse(txtLongitude.Text.Replace('.', ',')),
                 CityId = byte.Parse(cmbLocation.SelectedValue),

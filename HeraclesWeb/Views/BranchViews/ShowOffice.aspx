@@ -17,8 +17,9 @@
                     <form runat="server">
                         <asp:GridView runat="server" ID="gridData" CssClass="table" AutoGenerateColumns="false" OnRowCommand="gridData_RowCommand" OnRowDataBound="gridData_RowDataBound" OnRowDeleting="gridData_RowDeleting">
                             <Columns>
-                                <asp:BoundField DataField="ID" HeaderText="Dirección"/>
-                                <asp:BoundField DataField="Office" HeaderText="Latitud"/>
+                                <asp:BoundField DataField="ID" HeaderText="Oficina"/>
+                                <asp:BoundField DataField="Office" HeaderText="Dirección"/>
+                                <asp:BoundField DataField="Dirección" HeaderText="Latitud"/>
                                 <asp:BoundField DataField="Latitude" HeaderText="Longitud"/>
                                 <asp:BoundField DataField="Longitude" HeaderText="Ciudad"/>
                                 <asp:BoundField DataField="City"/>

@@ -14,6 +14,9 @@
                             <asp:TextBox ID="txtName" runat="server" type="text" placeholder="Nombre de la sucursal" />
                         </div>
                         <div>
+                            <asp:TextBox ID="txtDirection" runat="server" type="text" placeholder="Dirección de la sucursal" />
+                        </div>
+                        <div>
                             <asp:DropDownList runat="server" ID="cmbLocation" />
                         </div>
                         <div>

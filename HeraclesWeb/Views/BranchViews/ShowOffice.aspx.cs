@@ -42,10 +42,11 @@ namespace HeraclesWeb.Views.BranchViews
                     {
                         Id = byte.Parse(gridViewRow.Cells[0].Text),
                         Name = gridViewRow.Cells[1].Text,
-                        Latitude = double.Parse(gridViewRow.Cells[2].Text),
-                        Longitude = double.Parse(gridViewRow.Cells[3].Text)
+                        Direction = gridViewRow.Cells[2].Text,
+                        Latitude = double.Parse(gridViewRow.Cells[3].Text),
+                        Longitude = double.Parse(gridViewRow.Cells[4].Text)
                     };
-                    string cityName = gridViewRow.Cells[4].Text;
+                    string cityName = gridViewRow.Cells[5].Text;
                     Session["editOffice"] = office;
                     Session["city"] = cityName;
                     Response.Redirect("EditOffice");
@@ -57,8 +58,9 @@ namespace HeraclesWeb.Views.BranchViews
                     {
                         Id = byte.Parse(gridViewRow.Cells[0].Text),
                         Name = gridViewRow.Cells[1].Text,
-                        Latitude = double.Parse(gridViewRow.Cells[2].Text),
-                        Longitude = double.Parse(gridViewRow.Cells[3].Text)
+                        Direction = gridViewRow.Cells[2].Text,
+                        Latitude = double.Parse(gridViewRow.Cells[3].Text),
+                        Longitude = double.Parse(gridViewRow.Cells[4].Text)
                     };
                     aux = office;
                     ModalPopup.Show();
