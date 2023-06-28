@@ -44,6 +44,8 @@ namespace HeraclesWeb.Views.LoginViews
                 }
                 else
                 {
+                    txtUsername.Text = string.Empty;
+                    txtPassword.Text = string.Empty;
                     lblErrorLogin.Text = "Usuario y/o contraseña incorrectos. Verifique los datos y vuelva a intentarlo.";
                     lblErrorLogin.Visible = true;
                 }
